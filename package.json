@@ -1,0 +1,15 @@
+{
+  "name": "tipa",
+  "version": "1.0.0",
+  "description": "IPA in JavaScript",
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipa"
+  ],
+  "author": "Dustin Newman",
+  "license": "ISC"
+}
