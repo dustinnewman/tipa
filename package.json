@@ -11,5 +11,9 @@
     "ipa"
   ],
   "author": "Dustin Newman",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/dustinnewman98/tipa.git",
+    "type": "git"
+  }
 }
