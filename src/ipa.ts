@@ -5,7 +5,9 @@ import {
     ipa_vowel,
     ipa_diacritic,
     ipa_letter,
-    is_letter
+    is_letter,
+    LETTER,
+    DIAC
 } from "./types"
 import { get_feature_string } from "./feature_string"
 
@@ -157,9 +159,6 @@ export const features = {
     TENSE,
 }
 
-const LETTER = "letter"
-const DIAC = "diacritic"
-
 function pair_nums(...nums: number[]) {
     let str = ""
     for (let num of nums) {
@@ -168,7 +167,7 @@ function pair_nums(...nums: number[]) {
     return parseInt(str, 10)
 }
 
-const glottal_stop: ipa_consonant = {
+export const glottal_stop: ipa_consonant = {
     name: "glottal stop",
     type: LETTER,
     place: GLOTTAL,
@@ -211,7 +210,7 @@ const glottal_stop: ipa_consonant = {
     }
 }
 
-const high_front_tense_unround_vowel: ipa_vowel = {
+export const high_front_tense_unround_vowel: ipa_vowel = {
     name: "high front tense unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -253,7 +252,7 @@ const high_front_tense_unround_vowel: ipa_vowel = {
     }
 }
 
-const high_front_tense_round_vowel: ipa_vowel = {
+export const high_front_tense_round_vowel: ipa_vowel = {
     name: "high front tense rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -295,7 +294,7 @@ const high_front_tense_round_vowel: ipa_vowel = {
     }
 }
 
-const near_high_front_lax_unround_vowel: ipa_vowel = {
+export const near_high_front_lax_unround_vowel: ipa_vowel = {
     name: "near-high front lax unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -337,7 +336,7 @@ const near_high_front_lax_unround_vowel: ipa_vowel = {
     }
 }
 
-const near_high_front_lax_round_vowel: ipa_vowel = {
+export const near_high_front_lax_round_vowel: ipa_vowel = {
     name: "near-high front lax rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -379,7 +378,7 @@ const near_high_front_lax_round_vowel: ipa_vowel = {
     }
 }
 
-const high_mid_front_tense_unround_vowel: ipa_vowel = {
+export const high_mid_front_tense_unround_vowel: ipa_vowel = {
     name: "high-mid front tense unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -421,7 +420,7 @@ const high_mid_front_tense_unround_vowel: ipa_vowel = {
     }
 }
 
-const high_mid_front_tense_round_vowel: ipa_vowel = {
+export const high_mid_front_tense_round_vowel: ipa_vowel = {
     name: "high-mid front tense rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -463,7 +462,7 @@ const high_mid_front_tense_round_vowel: ipa_vowel = {
     }
 }
 
-const low_mid_front_unround_vowel: ipa_vowel = {
+export const low_mid_front_unround_vowel: ipa_vowel = {
     name: "low-mid front unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -505,7 +504,7 @@ const low_mid_front_unround_vowel: ipa_vowel = {
     }
 }
 
-const low_mid_front_round_vowel: ipa_vowel = {
+export const low_mid_front_round_vowel: ipa_vowel = {
     name: "low-mid front rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -547,7 +546,7 @@ const low_mid_front_round_vowel: ipa_vowel = {
     }
 }
 
-const near_low_front_unround_vowel: ipa_vowel = {
+export const near_low_front_unround_vowel: ipa_vowel = {
     name: "near-low front unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -589,7 +588,7 @@ const near_low_front_unround_vowel: ipa_vowel = {
     }
 }
 
-const low_front_unround_vowel: ipa_vowel = {
+export const low_front_unround_vowel: ipa_vowel = {
     name: "low front unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -631,7 +630,7 @@ const low_front_unround_vowel: ipa_vowel = {
     }
 }
 
-const low_front_round_vowel: ipa_vowel = {
+export const low_front_round_vowel: ipa_vowel = {
     name: "low front rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -673,7 +672,7 @@ const low_front_round_vowel: ipa_vowel = {
     }
 }
 
-const high_central_tense_unround_vowel: ipa_vowel = {
+export const high_central_tense_unround_vowel: ipa_vowel = {
     name: "high central tense unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -715,7 +714,7 @@ const high_central_tense_unround_vowel: ipa_vowel = {
     }
 }
 
-const high_central_tense_round_vowel: ipa_vowel = {
+export const high_central_tense_round_vowel: ipa_vowel = {
     name: "high central tense rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -757,7 +756,7 @@ const high_central_tense_round_vowel: ipa_vowel = {
     }
 }
 
-const schwa: ipa_vowel = {
+export const schwa: ipa_vowel = {
     name: "schwa",
     type: LETTER,
     place: DORSAL,
@@ -799,7 +798,7 @@ const schwa: ipa_vowel = {
     }
 }
 
-const high_back_tense_unround_vowel: ipa_vowel = {
+export const high_back_tense_unround_vowel: ipa_vowel = {
     name: "high back tense unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -841,7 +840,7 @@ const high_back_tense_unround_vowel: ipa_vowel = {
     }
 }
 
-const high_back_tense_round_vowel: ipa_vowel = {
+export const high_back_tense_round_vowel: ipa_vowel = {
     name: "high back tense rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -883,7 +882,7 @@ const high_back_tense_round_vowel: ipa_vowel = {
     }
 }
 
-const near_high_back_lax_round_vowel: ipa_vowel = {
+export const near_high_back_lax_round_vowel: ipa_vowel = {
     name: "near-high back lax rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -925,7 +924,7 @@ const near_high_back_lax_round_vowel: ipa_vowel = {
     }
 }
 
-const high_mid_back_tense_unround_vowel: ipa_vowel = {
+export const high_mid_back_tense_unround_vowel: ipa_vowel = {
     name: "high-mid back tense unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -967,7 +966,7 @@ const high_mid_back_tense_unround_vowel: ipa_vowel = {
     }
 }
 
-const high_mid_back_tense_round_vowel: ipa_vowel = {
+export const high_mid_back_tense_round_vowel: ipa_vowel = {
     name: "high-mid back tense rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -1009,7 +1008,7 @@ const high_mid_back_tense_round_vowel: ipa_vowel = {
     }
 }
 
-const low_mid_back_lax_unround_vowel: ipa_vowel = {
+export const low_mid_back_lax_unround_vowel: ipa_vowel = {
     name: "low-mid back lax unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -1051,7 +1050,7 @@ const low_mid_back_lax_unround_vowel: ipa_vowel = {
     }
 }
 
-const low_mid_back_lax_round_vowel: ipa_vowel = {
+export const low_mid_back_lax_round_vowel: ipa_vowel = {
     name: "low-mid back lax rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -1093,7 +1092,7 @@ const low_mid_back_lax_round_vowel: ipa_vowel = {
     }
 }
 
-const low_back_unround_vowel: ipa_vowel = {
+export const low_back_unround_vowel: ipa_vowel = {
     name: "low back unrounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -1135,7 +1134,7 @@ const low_back_unround_vowel: ipa_vowel = {
     }
 }
 
-const low_back_round_vowel: ipa_vowel = {
+export const low_back_round_vowel: ipa_vowel = {
     name: "low back rounded vowel",
     type: LETTER,
     place: DORSAL,
@@ -1177,7 +1176,7 @@ const low_back_round_vowel: ipa_vowel = {
     }
 }
 
-const voiceless_bilabial_stop: ipa_consonant = {
+export const voiceless_bilabial_stop: ipa_consonant = {
     name: "voiceless bilabial stop",
     type: LETTER,
     place: BILAB,
@@ -1220,7 +1219,7 @@ const voiceless_bilabial_stop: ipa_consonant = {
     }
 }
 
-const voiced_bilabial_stop: ipa_consonant = {
+export const voiced_bilabial_stop: ipa_consonant = {
     name: "voiced bilabial stop",
     type: LETTER,
     place: BILAB,
@@ -1263,7 +1262,7 @@ const voiced_bilabial_stop: ipa_consonant = {
     }
 }
 
-const voiced_bilabial_nasal: ipa_consonant = {
+export const voiced_bilabial_nasal: ipa_consonant = {
     name: "voiced bilabial nasal",
     type: LETTER,
     place: BILAB,
@@ -1306,7 +1305,7 @@ const voiced_bilabial_nasal: ipa_consonant = {
     }
 }
 
-const voiceless_bilabial_nasal: ipa_consonant = {
+export const voiceless_bilabial_nasal: ipa_consonant = {
     name: "voiceless bilabial nasal",
     type: LETTER,
     place: BILAB,
@@ -1349,7 +1348,7 @@ const voiceless_bilabial_nasal: ipa_consonant = {
     }
 }
 
-const voiceless_bilabial_fricative: ipa_consonant = {
+export const voiceless_bilabial_fricative: ipa_consonant = {
     name: "voiceless bilabial fricative",
     type: LETTER,
     place: BILAB,
@@ -1392,7 +1391,7 @@ const voiceless_bilabial_fricative: ipa_consonant = {
     }
 }
 
-const voiced_bilabial_fricative: ipa_consonant = {
+export const voiced_bilabial_fricative: ipa_consonant = {
     name: "voiced bilabial fricative",
     type: LETTER,
     place: BILAB,
@@ -1435,7 +1434,7 @@ const voiced_bilabial_fricative: ipa_consonant = {
     }
 }
 
-const voiced_bilabial_trill: ipa_consonant = {
+export const voiced_bilabial_trill: ipa_consonant = {
     name: "voiced bilabial trill",
     type: LETTER,
     place: BILAB,
@@ -1478,7 +1477,7 @@ const voiced_bilabial_trill: ipa_consonant = {
     }
 }
 
-const voiceless_bilabial_trill: ipa_consonant = {
+export const voiceless_bilabial_trill: ipa_consonant = {
     name: "voiceless bilabial trill",
     type: LETTER,
     place: BILAB,
@@ -1521,7 +1520,7 @@ const voiceless_bilabial_trill: ipa_consonant = {
     }
 }
 
-const voiceless_labiodental_affricate: ipa_consonant = {
+export const voiceless_labiodental_affricate: ipa_consonant = {
     name: "voiceless labiodental affricate",
     type: LETTER,
     place: LAB_DEN,
@@ -1564,7 +1563,7 @@ const voiceless_labiodental_affricate: ipa_consonant = {
     }
 }
 
-const voiced_labiodental_affricate: ipa_consonant = {
+export const voiced_labiodental_affricate: ipa_consonant = {
     name: "voiced labiodental affricate",
     type: LETTER,
     place: LAB_DEN,
@@ -1607,7 +1606,7 @@ const voiced_labiodental_affricate: ipa_consonant = {
     }
 }
 
-const voiced_labiodental_nasal: ipa_consonant = {
+export const voiced_labiodental_nasal: ipa_consonant = {
     name: "voiced labiodental nasal",
     type: LETTER,
     place: LAB_DEN,
@@ -1650,7 +1649,7 @@ const voiced_labiodental_nasal: ipa_consonant = {
     }
 }
 
-const voiceless_labiodental_fricative: ipa_consonant = {
+export const voiceless_labiodental_fricative: ipa_consonant = {
     name: "voiceless labiodental fricative",
     type: LETTER,
     place: LAB_DEN,
@@ -1693,7 +1692,7 @@ const voiceless_labiodental_fricative: ipa_consonant = {
     }
 }
 
-const voiced_labiodental_fricative: ipa_consonant = {
+export const voiced_labiodental_fricative: ipa_consonant = {
     name: "voiced labiodental fricative",
     type: LETTER,
     place: LAB_DEN,
@@ -1736,7 +1735,7 @@ const voiced_labiodental_fricative: ipa_consonant = {
     }
 }
 
-const voiced_labiodental_approximant: ipa_consonant = {
+export const voiced_labiodental_approximant: ipa_consonant = {
     name: "voiced labiodental approximant",
     type: LETTER,
     place: LAB_DEN,
@@ -1779,7 +1778,7 @@ const voiced_labiodental_approximant: ipa_consonant = {
     }
 }
 
-const voiceless_alveolar_stop: ipa_consonant = {
+export const voiceless_alveolar_stop: ipa_consonant = {
     name: "voiceless alveolar stop",
     type: LETTER,
     place: ALV,
@@ -1822,7 +1821,7 @@ const voiceless_alveolar_stop: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_stop: ipa_consonant = {
+export const voiced_alveolar_stop: ipa_consonant = {
     name: "voiced alveolar stop",
     type: LETTER,
     place: ALV,
@@ -1865,7 +1864,7 @@ const voiced_alveolar_stop: ipa_consonant = {
     }
 }
 
-const voiceless_dental_stop: ipa_consonant = {
+export const voiceless_dental_stop: ipa_consonant = {
     name: "voiceless dental stop",
     type: LETTER,
     place: DENTAL,
@@ -1908,7 +1907,7 @@ const voiceless_dental_stop: ipa_consonant = {
     }
 }
 
-const voiced_dental_stop: ipa_consonant = {
+export const voiced_dental_stop: ipa_consonant = {
     name: "voiced dental stop",
     type: LETTER,
     place: DENTAL,
@@ -1951,7 +1950,7 @@ const voiced_dental_stop: ipa_consonant = {
     }
 }
 
-const voiceless_dental_fricative: ipa_consonant = {
+export const voiceless_dental_fricative: ipa_consonant = {
     name: "voiceless dental fricative",
     type: LETTER,
     place: INTER_DENT,
@@ -1994,7 +1993,7 @@ const voiceless_dental_fricative: ipa_consonant = {
     }
 }
 
-const voiced_dental_fricative: ipa_consonant = {
+export const voiced_dental_fricative: ipa_consonant = {
     name: "voiced dental fricative",
     type: LETTER,
     place: INTER_DENT,
@@ -2037,7 +2036,7 @@ const voiced_dental_fricative: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_nasal: ipa_consonant = {
+export const voiced_alveolar_nasal: ipa_consonant = {
     name: "voiced alveolar nasal",
     type: LETTER,
     place: ALV,
@@ -2080,7 +2079,7 @@ const voiced_alveolar_nasal: ipa_consonant = {
     }
 }
 
-const voiceless_alveolar_affricate: ipa_consonant = {
+export const voiceless_alveolar_affricate: ipa_consonant = {
     name: "voiceless alveolar affricate",
     type: LETTER,
     place: ALV,
@@ -2123,7 +2122,7 @@ const voiceless_alveolar_affricate: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_affricate: ipa_consonant = {
+export const voiced_alveolar_affricate: ipa_consonant = {
     name: "voiced alveolar affricate",
     type: LETTER,
     place: ALV,
@@ -2166,7 +2165,7 @@ const voiced_alveolar_affricate: ipa_consonant = {
     }
 }
 
-const voiceless_alveolar_fricative: ipa_consonant = {
+export const voiceless_alveolar_fricative: ipa_consonant = {
     name: "voiceless alveolar fricative",
     type: LETTER,
     place: ALV,
@@ -2209,7 +2208,7 @@ const voiceless_alveolar_fricative: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_fricative: ipa_consonant = {
+export const voiced_alveolar_fricative: ipa_consonant = {
     name: "voiced alveolar fricative",
     type: LETTER,
     place: ALV,
@@ -2252,7 +2251,7 @@ const voiced_alveolar_fricative: ipa_consonant = {
     }
 }
 
-const voiceless_alveolar_lat_affricate: ipa_consonant = {
+export const voiceless_alveolar_lat_affricate: ipa_consonant = {
     name: "voiceless alveolar lateral affricate",
     type: LETTER,
     place: ALV,
@@ -2295,7 +2294,7 @@ const voiceless_alveolar_lat_affricate: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_lat_affricate: ipa_consonant = {
+export const voiced_alveolar_lat_affricate: ipa_consonant = {
     name: "voiced alveolar lateral affricate",
     type: LETTER,
     place: ALV,
@@ -2338,7 +2337,7 @@ const voiced_alveolar_lat_affricate: ipa_consonant = {
     }
 }
 
-const voiceless_alveolar_lat_fric: ipa_consonant = {
+export const voiceless_alveolar_lat_fric: ipa_consonant = {
     name: "voiceless alveolar lateral fricative",
     type: LETTER,
     place: ALV,
@@ -2381,7 +2380,7 @@ const voiceless_alveolar_lat_fric: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_lat_fric: ipa_consonant = {
+export const voiced_alveolar_lat_fric: ipa_consonant = {
     name: "voiced alveolar lateral fricative",
     type: LETTER,
     place: ALV,
@@ -2424,7 +2423,7 @@ const voiced_alveolar_lat_fric: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_approx: ipa_consonant = {
+export const voiced_alveolar_approx: ipa_consonant = {
     name: "voiced alveolar approximant",
     type: LETTER,
     place: ALV,
@@ -2467,7 +2466,7 @@ const voiced_alveolar_approx: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_trill: ipa_consonant = {
+export const voiced_alveolar_trill: ipa_consonant = {
     name: "voiced alveolar trill",
     type: LETTER,
     place: ALV,
@@ -2510,7 +2509,7 @@ const voiced_alveolar_trill: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_tap: ipa_consonant = {
+export const voiced_alveolar_tap: ipa_consonant = {
     name: "voiced alveolar tap",
     type: LETTER,
     place: ALV,
@@ -2553,7 +2552,7 @@ const voiced_alveolar_tap: ipa_consonant = {
     }
 }
 
-const voiced_alveolar_lateral: ipa_consonant = {
+export const voiced_alveolar_lateral: ipa_consonant = {
     name: "voiced alveolar lateral",
     type: LETTER,
     place: ALV,
@@ -2596,7 +2595,7 @@ const voiced_alveolar_lateral: ipa_consonant = {
     }
 }
 
-const dark_l: ipa_consonant = {
+export const dark_l: ipa_consonant = {
     name: "dark l",
     type: LETTER,
     place: ALV,
@@ -2639,7 +2638,7 @@ const dark_l: ipa_consonant = {
     }
 }
 
-const voiceless_pal_alv_affricate: ipa_consonant = {
+export const voiceless_pal_alv_affricate: ipa_consonant = {
     name: "voiceless palatoalveolar affricate",
     type: LETTER,
     place: PAL_ALV,
@@ -2682,7 +2681,7 @@ const voiceless_pal_alv_affricate: ipa_consonant = {
     }
 }
 
-const voiced_pal_alv_affricate: ipa_consonant = {
+export const voiced_pal_alv_affricate: ipa_consonant = {
     name: "voiced palatoalveolar affricate",
     type: LETTER,
     place: PAL_ALV,
@@ -2725,7 +2724,7 @@ const voiced_pal_alv_affricate: ipa_consonant = {
     }
 }
 
-const voiceless_pal_alv_fricative: ipa_consonant = {
+export const voiceless_pal_alv_fricative: ipa_consonant = {
     name: "voiceless palatoalveolar fricative",
     type: LETTER,
     place: PAL_ALV,
@@ -2768,7 +2767,7 @@ const voiceless_pal_alv_fricative: ipa_consonant = {
     }
 }
 
-const voiced_pal_alv_fricative = {
+export const voiced_pal_alv_fricative = {
     name: "voiced palatoalveolar fricative",
     type: LETTER,
     place: PAL_ALV,
@@ -2811,7 +2810,7 @@ const voiced_pal_alv_fricative = {
     }
 }
 
-const voiceless_velar_stop: ipa_consonant = {
+export const voiceless_velar_stop: ipa_consonant = {
     name: "voiceless velar stop",
     type: LETTER,
     place: VEL,
@@ -2854,7 +2853,7 @@ const voiceless_velar_stop: ipa_consonant = {
     }
 }
 
-const voiced_velar_stop: ipa_consonant = {
+export const voiced_velar_stop: ipa_consonant = {
     name: "voiced velar stop",
     type: LETTER,
     place: VEL,
@@ -2897,7 +2896,7 @@ const voiced_velar_stop: ipa_consonant = {
     }
 }
 
-const voiced_velar_nasal: ipa_consonant = {
+export const voiced_velar_nasal: ipa_consonant = {
     name: "voiced velar nasal",
     type: LETTER,
     place: VEL,
@@ -2940,7 +2939,7 @@ const voiced_velar_nasal: ipa_consonant = {
     }
 }
 
-const voiceless_uvular_stop = {
+export const voiceless_uvular_stop = {
     name: "voiceless uvular stop",
     type: LETTER,
     place: UVU,
@@ -2983,7 +2982,7 @@ const voiceless_uvular_stop = {
     }
 }
 
-const voiced_uvular_stop = {
+export const voiced_uvular_stop = {
     name: "voiced uvular stop",
     type: LETTER,
     place: UVU,
@@ -3026,7 +3025,7 @@ const voiced_uvular_stop = {
     }
 }
 
-const voiced_uvular_nasal: ipa_consonant = {
+export const voiced_uvular_nasal: ipa_consonant = {
     name: "voiced uvular nasal",
     type: LETTER,
     place: UVU,
@@ -3069,7 +3068,7 @@ const voiced_uvular_nasal: ipa_consonant = {
     }
 }
 
-const voiceless_glottal_fricative: ipa_consonant = {
+export const voiceless_glottal_fricative: ipa_consonant = {
     name: "voiceless glottal fricative",
     type: LETTER,
     place: GLOTTAL,
@@ -3112,7 +3111,7 @@ const voiceless_glottal_fricative: ipa_consonant = {
     }
 }
 
-const voiceless_velar_fricative: ipa_consonant = {
+export const voiceless_velar_fricative: ipa_consonant = {
     name: "voiceless velar fricative",
     type: LETTER,
     place: VEL,
@@ -3155,7 +3154,7 @@ const voiceless_velar_fricative: ipa_consonant = {
     }
 }
 
-const voiced_velar_fricative: ipa_consonant = {
+export const voiced_velar_fricative: ipa_consonant = {
     name: "voiced velar fricative",
     type: LETTER,
     place: VEL,
@@ -3198,7 +3197,7 @@ const voiced_velar_fricative: ipa_consonant = {
     }
 }
 
-const syllable_break: ipa_diacritic = {
+export const syllable_break: ipa_diacritic = {
     name: "syllable break",
     type: DIAC,
     ipa_sym: ".",
@@ -3207,7 +3206,7 @@ const syllable_break: ipa_diacritic = {
     number: 506
 }
 
-const primary_stress: ipa_diacritic = {
+export const primary_stress: ipa_diacritic = {
     name: "primary stress",
     type: DIAC,
     ipa_sym: "ˈ",
@@ -3216,7 +3215,7 @@ const primary_stress: ipa_diacritic = {
     number: 501
 }
 
-const secondary_stress: ipa_diacritic = {
+export const secondary_stress: ipa_diacritic = {
     name: "secondary stress",
     type: DIAC,
     ipa_sym: "ˌ",

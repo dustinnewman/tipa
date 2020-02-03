@@ -66,10 +66,27 @@ export type ipa_letter = ipa_vowel | ipa_consonant
 
 export type word = ipa_symbol[]
 
+export type correspondence = (number | null)[]
+
+export type markedness_constraint = (output: word) => number
+
+export type faithfulness_constraint = (input: word, output: word, corr: correspondence) => number
+
+export const LETTER = "letter"
+export const DIAC = "diacritic"
+
 export function is_diacritic(symbol: ipa_symbol): symbol is ipa_diacritic {
-    return (symbol as ipa_diacritic).type === "diacritic";
+    return (symbol as ipa_diacritic).type === DIAC;
 }
 
 export function is_letter(symbol: ipa_symbol): symbol is ipa_letter {
-    return (symbol as ipa_letter).type === "letter";
+    return (symbol as ipa_letter).type === LETTER;
+}
+
+export function is_consonant(symbol: ipa_letter): symbol is ipa_consonant {
+    return (symbol as ipa_consonant).consonant === true;
+}
+
+export function is_vowel(symbol: ipa_letter): symbol is ipa_vowel {
+    return (symbol as ipa_vowel).vowel === true;
 }
