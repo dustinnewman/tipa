@@ -17,3 +17,19 @@ function NOCODA(output) {
     return violations;
 }
 exports.NOCODA = NOCODA;
+function ONSET(output) {
+    var violations = 0;
+    var length = output.length;
+    for (var i = 0; i < length; i++) {
+        if (i < length - 1 && output[i].name === "syllable break") {
+            var next = output[i + 1];
+            if (types_1.is_letter(next)) {
+                if (next.consonant !== true) {
+                    violations += 1;
+                }
+            }
+        }
+    }
+    return violations;
+}
+exports.ONSET = ONSET;
