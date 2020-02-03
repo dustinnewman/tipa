@@ -3,8 +3,11 @@ import {
     ipa_symbol,
     ipa_consonant,
     ipa_vowel,
-    ipa_diacritic
+    ipa_diacritic,
+    ipa_letter,
+    is_letter
 } from "./types"
+import { get_feature_string } from "./feature_string"
 
 const LABIAL = "labial"
 const BILAB = "bilabial"
@@ -3302,6 +3305,7 @@ const all_phones: ipa_symbol[] = [
 let phones_by_name: { [key: string]: ipa_symbol } = {}
 let phones_by_ipa_sym: { [key: string]: ipa_symbol } = {}
 let phones_by_branner: { [key: string]: ipa_symbol } = {}
+let letters_by_feature_string: { [key: string]: ipa_letter } = {}
 
 const num_phones = all_phones.length
 for (let i = 0; i < num_phones; i++) {
@@ -3309,6 +3313,10 @@ for (let i = 0; i < num_phones; i++) {
     phones_by_name[phone.name] = phone
     phones_by_ipa_sym[phone.ipa_sym] = phone
     phones_by_branner[phone.branner] = phone
+    if (is_letter(phone)) {
+        const fs = get_feature_string(phone.features)
+        letters_by_feature_string[fs] = phone
+    }
 }
 
 export function get(key: string): ipa_symbol | undefined {
@@ -3322,6 +3330,14 @@ export function get(key: string): ipa_symbol | undefined {
 
     if (phones_by_ipa_sym[key]) {
         return phones_by_ipa_sym[key]
+    }
+
+    return undefined
+}
+
+export function get_by_feature_string(key: string): ipa_letter | undefined {
+    if (letters_by_feature_string[key]) {
+        return letters_by_feature_string[key]
     }
 
     return undefined

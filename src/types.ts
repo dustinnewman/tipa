@@ -38,6 +38,8 @@ export interface feature_matrix {
     TENSE: feature;
 }
 
+export type feature_string = string
+
 export type ipa_symbol = {
     name: string;
     type: string;
