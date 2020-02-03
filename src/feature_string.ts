@@ -19,8 +19,6 @@ function get_char(f: feature): string {
 export function get_feature_string(i: feature_matrix): feature_string {
     let fs: feature_string = ""
     fs += get_char(i.SYL)
-    fs += get_char(i.STRES)
-    fs += get_char(i.LONG)
     fs += get_char(i.CONS)
     fs += get_char(i.SON)
     fs += get_char(i.CONT)

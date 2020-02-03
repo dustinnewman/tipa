@@ -182,8 +182,6 @@ exports.glottal_stop = {
     number: 113,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -223,8 +221,6 @@ exports.high_front_tense_unround_vowel = {
     number: 301,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -264,8 +260,6 @@ exports.high_front_tense_round_vowel = {
     number: 309,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -305,8 +299,6 @@ exports.near_high_front_lax_unround_vowel = {
     number: 319,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -346,8 +338,6 @@ exports.near_high_front_lax_round_vowel = {
     number: 320,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -387,8 +377,6 @@ exports.high_mid_front_tense_unround_vowel = {
     number: 302,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -428,8 +416,6 @@ exports.high_mid_front_tense_round_vowel = {
     number: 310,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -469,8 +455,6 @@ exports.low_mid_front_unround_vowel = {
     number: 303,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -510,8 +494,6 @@ exports.low_mid_front_round_vowel = {
     number: 311,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -551,8 +533,6 @@ exports.near_low_front_unround_vowel = {
     number: 325,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -592,8 +572,6 @@ exports.low_front_unround_vowel = {
     number: 304,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -633,8 +611,6 @@ exports.low_front_round_vowel = {
     number: 312,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -674,8 +650,6 @@ exports.high_central_tense_unround_vowel = {
     number: 317,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -715,8 +689,6 @@ exports.high_central_tense_round_vowel = {
     number: 318,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -756,8 +728,6 @@ exports.schwa = {
     number: 322,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -797,8 +767,6 @@ exports.high_back_tense_unround_vowel = {
     number: 316,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -838,8 +806,6 @@ exports.high_back_tense_round_vowel = {
     number: 308,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -879,8 +845,6 @@ exports.near_high_back_lax_round_vowel = {
     number: 321,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -920,8 +884,6 @@ exports.high_mid_back_tense_unround_vowel = {
     number: 315,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -961,8 +923,6 @@ exports.high_mid_back_tense_round_vowel = {
     number: 307,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1002,8 +962,6 @@ exports.low_mid_back_lax_unround_vowel = {
     number: 314,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1043,8 +1001,6 @@ exports.low_mid_back_lax_round_vowel = {
     number: 306,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1084,8 +1040,6 @@ exports.low_back_unround_vowel = {
     number: 305,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1125,8 +1079,6 @@ exports.low_back_round_vowel = {
     number: 313,
     features: {
         SYL: types_1.feature.pos,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.neg,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1167,8 +1119,6 @@ exports.voiceless_bilabial_stop = {
     number: 101,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1209,8 +1159,6 @@ exports.voiced_bilabial_stop = {
     number: 102,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1251,8 +1199,6 @@ exports.voiced_bilabial_nasal = {
     number: 114,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.neg,
@@ -1293,8 +1239,6 @@ exports.voiceless_bilabial_nasal = {
     number: pair_nums(114, 402),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.neg,
@@ -1335,8 +1279,6 @@ exports.voiceless_bilabial_fricative = {
     number: 126,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -1377,8 +1319,6 @@ exports.voiced_bilabial_fricative = {
     number: 127,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -1419,8 +1359,6 @@ exports.voiced_bilabial_trill = {
     number: 121,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1461,8 +1399,6 @@ exports.voiceless_bilabial_trill = {
     number: pair_nums(121, 402),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1503,8 +1439,6 @@ exports.voiceless_labiodental_affricate = {
     number: pair_nums(101, 408, 128),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1545,8 +1479,6 @@ exports.voiced_labiodental_affricate = {
     number: pair_nums(102, 408, 129),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1587,8 +1519,6 @@ exports.voiced_labiodental_nasal = {
     number: 115,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.neg,
@@ -1629,8 +1559,6 @@ exports.voiceless_labiodental_fricative = {
     number: 128,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -1671,8 +1599,6 @@ exports.voiced_labiodental_fricative = {
     number: 129,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -1713,8 +1639,6 @@ exports.voiced_labiodental_approximant = {
     number: 150,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -1755,8 +1679,6 @@ exports.voiceless_alveolar_stop = {
     number: 103,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1797,8 +1719,6 @@ exports.voiced_alveolar_stop = {
     number: 104,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1839,8 +1759,6 @@ exports.voiceless_dental_stop = {
     number: pair_nums(103, 408),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1881,8 +1799,6 @@ exports.voiced_dental_stop = {
     number: pair_nums(104, 408),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -1923,8 +1839,6 @@ exports.voiceless_dental_fricative = {
     number: 130,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -1965,8 +1879,6 @@ exports.voiced_dental_fricative = {
     number: 131,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2007,8 +1919,6 @@ exports.voiced_alveolar_nasal = {
     number: 116,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.neg,
@@ -2049,8 +1959,6 @@ exports.voiceless_alveolar_affricate = {
     number: pair_nums(103, 132),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2091,8 +1999,6 @@ exports.voiced_alveolar_affricate = {
     number: pair_nums(104, 133),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2133,8 +2039,6 @@ exports.voiceless_alveolar_fricative = {
     number: 132,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2175,8 +2079,6 @@ exports.voiced_alveolar_fricative = {
     number: 133,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2217,8 +2119,6 @@ exports.voiceless_alveolar_lat_affricate = {
     number: pair_nums(103, 148),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2259,8 +2159,6 @@ exports.voiced_alveolar_lat_affricate = {
     number: pair_nums(104, 149),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2301,8 +2199,6 @@ exports.voiceless_alveolar_lat_fric = {
     number: 148,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2343,8 +2239,6 @@ exports.voiced_alveolar_lat_fric = {
     number: 149,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2385,8 +2279,6 @@ exports.voiced_alveolar_approx = {
     number: 151,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -2427,8 +2319,6 @@ exports.voiced_alveolar_trill = {
     number: 122,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -2469,8 +2359,6 @@ exports.voiced_alveolar_tap = {
     number: 124,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -2511,8 +2399,6 @@ exports.voiced_alveolar_lateral = {
     number: 155,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -2553,8 +2439,6 @@ exports.dark_l = {
     number: 209,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.pos,
@@ -2595,8 +2479,6 @@ exports.voiceless_pal_alv_affricate = {
     number: pair_nums(103, 134),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2637,8 +2519,6 @@ exports.voiced_pal_alv_affricate = {
     number: pair_nums(104, 135),
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2679,8 +2559,6 @@ exports.voiceless_pal_alv_fricative = {
     number: 134,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2721,8 +2599,6 @@ exports.voiced_pal_alv_fricative = {
     number: 135,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -2763,8 +2639,6 @@ exports.voiceless_velar_stop = {
     number: 109,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2805,8 +2679,6 @@ exports.voiced_velar_stop = {
     number: 110,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2847,8 +2719,6 @@ exports.voiced_velar_nasal = {
     number: 119,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.neg,
@@ -2889,8 +2759,6 @@ exports.voiceless_uvular_stop = {
     number: 111,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2931,8 +2799,6 @@ exports.voiced_uvular_stop = {
     number: 112,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.neg,
@@ -2973,8 +2839,6 @@ exports.voiced_uvular_nasal = {
     number: 120,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.pos,
         CONT: types_1.feature.neg,
@@ -3015,8 +2879,6 @@ exports.voiceless_glottal_fricative = {
     number: 146,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -3057,8 +2919,6 @@ exports.voiceless_velar_fricative = {
     number: 140,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -3099,8 +2959,6 @@ exports.voiced_velar_fricative = {
     number: 141,
     features: {
         SYL: types_1.feature.neg,
-        STRES: types_1.feature.neg,
-        LONG: types_1.feature.neg,
         CONS: types_1.feature.pos,
         SON: types_1.feature.neg,
         CONT: types_1.feature.pos,
@@ -3151,6 +3009,40 @@ exports.secondary_stress = {
     ipa_ent: "&#716;",
     branner: ",",
     number: 502
+};
+exports.long = {
+    name: "long",
+    type: types_1.DIAC,
+    ipa_sym: "ː",
+    ipa_ent: "&#720;",
+    branner: ":",
+    number: 503
+};
+exports.half_long = {
+    name: "half long",
+    type: types_1.DIAC,
+    ipa_sym: "ˑ",
+    ipa_ent: "&#721;",
+    branner: ";",
+    number: 504
+};
+// NOTE: The diacritics come in two forms:
+// Combining and Non-combining
+exports.top_diacritic = {
+    name: "top diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "˝",
+    ipa_ent: "&#779;",
+    branner: "5",
+    number: 512
+};
+exports.high_diacritic = {
+    name: "top diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u0301",
+    ipa_ent: "&#769;",
+    branner: "5",
+    number: 512
 };
 var all_phones = [
     exports.high_front_tense_unround_vowel,

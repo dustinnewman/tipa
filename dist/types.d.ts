@@ -7,8 +7,6 @@ export declare type place = string;
 export declare type manner = string;
 export interface feature_matrix {
     SYL: feature;
-    STRES: feature;
-    LONG: feature;
     CONS: feature;
     SON: feature;
     CONT: feature;
@@ -59,6 +57,18 @@ export declare type word = ipa_symbol[];
 export declare type correspondence = (number | null)[];
 export declare type markedness_constraint = (output: word) => number;
 export declare type faithfulness_constraint = (input: word, output: word, corr: correspondence) => number;
+export declare type mora = ipa_letter[];
+export declare enum syllable_weight {
+    light = "light",
+    heavy = "heavy"
+}
+export declare type syllable = {
+    onset?: ipa_letter[];
+    nucleus: ipa_letter[];
+    coda?: ipa_letter[];
+    weight: syllable_weight;
+    tone?: "";
+};
 export declare const LETTER = "letter";
 export declare const DIAC = "diacritic";
 export declare function is_diacritic(symbol: ipa_symbol): symbol is ipa_diacritic;

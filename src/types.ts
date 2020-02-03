@@ -9,8 +9,6 @@ export type manner = string
 
 export interface feature_matrix {
     SYL: feature;
-    STRES: feature;
-    LONG: feature;
     CONS: feature;
     SON: feature;
     CONT: feature;
@@ -71,6 +69,21 @@ export type correspondence = (number | null)[]
 export type markedness_constraint = (output: word) => number
 
 export type faithfulness_constraint = (input: word, output: word, corr: correspondence) => number
+
+export type mora = ipa_letter[]
+
+export enum syllable_weight {
+    light = "light",
+    heavy = "heavy"
+}
+
+export type syllable = {
+    onset?: ipa_letter[],
+    nucleus: ipa_letter[],
+    coda?: ipa_letter[],
+    weight: syllable_weight,
+    tone?: ""
+}
 
 export const LETTER = "letter"
 export const DIAC = "diacritic"

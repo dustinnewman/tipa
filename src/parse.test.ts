@@ -53,4 +53,49 @@ describe("parse", () => {
         expect(ipa).to.deep.equal(branner)
     })
 
+    it("should parse combining symbols as separate diacritics", () => {
+        const input = ".e̋."
+        const input_len = input.length
+
+        const result = parse(input, {
+            auto_syllabify_start: true,
+            auto_syllabify_end: true
+        })
+        expect(result).to.not.be.undefined
+        expect(result).to.have.lengthOf(input_len)
+        if (result) {
+            expect(result[1].type).to.equal("letter")
+            expect(result[2].type).to.equal("diacritic")
+        }
+    })
+
+    it("should parse combining symbols as separate diacritics in Branner form", () => {
+        const input = ".e5."
+        const input_len = input.length
+
+        const result = parse(input, {
+            auto_syllabify_start: true,
+            auto_syllabify_end: true
+        })
+        expect(result).to.not.be.undefined
+        expect(result).to.have.lengthOf(input_len)
+        if (result) {
+            expect(result[1].type).to.equal("letter")
+            expect(result[2].type).to.equal("diacritic")
+        }
+    })
+
+    it("should parse combining symbols identically between Unicode and Branner", () => {
+        const ipa = parse(".e̋.", {
+            auto_syllabify_start: true,
+            auto_syllabify_end: true
+        })
+        const branner = parse(".e5.", {
+            auto_syllabify_start: true,
+            auto_syllabify_end: true
+        })
+        expect(ipa?.length).to.equal(branner?.length)
+        expect(ipa).to.deep.equal(branner)
+    })
+
 })

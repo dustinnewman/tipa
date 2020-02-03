@@ -6,6 +6,11 @@ var feature;
     feature[feature["zero"] = 0] = "zero";
     feature[feature["pos"] = 1] = "pos";
 })(feature = exports.feature || (exports.feature = {}));
+var syllable_weight;
+(function (syllable_weight) {
+    syllable_weight["light"] = "light";
+    syllable_weight["heavy"] = "heavy";
+})(syllable_weight = exports.syllable_weight || (exports.syllable_weight = {}));
 exports.LETTER = "letter";
 exports.DIAC = "diacritic";
 function is_diacritic(symbol) {

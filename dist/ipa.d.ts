@@ -137,8 +137,6 @@ export declare const voiced_pal_alv_fricative: {
     number: number;
     features: {
         SYL: feature;
-        STRES: feature;
-        LONG: feature;
         CONS: feature;
         SON: feature;
         CONT: feature;
@@ -182,8 +180,6 @@ export declare const voiceless_uvular_stop: {
     number: number;
     features: {
         SYL: feature;
-        STRES: feature;
-        LONG: feature;
         CONS: feature;
         SON: feature;
         CONT: feature;
@@ -224,8 +220,6 @@ export declare const voiced_uvular_stop: {
     number: number;
     features: {
         SYL: feature;
-        STRES: feature;
-        LONG: feature;
         CONS: feature;
         SON: feature;
         CONT: feature;
@@ -260,5 +254,9 @@ export declare const voiced_velar_fricative: ipa_consonant;
 export declare const syllable_break: ipa_diacritic;
 export declare const primary_stress: ipa_diacritic;
 export declare const secondary_stress: ipa_diacritic;
+export declare const long: ipa_diacritic;
+export declare const half_long: ipa_diacritic;
+export declare const top_diacritic: ipa_diacritic;
+export declare const high_diacritic: ipa_diacritic;
 export declare function get(key: string): ipa_symbol | undefined;
 export declare function get_by_feature_string(key: string): ipa_letter | undefined;

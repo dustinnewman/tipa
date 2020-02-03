@@ -18,8 +18,6 @@ function get_char(f) {
 function get_feature_string(i) {
     var fs = "";
     fs += get_char(i.SYL);
-    fs += get_char(i.STRES);
-    fs += get_char(i.LONG);
     fs += get_char(i.CONS);
     fs += get_char(i.SON);
     fs += get_char(i.CONT);

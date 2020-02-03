@@ -180,8 +180,6 @@ export const glottal_stop: ipa_consonant = {
     number: 113,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -222,8 +220,6 @@ export const high_front_tense_unround_vowel: ipa_vowel = {
     number: 301,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -264,8 +260,6 @@ export const high_front_tense_round_vowel: ipa_vowel = {
     number: 309,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -306,8 +300,6 @@ export const near_high_front_lax_unround_vowel: ipa_vowel = {
     number: 319,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -348,8 +340,6 @@ export const near_high_front_lax_round_vowel: ipa_vowel = {
     number: 320,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -390,8 +380,6 @@ export const high_mid_front_tense_unround_vowel: ipa_vowel = {
     number: 302,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -432,8 +420,6 @@ export const high_mid_front_tense_round_vowel: ipa_vowel = {
     number: 310,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -474,8 +460,6 @@ export const low_mid_front_unround_vowel: ipa_vowel = {
     number: 303,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -516,8 +500,6 @@ export const low_mid_front_round_vowel: ipa_vowel = {
     number: 311,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -558,8 +540,6 @@ export const near_low_front_unround_vowel: ipa_vowel = {
     number: 325,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -600,8 +580,6 @@ export const low_front_unround_vowel: ipa_vowel = {
     number: 304,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -642,8 +620,6 @@ export const low_front_round_vowel: ipa_vowel = {
     number: 312,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -684,8 +660,6 @@ export const high_central_tense_unround_vowel: ipa_vowel = {
     number: 317,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -726,8 +700,6 @@ export const high_central_tense_round_vowel: ipa_vowel = {
     number: 318,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -768,8 +740,6 @@ export const schwa: ipa_vowel = {
     number: 322,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -810,8 +780,6 @@ export const high_back_tense_unround_vowel: ipa_vowel = {
     number: 316,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -852,8 +820,6 @@ export const high_back_tense_round_vowel: ipa_vowel = {
     number: 308,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -894,8 +860,6 @@ export const near_high_back_lax_round_vowel: ipa_vowel = {
     number: 321,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -936,8 +900,6 @@ export const high_mid_back_tense_unround_vowel: ipa_vowel = {
     number: 315,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -978,8 +940,6 @@ export const high_mid_back_tense_round_vowel: ipa_vowel = {
     number: 307,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1020,8 +980,6 @@ export const low_mid_back_lax_unround_vowel: ipa_vowel = {
     number: 314,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1062,8 +1020,6 @@ export const low_mid_back_lax_round_vowel: ipa_vowel = {
     number: 306,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1104,8 +1060,6 @@ export const low_back_unround_vowel: ipa_vowel = {
     number: 305,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1146,8 +1100,6 @@ export const low_back_round_vowel: ipa_vowel = {
     number: 313,
     features: {
         SYL: feature.pos,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.neg,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1189,8 +1141,6 @@ export const voiceless_bilabial_stop: ipa_consonant = {
     number: 101,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1232,8 +1182,6 @@ export const voiced_bilabial_stop: ipa_consonant = {
     number: 102,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1275,8 +1223,6 @@ export const voiced_bilabial_nasal: ipa_consonant = {
     number: 114,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.neg,
@@ -1318,8 +1264,6 @@ export const voiceless_bilabial_nasal: ipa_consonant = {
     number: pair_nums(114, 402),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.neg,
@@ -1361,8 +1305,6 @@ export const voiceless_bilabial_fricative: ipa_consonant = {
     number: 126,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -1404,8 +1346,6 @@ export const voiced_bilabial_fricative: ipa_consonant = {
     number: 127,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -1447,8 +1387,6 @@ export const voiced_bilabial_trill: ipa_consonant = {
     number: 121,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1490,8 +1428,6 @@ export const voiceless_bilabial_trill: ipa_consonant = {
     number: pair_nums(121, 402),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1533,8 +1469,6 @@ export const voiceless_labiodental_affricate: ipa_consonant = {
     number: pair_nums(101, 408, 128),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1576,8 +1510,6 @@ export const voiced_labiodental_affricate: ipa_consonant = {
     number: pair_nums(102, 408, 129),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1619,8 +1551,6 @@ export const voiced_labiodental_nasal: ipa_consonant = {
     number: 115,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.neg,
@@ -1662,8 +1592,6 @@ export const voiceless_labiodental_fricative: ipa_consonant = {
     number: 128,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -1705,8 +1633,6 @@ export const voiced_labiodental_fricative: ipa_consonant = {
     number: 129,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -1748,8 +1674,6 @@ export const voiced_labiodental_approximant: ipa_consonant = {
     number: 150,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -1791,8 +1715,6 @@ export const voiceless_alveolar_stop: ipa_consonant = {
     number: 103,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1834,8 +1756,6 @@ export const voiced_alveolar_stop: ipa_consonant = {
     number: 104,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1877,8 +1797,6 @@ export const voiceless_dental_stop: ipa_consonant = {
     number: pair_nums(103, 408),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1920,8 +1838,6 @@ export const voiced_dental_stop: ipa_consonant = {
     number: pair_nums(104, 408),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -1963,8 +1879,6 @@ export const voiceless_dental_fricative: ipa_consonant = {
     number: 130,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2006,8 +1920,6 @@ export const voiced_dental_fricative: ipa_consonant = {
     number: 131,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2049,8 +1961,6 @@ export const voiced_alveolar_nasal: ipa_consonant = {
     number: 116,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.neg,
@@ -2092,8 +2002,6 @@ export const voiceless_alveolar_affricate: ipa_consonant = {
     number: pair_nums(103, 132),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2135,8 +2043,6 @@ export const voiced_alveolar_affricate: ipa_consonant = {
     number: pair_nums(104, 133),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2178,8 +2084,6 @@ export const voiceless_alveolar_fricative: ipa_consonant = {
     number: 132,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2221,8 +2125,6 @@ export const voiced_alveolar_fricative: ipa_consonant = {
     number: 133,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2264,8 +2166,6 @@ export const voiceless_alveolar_lat_affricate: ipa_consonant = {
     number: pair_nums(103, 148),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2307,8 +2207,6 @@ export const voiced_alveolar_lat_affricate: ipa_consonant = {
     number: pair_nums(104, 149),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2350,8 +2248,6 @@ export const voiceless_alveolar_lat_fric: ipa_consonant = {
     number: 148,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2393,8 +2289,6 @@ export const voiced_alveolar_lat_fric: ipa_consonant = {
     number: 149,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2436,8 +2330,6 @@ export const voiced_alveolar_approx: ipa_consonant = {
     number: 151,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -2479,8 +2371,6 @@ export const voiced_alveolar_trill: ipa_consonant = {
     number: 122,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -2522,8 +2412,6 @@ export const voiced_alveolar_tap: ipa_consonant = {
     number: 124,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -2565,8 +2453,6 @@ export const voiced_alveolar_lateral: ipa_consonant = {
     number: 155,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -2608,8 +2494,6 @@ export const dark_l: ipa_consonant = {
     number: 209,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.pos,
@@ -2651,8 +2535,6 @@ export const voiceless_pal_alv_affricate: ipa_consonant = {
     number: pair_nums(103, 134),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2694,8 +2576,6 @@ export const voiced_pal_alv_affricate: ipa_consonant = {
     number: pair_nums(104, 135),
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2737,8 +2617,6 @@ export const voiceless_pal_alv_fricative: ipa_consonant = {
     number: 134,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2780,8 +2658,6 @@ export const voiced_pal_alv_fricative = {
     number: 135,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -2823,8 +2699,6 @@ export const voiceless_velar_stop: ipa_consonant = {
     number: 109,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2866,8 +2740,6 @@ export const voiced_velar_stop: ipa_consonant = {
     number: 110,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2909,8 +2781,6 @@ export const voiced_velar_nasal: ipa_consonant = {
     number: 119,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.neg,
@@ -2952,8 +2822,6 @@ export const voiceless_uvular_stop = {
     number: 111,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -2995,8 +2863,6 @@ export const voiced_uvular_stop = {
     number: 112,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.neg,
@@ -3038,8 +2904,6 @@ export const voiced_uvular_nasal: ipa_consonant = {
     number: 120,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.pos,
         CONT: feature.neg,
@@ -3081,8 +2945,6 @@ export const voiceless_glottal_fricative: ipa_consonant = {
     number: 146,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -3124,8 +2986,6 @@ export const voiceless_velar_fricative: ipa_consonant = {
     number: 140,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -3167,8 +3027,6 @@ export const voiced_velar_fricative: ipa_consonant = {
     number: 141,
     features: {
         SYL: feature.neg,
-        STRES: feature.neg,
-        LONG: feature.neg,
         CONS: feature.pos,
         SON: feature.neg,
         CONT: feature.pos,
@@ -3222,6 +3080,75 @@ export const secondary_stress: ipa_diacritic = {
     ipa_ent: "&#716;",
     branner: ",",
     number: 502
+}
+
+export const long: ipa_diacritic = {
+    name: "long",
+    type: DIAC,
+    ipa_sym: "ː",
+    ipa_ent: "&#720;",
+    branner: ":",
+    number: 503
+}
+
+export const half_long: ipa_diacritic = {
+    name: "half long",
+    type: DIAC,
+    ipa_sym: "ˑ",
+    ipa_ent: "&#721;",
+    branner: ";",
+    number: 504
+}
+
+// NOTE: The diacritics come in two forms:
+// combining and non-combining. I am using the
+// combining variant because that is what I am
+// expecting as user input. Due to this file itself
+// being written in Unicode, it will appear strangely
+// but the tests will show the symbol is still there.
+export const top_diacritic: ipa_diacritic = {
+    name: "top diacritic",
+    type: DIAC,
+    ipa_sym: `̋`,
+    ipa_ent: "&#779;",
+    branner: "5",
+    number: 512
+}
+
+export const high_diacritic: ipa_diacritic = {
+    name: "high diacritic",
+    type: DIAC,
+    ipa_sym: `́`,
+    ipa_ent: "&#769;",
+    branner: "4",
+    number: 513
+}
+
+export const mid_diacritic: ipa_diacritic = {
+    name: "mid diacritic",
+    type: DIAC,
+    ipa_sym: `̄`,
+    ipa_ent: "&#772;",
+    branner: "3",
+    number: 514
+}
+
+export const low_diacritic: ipa_diacritic = {
+    name: "low diacritic",
+    type: DIAC,
+    ipa_sym: `̄`,
+    ipa_ent: "&#768;",
+    branner: "2",
+    number: 515
+}
+
+export const bottom_diacritic: ipa_diacritic = {
+    name: "bottom diacritic",
+    type: DIAC,
+    ipa_sym: `̏`,
+    ipa_ent: "&#783;",
+    branner: "1",
+    number: 516
 }
 
 const all_phones: ipa_symbol[] = [
@@ -3298,7 +3225,14 @@ const all_phones: ipa_symbol[] = [
     voiced_velar_fricative,
     syllable_break,
     primary_stress,
-    secondary_stress
+    secondary_stress,
+    long,
+    half_long,
+    top_diacritic,
+    high_diacritic,
+    mid_diacritic,
+    low_diacritic,
+    bottom_diacritic
 ]
 
 let phones_by_name: { [key: string]: ipa_symbol } = {}
