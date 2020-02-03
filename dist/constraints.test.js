@@ -36,3 +36,32 @@ describe("ONSET", function () {
         }
     });
 });
+describe("MAX", function () {
+    it("should assign zero violations to faithful candidate", function () {
+        var input = parse_1.parse(".ma.");
+        var output = parse_1.parse(".ma.");
+        var correspondence = [0, 1, 2, 3];
+        if (input && output) {
+            var violations = constraints_1.MAX(input, output, correspondence);
+            chai_1.expect(violations).to.equal(0);
+        }
+    });
+    it("should assign one violation", function () {
+        var input = parse_1.parse(".ma.");
+        var output = parse_1.parse(".m.");
+        var correspondence = [0, 1, null, 2];
+        if (input && output) {
+            var violations = constraints_1.MAX(input, output, correspondence);
+            chai_1.expect(violations).to.equal(1);
+        }
+    });
+    it("should not assign violations for epenthesis", function () {
+        var input = parse_1.parse(".ma.");
+        var output = parse_1.parse(".mat.");
+        var correspondence = [0, 1, 2, 4];
+        if (input && output) {
+            var violations = constraints_1.MAX(input, output, correspondence);
+            chai_1.expect(violations).to.equal(0);
+        }
+    });
+});

@@ -12,6 +12,7 @@ var __values = (this && this.__values) || function(o) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var types_1 = require("./types");
+var feature_string_1 = require("./feature_string");
 var LABIAL = "labial";
 var BILAB = "bilabial";
 var LAB_DEN = "labiodental";
@@ -146,8 +147,6 @@ exports.features = {
     BACK: BACK,
     TENSE: TENSE,
 };
-var LETTER = "letter";
-var DIAC = "diacritic";
 function pair_nums() {
     var e_1, _a;
     var nums = [];
@@ -170,9 +169,9 @@ function pair_nums() {
     }
     return parseInt(str, 10);
 }
-var glottal_stop = {
+exports.glottal_stop = {
     name: "glottal stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: GLOTTAL,
     manner: STOP,
     consonant: true,
@@ -212,9 +211,9 @@ var glottal_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var high_front_tense_unround_vowel = {
+exports.high_front_tense_unround_vowel = {
     name: "high front tense unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -253,9 +252,9 @@ var high_front_tense_unround_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var high_front_tense_round_vowel = {
+exports.high_front_tense_round_vowel = {
     name: "high front tense rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -294,9 +293,9 @@ var high_front_tense_round_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var near_high_front_lax_unround_vowel = {
+exports.near_high_front_lax_unround_vowel = {
     name: "near-high front lax unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -335,9 +334,9 @@ var near_high_front_lax_unround_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var near_high_front_lax_round_vowel = {
+exports.near_high_front_lax_round_vowel = {
     name: "near-high front lax rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -376,9 +375,9 @@ var near_high_front_lax_round_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var high_mid_front_tense_unround_vowel = {
+exports.high_mid_front_tense_unround_vowel = {
     name: "high-mid front tense unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -417,9 +416,9 @@ var high_mid_front_tense_unround_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var high_mid_front_tense_round_vowel = {
+exports.high_mid_front_tense_round_vowel = {
     name: "high-mid front tense rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -458,9 +457,9 @@ var high_mid_front_tense_round_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var low_mid_front_unround_vowel = {
+exports.low_mid_front_unround_vowel = {
     name: "low-mid front unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -499,9 +498,9 @@ var low_mid_front_unround_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var low_mid_front_round_vowel = {
+exports.low_mid_front_round_vowel = {
     name: "low-mid front rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -540,9 +539,9 @@ var low_mid_front_round_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var near_low_front_unround_vowel = {
+exports.near_low_front_unround_vowel = {
     name: "near-low front unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -581,9 +580,9 @@ var near_low_front_unround_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var low_front_unround_vowel = {
+exports.low_front_unround_vowel = {
     name: "low front unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -622,9 +621,9 @@ var low_front_unround_vowel = {
         TENSE: types_1.feature.zero,
     }
 };
-var low_front_round_vowel = {
+exports.low_front_round_vowel = {
     name: "low front rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -663,9 +662,9 @@ var low_front_round_vowel = {
         TENSE: types_1.feature.zero,
     }
 };
-var high_central_tense_unround_vowel = {
+exports.high_central_tense_unround_vowel = {
     name: "high central tense unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -704,9 +703,9 @@ var high_central_tense_unround_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var high_central_tense_round_vowel = {
+exports.high_central_tense_round_vowel = {
     name: "high central tense rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -745,9 +744,9 @@ var high_central_tense_round_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var schwa = {
+exports.schwa = {
     name: "schwa",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -786,9 +785,9 @@ var schwa = {
         TENSE: types_1.feature.neg,
     }
 };
-var high_back_tense_unround_vowel = {
+exports.high_back_tense_unround_vowel = {
     name: "high back tense unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -827,9 +826,9 @@ var high_back_tense_unround_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var high_back_tense_round_vowel = {
+exports.high_back_tense_round_vowel = {
     name: "high back tense rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -868,9 +867,9 @@ var high_back_tense_round_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var near_high_back_lax_round_vowel = {
+exports.near_high_back_lax_round_vowel = {
     name: "near-high back lax rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -909,9 +908,9 @@ var near_high_back_lax_round_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var high_mid_back_tense_unround_vowel = {
+exports.high_mid_back_tense_unround_vowel = {
     name: "high-mid back tense unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -950,9 +949,9 @@ var high_mid_back_tense_unround_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var high_mid_back_tense_round_vowel = {
+exports.high_mid_back_tense_round_vowel = {
     name: "high-mid back tense rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -991,9 +990,9 @@ var high_mid_back_tense_round_vowel = {
         TENSE: types_1.feature.pos,
     }
 };
-var low_mid_back_lax_unround_vowel = {
+exports.low_mid_back_lax_unround_vowel = {
     name: "low-mid back lax unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -1032,9 +1031,9 @@ var low_mid_back_lax_unround_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var low_mid_back_lax_round_vowel = {
+exports.low_mid_back_lax_round_vowel = {
     name: "low-mid back lax rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -1073,9 +1072,9 @@ var low_mid_back_lax_round_vowel = {
         TENSE: types_1.feature.neg,
     }
 };
-var low_back_unround_vowel = {
+exports.low_back_unround_vowel = {
     name: "low back unrounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -1114,9 +1113,9 @@ var low_back_unround_vowel = {
         TENSE: types_1.feature.zero,
     }
 };
-var low_back_round_vowel = {
+exports.low_back_round_vowel = {
     name: "low back rounded vowel",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
@@ -1155,9 +1154,9 @@ var low_back_round_vowel = {
         TENSE: types_1.feature.zero,
     }
 };
-var voiceless_bilabial_stop = {
+exports.voiceless_bilabial_stop = {
     name: "voiceless bilabial stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: STOP,
     consonant: true,
@@ -1197,9 +1196,9 @@ var voiceless_bilabial_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_bilabial_stop = {
+exports.voiced_bilabial_stop = {
     name: "voiced bilabial stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: STOP,
     consonant: true,
@@ -1239,9 +1238,9 @@ var voiced_bilabial_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_bilabial_nasal = {
+exports.voiced_bilabial_nasal = {
     name: "voiced bilabial nasal",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: NASAL,
     consonant: true,
@@ -1281,9 +1280,9 @@ var voiced_bilabial_nasal = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_bilabial_nasal = {
+exports.voiceless_bilabial_nasal = {
     name: "voiceless bilabial nasal",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: NASAL,
     consonant: true,
@@ -1323,9 +1322,9 @@ var voiceless_bilabial_nasal = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_bilabial_fricative = {
+exports.voiceless_bilabial_fricative = {
     name: "voiceless bilabial fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: FRIC,
     consonant: true,
@@ -1365,9 +1364,9 @@ var voiceless_bilabial_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_bilabial_fricative = {
+exports.voiced_bilabial_fricative = {
     name: "voiced bilabial fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: FRIC,
     consonant: true,
@@ -1407,9 +1406,9 @@ var voiced_bilabial_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_bilabial_trill = {
+exports.voiced_bilabial_trill = {
     name: "voiced bilabial trill",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: TRIL,
     consonant: true,
@@ -1449,9 +1448,9 @@ var voiced_bilabial_trill = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_bilabial_trill = {
+exports.voiceless_bilabial_trill = {
     name: "voiceless bilabial trill",
-    type: LETTER,
+    type: types_1.LETTER,
     place: BILAB,
     manner: TRIL,
     consonant: true,
@@ -1491,9 +1490,9 @@ var voiceless_bilabial_trill = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_labiodental_affricate = {
+exports.voiceless_labiodental_affricate = {
     name: "voiceless labiodental affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: LAB_DEN,
     manner: AFF,
     consonant: true,
@@ -1533,9 +1532,9 @@ var voiceless_labiodental_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_labiodental_affricate = {
+exports.voiced_labiodental_affricate = {
     name: "voiced labiodental affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: LAB_DEN,
     manner: AFF,
     consonant: true,
@@ -1575,9 +1574,9 @@ var voiced_labiodental_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_labiodental_nasal = {
+exports.voiced_labiodental_nasal = {
     name: "voiced labiodental nasal",
-    type: LETTER,
+    type: types_1.LETTER,
     place: LAB_DEN,
     manner: NASAL,
     consonant: true,
@@ -1617,9 +1616,9 @@ var voiced_labiodental_nasal = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_labiodental_fricative = {
+exports.voiceless_labiodental_fricative = {
     name: "voiceless labiodental fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: LAB_DEN,
     manner: FRIC,
     consonant: true,
@@ -1659,9 +1658,9 @@ var voiceless_labiodental_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_labiodental_fricative = {
+exports.voiced_labiodental_fricative = {
     name: "voiced labiodental fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: LAB_DEN,
     manner: FRIC,
     consonant: true,
@@ -1701,9 +1700,9 @@ var voiced_labiodental_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_labiodental_approximant = {
+exports.voiced_labiodental_approximant = {
     name: "voiced labiodental approximant",
-    type: LETTER,
+    type: types_1.LETTER,
     place: LAB_DEN,
     manner: APPROX,
     consonant: true,
@@ -1743,9 +1742,9 @@ var voiced_labiodental_approximant = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_alveolar_stop = {
+exports.voiceless_alveolar_stop = {
     name: "voiceless alveolar stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: STOP,
     consonant: true,
@@ -1785,9 +1784,9 @@ var voiceless_alveolar_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_stop = {
+exports.voiced_alveolar_stop = {
     name: "voiced alveolar stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: STOP,
     consonant: true,
@@ -1827,9 +1826,9 @@ var voiced_alveolar_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_dental_stop = {
+exports.voiceless_dental_stop = {
     name: "voiceless dental stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DENTAL,
     manner: STOP,
     consonant: true,
@@ -1869,9 +1868,9 @@ var voiceless_dental_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_dental_stop = {
+exports.voiced_dental_stop = {
     name: "voiced dental stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: DENTAL,
     manner: STOP,
     consonant: true,
@@ -1911,9 +1910,9 @@ var voiced_dental_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_dental_fricative = {
+exports.voiceless_dental_fricative = {
     name: "voiceless dental fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: INTER_DENT,
     manner: FRIC,
     consonant: true,
@@ -1953,9 +1952,9 @@ var voiceless_dental_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_dental_fricative = {
+exports.voiced_dental_fricative = {
     name: "voiced dental fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: INTER_DENT,
     manner: FRIC,
     consonant: true,
@@ -1995,9 +1994,9 @@ var voiced_dental_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_nasal = {
+exports.voiced_alveolar_nasal = {
     name: "voiced alveolar nasal",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: NASAL,
     consonant: true,
@@ -2037,9 +2036,9 @@ var voiced_alveolar_nasal = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_alveolar_affricate = {
+exports.voiceless_alveolar_affricate = {
     name: "voiceless alveolar affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: AFF,
     consonant: true,
@@ -2079,9 +2078,9 @@ var voiceless_alveolar_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_affricate = {
+exports.voiced_alveolar_affricate = {
     name: "voiced alveolar affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: AFF,
     consonant: true,
@@ -2121,9 +2120,9 @@ var voiced_alveolar_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_alveolar_fricative = {
+exports.voiceless_alveolar_fricative = {
     name: "voiceless alveolar fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: FRIC,
     consonant: true,
@@ -2163,9 +2162,9 @@ var voiceless_alveolar_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_fricative = {
+exports.voiced_alveolar_fricative = {
     name: "voiced alveolar fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: FRIC,
     consonant: true,
@@ -2205,9 +2204,9 @@ var voiced_alveolar_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_alveolar_lat_affricate = {
+exports.voiceless_alveolar_lat_affricate = {
     name: "voiceless alveolar lateral affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: LAT_AFF,
     consonant: true,
@@ -2247,9 +2246,9 @@ var voiceless_alveolar_lat_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_lat_affricate = {
+exports.voiced_alveolar_lat_affricate = {
     name: "voiced alveolar lateral affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: LAT_AFF,
     consonant: true,
@@ -2289,9 +2288,9 @@ var voiced_alveolar_lat_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_alveolar_lat_fric = {
+exports.voiceless_alveolar_lat_fric = {
     name: "voiceless alveolar lateral fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: LAT_FRIC,
     consonant: true,
@@ -2331,9 +2330,9 @@ var voiceless_alveolar_lat_fric = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_lat_fric = {
+exports.voiced_alveolar_lat_fric = {
     name: "voiced alveolar lateral fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: LAT_FRIC,
     consonant: true,
@@ -2373,9 +2372,9 @@ var voiced_alveolar_lat_fric = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_approx = {
+exports.voiced_alveolar_approx = {
     name: "voiced alveolar approximant",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: APPROX,
     consonant: true,
@@ -2415,9 +2414,9 @@ var voiced_alveolar_approx = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_trill = {
+exports.voiced_alveolar_trill = {
     name: "voiced alveolar trill",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: TRIL,
     consonant: true,
@@ -2457,9 +2456,9 @@ var voiced_alveolar_trill = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_tap = {
+exports.voiced_alveolar_tap = {
     name: "voiced alveolar tap",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: TAP,
     consonant: true,
@@ -2499,9 +2498,9 @@ var voiced_alveolar_tap = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_alveolar_lateral = {
+exports.voiced_alveolar_lateral = {
     name: "voiced alveolar lateral",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: LAT,
     consonant: true,
@@ -2541,9 +2540,9 @@ var voiced_alveolar_lateral = {
         TENSE: types_1.feature.zero
     }
 };
-var dark_l = {
+exports.dark_l = {
     name: "dark l",
-    type: LETTER,
+    type: types_1.LETTER,
     place: ALV,
     manner: LAT,
     consonant: true,
@@ -2583,9 +2582,9 @@ var dark_l = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_pal_alv_affricate = {
+exports.voiceless_pal_alv_affricate = {
     name: "voiceless palatoalveolar affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: PAL_ALV,
     manner: AFF,
     consonant: true,
@@ -2625,9 +2624,9 @@ var voiceless_pal_alv_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_pal_alv_affricate = {
+exports.voiced_pal_alv_affricate = {
     name: "voiced palatoalveolar affricate",
-    type: LETTER,
+    type: types_1.LETTER,
     place: PAL_ALV,
     manner: AFF,
     consonant: true,
@@ -2667,9 +2666,9 @@ var voiced_pal_alv_affricate = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_pal_alv_fricative = {
+exports.voiceless_pal_alv_fricative = {
     name: "voiceless palatoalveolar fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: PAL_ALV,
     manner: FRIC,
     consonant: true,
@@ -2709,9 +2708,9 @@ var voiceless_pal_alv_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_pal_alv_fricative = {
+exports.voiced_pal_alv_fricative = {
     name: "voiced palatoalveolar fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: PAL_ALV,
     manner: FRIC,
     consonant: true,
@@ -2751,9 +2750,9 @@ var voiced_pal_alv_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_velar_stop = {
+exports.voiceless_velar_stop = {
     name: "voiceless velar stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: VEL,
     manner: STOP,
     consonant: true,
@@ -2793,9 +2792,9 @@ var voiceless_velar_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_velar_stop = {
+exports.voiced_velar_stop = {
     name: "voiced velar stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: VEL,
     manner: STOP,
     consonant: true,
@@ -2835,9 +2834,9 @@ var voiced_velar_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_velar_nasal = {
+exports.voiced_velar_nasal = {
     name: "voiced velar nasal",
-    type: LETTER,
+    type: types_1.LETTER,
     place: VEL,
     manner: NASAL,
     consonant: true,
@@ -2877,9 +2876,9 @@ var voiced_velar_nasal = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_uvular_stop = {
+exports.voiceless_uvular_stop = {
     name: "voiceless uvular stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: UVU,
     manner: STOP,
     consonant: true,
@@ -2919,9 +2918,9 @@ var voiceless_uvular_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_uvular_stop = {
+exports.voiced_uvular_stop = {
     name: "voiced uvular stop",
-    type: LETTER,
+    type: types_1.LETTER,
     place: UVU,
     manner: STOP,
     consonant: true,
@@ -2961,9 +2960,9 @@ var voiced_uvular_stop = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_uvular_nasal = {
+exports.voiced_uvular_nasal = {
     name: "voiced uvular nasal",
-    type: LETTER,
+    type: types_1.LETTER,
     place: UVU,
     manner: NASAL,
     consonant: true,
@@ -3003,9 +3002,9 @@ var voiced_uvular_nasal = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_glottal_fricative = {
+exports.voiceless_glottal_fricative = {
     name: "voiceless glottal fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: GLOTTAL,
     manner: FRIC,
     consonant: true,
@@ -3045,9 +3044,9 @@ var voiceless_glottal_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiceless_velar_fricative = {
+exports.voiceless_velar_fricative = {
     name: "voiceless velar fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: VEL,
     manner: FRIC,
     consonant: true,
@@ -3087,9 +3086,9 @@ var voiceless_velar_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var voiced_velar_fricative = {
+exports.voiced_velar_fricative = {
     name: "voiced velar fricative",
-    type: LETTER,
+    type: types_1.LETTER,
     place: VEL,
     manner: FRIC,
     consonant: true,
@@ -3129,115 +3128,120 @@ var voiced_velar_fricative = {
         TENSE: types_1.feature.zero
     }
 };
-var syllable_break = {
+exports.syllable_break = {
     name: "syllable break",
-    type: DIAC,
+    type: types_1.DIAC,
     ipa_sym: ".",
     ipa_ent: "&#46;",
     branner: ".",
     number: 506
 };
-var primary_stress = {
+exports.primary_stress = {
     name: "primary stress",
-    type: DIAC,
+    type: types_1.DIAC,
     ipa_sym: "ˈ",
     ipa_ent: "&#712;",
     branner: "'",
     number: 501
 };
-var secondary_stress = {
+exports.secondary_stress = {
     name: "secondary stress",
-    type: DIAC,
+    type: types_1.DIAC,
     ipa_sym: "ˌ",
     ipa_ent: "&#716;",
     branner: ",",
     number: 502
 };
 var all_phones = [
-    high_front_tense_unround_vowel,
-    high_front_tense_round_vowel,
-    near_high_front_lax_unround_vowel,
-    near_high_front_lax_round_vowel,
-    high_mid_front_tense_unround_vowel,
-    high_mid_front_tense_round_vowel,
-    low_mid_front_unround_vowel,
-    low_mid_front_round_vowel,
-    near_low_front_unround_vowel,
-    low_front_unround_vowel,
-    low_front_round_vowel,
-    high_central_tense_unround_vowel,
-    high_central_tense_round_vowel,
-    schwa,
-    high_back_tense_unround_vowel,
-    high_back_tense_round_vowel,
-    near_high_back_lax_round_vowel,
-    high_mid_back_tense_unround_vowel,
-    high_mid_back_tense_round_vowel,
-    low_mid_back_lax_unround_vowel,
-    low_mid_back_lax_round_vowel,
-    low_back_unround_vowel,
-    low_back_round_vowel,
-    voiceless_bilabial_stop,
-    voiced_bilabial_stop,
-    voiced_bilabial_nasal,
-    voiceless_bilabial_nasal,
-    voiceless_bilabial_fricative,
-    voiced_bilabial_fricative,
-    voiced_bilabial_trill,
-    voiceless_bilabial_trill,
-    voiceless_labiodental_affricate,
-    voiced_labiodental_affricate,
-    voiced_labiodental_nasal,
-    voiceless_labiodental_fricative,
-    voiced_labiodental_fricative,
-    voiced_labiodental_approximant,
-    voiceless_alveolar_stop,
-    voiced_alveolar_stop,
-    voiceless_dental_stop,
-    voiced_dental_stop,
-    voiceless_dental_fricative,
-    voiced_dental_fricative,
-    voiced_alveolar_nasal,
-    voiceless_alveolar_affricate,
-    voiced_alveolar_affricate,
-    voiceless_alveolar_fricative,
-    voiced_alveolar_fricative,
-    voiceless_alveolar_lat_affricate,
-    voiced_alveolar_lat_affricate,
-    voiceless_alveolar_lat_fric,
-    voiced_alveolar_lat_fric,
-    voiced_alveolar_approx,
-    voiced_alveolar_trill,
-    voiced_alveolar_tap,
-    voiced_alveolar_lateral,
-    dark_l,
-    voiceless_pal_alv_affricate,
-    voiced_pal_alv_affricate,
-    voiceless_pal_alv_fricative,
-    voiced_pal_alv_fricative,
-    voiceless_velar_stop,
-    voiced_velar_stop,
-    voiced_velar_nasal,
-    voiceless_uvular_stop,
-    voiced_uvular_stop,
-    voiced_uvular_nasal,
-    glottal_stop,
-    voiceless_glottal_fricative,
-    voiceless_velar_fricative,
-    voiced_velar_fricative,
-    syllable_break,
-    primary_stress,
-    secondary_stress
+    exports.high_front_tense_unround_vowel,
+    exports.high_front_tense_round_vowel,
+    exports.near_high_front_lax_unround_vowel,
+    exports.near_high_front_lax_round_vowel,
+    exports.high_mid_front_tense_unround_vowel,
+    exports.high_mid_front_tense_round_vowel,
+    exports.low_mid_front_unround_vowel,
+    exports.low_mid_front_round_vowel,
+    exports.near_low_front_unround_vowel,
+    exports.low_front_unround_vowel,
+    exports.low_front_round_vowel,
+    exports.high_central_tense_unround_vowel,
+    exports.high_central_tense_round_vowel,
+    exports.schwa,
+    exports.high_back_tense_unround_vowel,
+    exports.high_back_tense_round_vowel,
+    exports.near_high_back_lax_round_vowel,
+    exports.high_mid_back_tense_unround_vowel,
+    exports.high_mid_back_tense_round_vowel,
+    exports.low_mid_back_lax_unround_vowel,
+    exports.low_mid_back_lax_round_vowel,
+    exports.low_back_unround_vowel,
+    exports.low_back_round_vowel,
+    exports.voiceless_bilabial_stop,
+    exports.voiced_bilabial_stop,
+    exports.voiced_bilabial_nasal,
+    exports.voiceless_bilabial_nasal,
+    exports.voiceless_bilabial_fricative,
+    exports.voiced_bilabial_fricative,
+    exports.voiced_bilabial_trill,
+    exports.voiceless_bilabial_trill,
+    exports.voiceless_labiodental_affricate,
+    exports.voiced_labiodental_affricate,
+    exports.voiced_labiodental_nasal,
+    exports.voiceless_labiodental_fricative,
+    exports.voiced_labiodental_fricative,
+    exports.voiced_labiodental_approximant,
+    exports.voiceless_alveolar_stop,
+    exports.voiced_alveolar_stop,
+    exports.voiceless_dental_stop,
+    exports.voiced_dental_stop,
+    exports.voiceless_dental_fricative,
+    exports.voiced_dental_fricative,
+    exports.voiced_alveolar_nasal,
+    exports.voiceless_alveolar_affricate,
+    exports.voiced_alveolar_affricate,
+    exports.voiceless_alveolar_fricative,
+    exports.voiced_alveolar_fricative,
+    exports.voiceless_alveolar_lat_affricate,
+    exports.voiced_alveolar_lat_affricate,
+    exports.voiceless_alveolar_lat_fric,
+    exports.voiced_alveolar_lat_fric,
+    exports.voiced_alveolar_approx,
+    exports.voiced_alveolar_trill,
+    exports.voiced_alveolar_tap,
+    exports.voiced_alveolar_lateral,
+    exports.dark_l,
+    exports.voiceless_pal_alv_affricate,
+    exports.voiced_pal_alv_affricate,
+    exports.voiceless_pal_alv_fricative,
+    exports.voiced_pal_alv_fricative,
+    exports.voiceless_velar_stop,
+    exports.voiced_velar_stop,
+    exports.voiced_velar_nasal,
+    exports.voiceless_uvular_stop,
+    exports.voiced_uvular_stop,
+    exports.voiced_uvular_nasal,
+    exports.glottal_stop,
+    exports.voiceless_glottal_fricative,
+    exports.voiceless_velar_fricative,
+    exports.voiced_velar_fricative,
+    exports.syllable_break,
+    exports.primary_stress,
+    exports.secondary_stress
 ];
 var phones_by_name = {};
 var phones_by_ipa_sym = {};
 var phones_by_branner = {};
+var letters_by_feature_string = {};
 var num_phones = all_phones.length;
 for (var i = 0; i < num_phones; i++) {
     var phone = all_phones[i];
     phones_by_name[phone.name] = phone;
     phones_by_ipa_sym[phone.ipa_sym] = phone;
     phones_by_branner[phone.branner] = phone;
+    if (types_1.is_letter(phone)) {
+        var fs = feature_string_1.get_feature_string(phone.features);
+        letters_by_feature_string[fs] = phone;
+    }
 }
 function get(key) {
     if (phones_by_name[key]) {
@@ -3252,3 +3256,10 @@ function get(key) {
     return undefined;
 }
 exports.get = get;
+function get_by_feature_string(key) {
+    if (letters_by_feature_string[key]) {
+        return letters_by_feature_string[key];
+    }
+    return undefined;
+}
+exports.get_by_feature_string = get_by_feature_string;
