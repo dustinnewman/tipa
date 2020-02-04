@@ -3099,7 +3099,7 @@ exports.mid_diacritic = {
 exports.low_diacritic = {
     name: "low diacritic",
     type: types_1.DIAC,
-    ipa_sym: '̀',
+    ipa_sym: "\u0300",
     ipa_ent: "&#768;",
     branner: "2",
     number: 515
@@ -3123,7 +3123,7 @@ exports.voiceless_diacritic = {
 exports.voiced_diacritic = {
     name: "voiced diacritic",
     type: types_1.DIAC,
-    ipa_sym: '̬',
+    ipa_sym: "\u032C",
     ipa_ent: "&#812;",
     branner: "v)",
     number: 403

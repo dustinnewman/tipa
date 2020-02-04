@@ -3153,7 +3153,7 @@ export const half_long: ipa_diacritic = {
 export const top_diacritic: ipa_diacritic = {
     name: "top diacritic",
     type: DIAC,
-    ipa_sym: `̋`,
+    ipa_sym: "\u030B",
     ipa_ent: "&#779;",
     branner: "5",
     number: 512
@@ -3162,7 +3162,7 @@ export const top_diacritic: ipa_diacritic = {
 export const high_diacritic: ipa_diacritic = {
     name: "high diacritic",
     type: DIAC,
-    ipa_sym: `́`,
+    ipa_sym: "\u0301",
     ipa_ent: "&#769;",
     branner: "4",
     number: 513
@@ -3171,7 +3171,7 @@ export const high_diacritic: ipa_diacritic = {
 export const mid_diacritic: ipa_diacritic = {
     name: "mid diacritic",
     type: DIAC,
-    ipa_sym: `̄`,
+    ipa_sym: "\u0304",
     ipa_ent: "&#772;",
     branner: "3",
     number: 514
@@ -3180,7 +3180,7 @@ export const mid_diacritic: ipa_diacritic = {
 export const low_diacritic: ipa_diacritic = {
     name: "low diacritic",
     type: DIAC,
-    ipa_sym: '̀',
+    ipa_sym: "\u0300",
     ipa_ent: "&#768;",
     branner: "2",
     number: 515
@@ -3189,7 +3189,7 @@ export const low_diacritic: ipa_diacritic = {
 export const bottom_diacritic: ipa_diacritic = {
     name: "bottom diacritic",
     type: DIAC,
-    ipa_sym: `̏`,
+    ipa_sym: "\u030F",
     ipa_ent: "&#783;",
     branner: "1",
     number: 516
@@ -3198,7 +3198,7 @@ export const bottom_diacritic: ipa_diacritic = {
 export const voiceless_diacritic: ipa_diacritic = {
     name: "voiceless diacritic",
     type: DIAC,
-    ipa_sym: `̥`,
+    ipa_sym: "\u0325",
     ipa_ent: "&#805;",
     branner: "V)",
     number: 402
@@ -3207,7 +3207,7 @@ export const voiceless_diacritic: ipa_diacritic = {
 export const voiced_diacritic: ipa_diacritic = {
     name: "voiced diacritic",
     type: DIAC,
-    ipa_sym: '̬',
+    ipa_sym: "\u032C",
     ipa_ent: "&#812;",
     branner: "v)",
     number: 403

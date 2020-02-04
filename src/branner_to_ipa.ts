@@ -27,7 +27,7 @@ const branner_map: Map<string, string> = new Map([
     ['c"', ""], // TODO
     ['j"', ""], // TODO
     ['v"', "ʋ"], // Must precede v
-    ['v)', '̬'], // Must precede v
+    ['v)', "\u032C"], // Must precede v
     ["l-", "ɬ"], // Must precede l
     ['a"', "ɑ"], // Must precede a
     ["m&", "ɯ"], // Must precede m
@@ -53,12 +53,12 @@ const branner_map: Map<string, string> = new Map([
     ["G", "ɢ"],
     ["N", "ɴ"],
     ["@", "ə"],
-    ["5", `̋`],
-    ["4", `́`],
-    ["3", `̄`],
-    ["2", '̀'],
-    ["1", `̏`],
-    ["V)", `̥`]
+    ["5", "\u030B"],
+    ["4", "\u0301"],
+    ["3", "\u0304"],
+    ["2", "\u0300"],
+    ["1", "\u030F"],
+    ["V)", "\u0325"]
 ])
 
 // Source: https://stackoverflow.com/a/3561711
