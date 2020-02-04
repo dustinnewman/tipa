@@ -18,6 +18,9 @@ function is_diacritic(symbol) {
 }
 exports.is_diacritic = is_diacritic;
 function is_letter(symbol) {
+    if (Array.isArray(symbol)) {
+        return false;
+    }
     return symbol.type === exports.LETTER;
 }
 exports.is_letter = is_letter;

@@ -3027,22 +3027,58 @@ exports.half_long = {
     number: 504
 };
 // NOTE: The diacritics come in two forms:
-// Combining and Non-combining
+// combining and non-combining. I am using the
+// combining variant because that is what I am
+// expecting as user input. Due to this file itself
+// being written in Unicode, it will appear strangely
+// but the tests will show the symbol is still there.
 exports.top_diacritic = {
     name: "top diacritic",
     type: types_1.DIAC,
-    ipa_sym: "˝",
+    ipa_sym: "\u030B",
     ipa_ent: "&#779;",
     branner: "5",
     number: 512
 };
 exports.high_diacritic = {
-    name: "top diacritic",
+    name: "high diacritic",
     type: types_1.DIAC,
     ipa_sym: "\u0301",
     ipa_ent: "&#769;",
-    branner: "5",
-    number: 512
+    branner: "4",
+    number: 513
+};
+exports.mid_diacritic = {
+    name: "mid diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u0304",
+    ipa_ent: "&#772;",
+    branner: "3",
+    number: 514
+};
+exports.low_diacritic = {
+    name: "low diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u0304",
+    ipa_ent: "&#768;",
+    branner: "2",
+    number: 515
+};
+exports.bottom_diacritic = {
+    name: "bottom diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u030F",
+    ipa_ent: "&#783;",
+    branner: "1",
+    number: 516
+};
+exports.voiceless_diacritic = {
+    name: "voiceless diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u0325",
+    ipa_ent: "&#805;",
+    branner: "V)",
+    number: 402
 };
 var all_phones = [
     exports.high_front_tense_unround_vowel,
@@ -3118,7 +3154,15 @@ var all_phones = [
     exports.voiced_velar_fricative,
     exports.syllable_break,
     exports.primary_stress,
-    exports.secondary_stress
+    exports.secondary_stress,
+    exports.long,
+    exports.half_long,
+    exports.top_diacritic,
+    exports.high_diacritic,
+    exports.mid_diacritic,
+    exports.low_diacritic,
+    exports.bottom_diacritic,
+    exports.voiceless_diacritic
 ];
 var phones_by_name = {};
 var phones_by_ipa_sym = {};
