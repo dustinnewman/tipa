@@ -78,13 +78,14 @@ export type mora = ipa_letter[]
 
 export enum syllable_weight {
     light = "light",
-    heavy = "heavy"
+    heavy = "heavy",
+    superheavy = "superheavy"
 }
 
 export type syllable = {
-    onset?: ipa_letter[],
-    nucleus: ipa_letter[],
-    coda?: ipa_letter[],
+    onset?: ipa_segment[],
+    nucleus: ipa_segment[],
+    coda?: ipa_segment[],
     weight: syllable_weight,
     tone?: ""
 }

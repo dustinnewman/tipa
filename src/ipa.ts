@@ -3057,6 +3057,47 @@ export const voiced_velar_fricative: ipa_consonant = {
     }
 }
 
+export const voiced_phar_fricative: ipa_consonant = {
+    name: "voiced pharyngeal fricative",
+    type: LETTER,
+    place: PHAR,
+    manner: FRIC,
+    consonant: true,
+    vowel: false,
+    ipa_sym: "ʕ",
+    ipa_ent: "&#661;",
+    branner: "?&",
+    number: 145,
+    features: {
+        SYL: feature.neg,
+        CONS: feature.pos,
+        SON: feature.neg,
+        CONT: feature.pos,
+        DELREL: feature.neg,
+        APPROX: feature.neg,
+        TAP: feature.neg,
+        TRIL: feature.neg,
+        LAT: feature.neg,
+        NASAL: feature.neg,
+        VOICE: feature.pos,
+        SP_GLOT: feature.neg,
+        CON_GLOT: feature.neg,
+        LABIAL: feature.neg,
+        ROUND: feature.neg,
+        LAB_DEN: feature.neg,
+        CORONAL: feature.neg,
+        ANT: feature.zero,
+        DISTRO: feature.zero,
+        STRID: feature.zero,
+        DORSAL: feature.pos,
+        HIGH: feature.neg,
+        LOW: feature.pos,
+        FRONT: feature.neg,
+        BACK: feature.pos,
+        TENSE: feature.zero
+    }
+}
+
 export const syllable_break: ipa_suprasegmental = {
     name: "syllable break",
     type: SUPRA,
@@ -3243,6 +3284,7 @@ const all_phones: ipa_symbol[] = [
     voiceless_glottal_fricative,
     voiceless_velar_fricative,
     voiced_velar_fricative,
+    voiced_phar_fricative,
     syllable_break,
     primary_stress,
     secondary_stress,

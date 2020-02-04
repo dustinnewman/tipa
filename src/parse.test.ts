@@ -1,5 +1,6 @@
 import "mocha"
 import { expect } from "chai"
+import { LETTER, DIAC, SUPRA } from "./types"
 import { parse } from "./parse"
 
 describe("parse", () => {
@@ -96,8 +97,27 @@ describe("parse", () => {
             use_branner: true,
             use_ipa_sym: false
         })
-        expect(ipa?.length).to.equal(branner?.length)
-        expect(ipa).to.deep.equal(branner)
+        expect(ipa).to.not.be.undefined
+        expect(branner).to.not.be.undefined
+        if (ipa && branner) {
+            expect(ipa.length).to.equal(branner.length)
+            expect(ipa).to.deep.equal(branner)
+        }
+    })
+
+    it("should parse long polysyllabic words with tone", () => {
+        const result = parse(".ʕe.es.a.án.")
+        expect(result).to.not.be.undefined
+        if (result) {
+            expect(result).to.have.lengthOf(13)
+            expect(result[0].type).to.equal(SUPRA)
+            expect(result[1].type).to.equal(LETTER)
+            expect(result[1].branner).to.equal("?&")
+            expect(result[3].type).to.equal(SUPRA)
+            expect(result[9].type).to.equal(LETTER)
+            expect(result[10].type).to.equal(DIAC)
+            expect(result[10].branner).to.equal("4")
+        }
     })
 
 })

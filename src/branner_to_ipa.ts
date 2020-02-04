@@ -45,6 +45,7 @@ const branner_map: Map<string, string> = new Map([
     ["v&", "ʌ"], // Must precede v
     ["c&", "ɔ"], // Must precede c
     ["r&", "ɹ"], // Must precede r
+    ["?&", "ʕ"], // Must precede ?
     ["0-", "θ"],
     ["d-", "ð"],
     ["?", "ʔ"],
