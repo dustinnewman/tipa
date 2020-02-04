@@ -1,7 +1,7 @@
 {
   "name": "tipa",
   "version": "1.0.3",
-  "description": "IPA in JavaScript",
+  "description": "IPA in TypeScript",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -81,7 +81,9 @@ describe("parse", function () {
         });
         var branner = parse_1.parse(".e5.", {
             auto_syllabify_start: true,
-            auto_syllabify_end: true
+            auto_syllabify_end: true,
+            use_branner: true,
+            use_ipa_sym: false
         });
         chai_1.expect((_a = ipa) === null || _a === void 0 ? void 0 : _a.length).to.equal((_b = branner) === null || _b === void 0 ? void 0 : _b.length);
         chai_1.expect(ipa).to.deep.equal(branner);

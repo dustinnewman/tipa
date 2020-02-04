@@ -2988,7 +2988,7 @@ exports.voiced_velar_fricative = {
 };
 exports.syllable_break = {
     name: "syllable break",
-    type: types_1.DIAC,
+    type: types_1.SUPRA,
     ipa_sym: ".",
     ipa_ent: "&#46;",
     branner: ".",
@@ -2996,7 +2996,7 @@ exports.syllable_break = {
 };
 exports.primary_stress = {
     name: "primary stress",
-    type: types_1.DIAC,
+    type: types_1.SUPRA,
     ipa_sym: "ˈ",
     ipa_ent: "&#712;",
     branner: "'",
@@ -3004,7 +3004,7 @@ exports.primary_stress = {
 };
 exports.secondary_stress = {
     name: "secondary stress",
-    type: types_1.DIAC,
+    type: types_1.SUPRA,
     ipa_sym: "ˌ",
     ipa_ent: "&#716;",
     branner: ",",
@@ -3012,7 +3012,7 @@ exports.secondary_stress = {
 };
 exports.long = {
     name: "long",
-    type: types_1.DIAC,
+    type: types_1.SUPRA,
     ipa_sym: "ː",
     ipa_ent: "&#720;",
     branner: ":",
@@ -3020,7 +3020,7 @@ exports.long = {
 };
 exports.half_long = {
     name: "half long",
-    type: types_1.DIAC,
+    type: types_1.SUPRA,
     ipa_sym: "ˑ",
     ipa_ent: "&#721;",
     branner: ";",
@@ -3059,7 +3059,7 @@ exports.mid_diacritic = {
 exports.low_diacritic = {
     name: "low diacritic",
     type: types_1.DIAC,
-    ipa_sym: "\u0304",
+    ipa_sym: '̀',
     ipa_ent: "&#768;",
     branner: "2",
     number: 515
@@ -3079,6 +3079,14 @@ exports.voiceless_diacritic = {
     ipa_ent: "&#805;",
     branner: "V)",
     number: 402
+};
+exports.voiced_diacritic = {
+    name: "voiced diacritic",
+    type: types_1.DIAC,
+    ipa_sym: '̬',
+    ipa_ent: "&#812;",
+    branner: "v)",
+    number: 403
 };
 var all_phones = [
     exports.high_front_tense_unround_vowel,

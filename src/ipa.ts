@@ -7,7 +7,9 @@ import {
     ipa_letter,
     is_letter,
     LETTER,
-    DIAC
+    DIAC,
+    SUPRA,
+    ipa_suprasegmental
 } from "./types"
 import { get_feature_string } from "./feature_string"
 
@@ -3055,45 +3057,45 @@ export const voiced_velar_fricative: ipa_consonant = {
     }
 }
 
-export const syllable_break: ipa_diacritic = {
+export const syllable_break: ipa_suprasegmental = {
     name: "syllable break",
-    type: DIAC,
+    type: SUPRA,
     ipa_sym: ".",
     ipa_ent: "&#46;",
     branner: ".",
     number: 506
 }
 
-export const primary_stress: ipa_diacritic = {
+export const primary_stress: ipa_suprasegmental = {
     name: "primary stress",
-    type: DIAC,
+    type: SUPRA,
     ipa_sym: "ˈ",
     ipa_ent: "&#712;",
     branner: "'",
     number: 501
 }
 
-export const secondary_stress: ipa_diacritic = {
+export const secondary_stress: ipa_suprasegmental = {
     name: "secondary stress",
-    type: DIAC,
+    type: SUPRA,
     ipa_sym: "ˌ",
     ipa_ent: "&#716;",
     branner: ",",
     number: 502
 }
 
-export const long: ipa_diacritic = {
+export const long: ipa_suprasegmental = {
     name: "long",
-    type: DIAC,
+    type: SUPRA,
     ipa_sym: "ː",
     ipa_ent: "&#720;",
     branner: ":",
     number: 503
 }
 
-export const half_long: ipa_diacritic = {
+export const half_long: ipa_suprasegmental = {
     name: "half long",
-    type: DIAC,
+    type: SUPRA,
     ipa_sym: "ˑ",
     ipa_ent: "&#721;",
     branner: ";",
@@ -3136,7 +3138,7 @@ export const mid_diacritic: ipa_diacritic = {
 export const low_diacritic: ipa_diacritic = {
     name: "low diacritic",
     type: DIAC,
-    ipa_sym: `̄`,
+    ipa_sym: '̀',
     ipa_ent: "&#768;",
     branner: "2",
     number: 515
@@ -3158,6 +3160,15 @@ export const voiceless_diacritic: ipa_diacritic = {
     ipa_ent: "&#805;",
     branner: "V)",
     number: 402
+}
+
+export const voiced_diacritic: ipa_diacritic = {
+    name: "voiced diacritic",
+    type: DIAC,
+    ipa_sym: '̬',
+    ipa_ent: "&#812;",
+    branner: "v)",
+    number: 403
 }
 
 const all_phones: ipa_symbol[] = [

@@ -1,4 +1,4 @@
-import { feature, ipa_symbol, ipa_consonant, ipa_vowel, ipa_diacritic, ipa_letter } from "./types";
+import { feature, ipa_symbol, ipa_consonant, ipa_vowel, ipa_diacritic, ipa_letter, ipa_suprasegmental } from "./types";
 export declare const place: {
     LABIAL: string;
     BILAB: string;
@@ -251,16 +251,17 @@ export declare const voiced_uvular_nasal: ipa_consonant;
 export declare const voiceless_glottal_fricative: ipa_consonant;
 export declare const voiceless_velar_fricative: ipa_consonant;
 export declare const voiced_velar_fricative: ipa_consonant;
-export declare const syllable_break: ipa_diacritic;
-export declare const primary_stress: ipa_diacritic;
-export declare const secondary_stress: ipa_diacritic;
-export declare const long: ipa_diacritic;
-export declare const half_long: ipa_diacritic;
+export declare const syllable_break: ipa_suprasegmental;
+export declare const primary_stress: ipa_suprasegmental;
+export declare const secondary_stress: ipa_suprasegmental;
+export declare const long: ipa_suprasegmental;
+export declare const half_long: ipa_suprasegmental;
 export declare const top_diacritic: ipa_diacritic;
 export declare const high_diacritic: ipa_diacritic;
 export declare const mid_diacritic: ipa_diacritic;
 export declare const low_diacritic: ipa_diacritic;
 export declare const bottom_diacritic: ipa_diacritic;
 export declare const voiceless_diacritic: ipa_diacritic;
+export declare const voiced_diacritic: ipa_diacritic;
 export declare function get(key: string): ipa_symbol | undefined;
 export declare function get_by_feature_string(key: string): (ipa_letter | undefined);

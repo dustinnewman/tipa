@@ -24,4 +24,25 @@ describe("branner_to_ipa", () => {
         expect(result).to.equal(ipa)
     })
 
+    it("should convert tones", () => {
+        const branner = "e5"
+        const ipa = "e̋"
+        const result = branner_to_ipa(branner)
+        expect(result).to.equal(ipa)
+    })
+
+    it("should convert voiced diacritics", () => {
+        const branner = "vv)"
+        const ipa = "v̬"
+        const result = branner_to_ipa(branner)
+        expect(result).to.equal(ipa)
+    })
+
+    it("should convert voiceless diacritics", () => {
+        const branner = "vV)"
+        const ipa = "v̥"
+        const result = branner_to_ipa(branner)
+        expect(result).to.equal(ipa)
+    })
+
 })

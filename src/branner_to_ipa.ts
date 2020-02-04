@@ -6,7 +6,7 @@ const branner_map: Map<string, string> = new Map([
     ["tS))", "t͡ʃ"], // Must precede t and S
     ['d3"))', "d͡ʒ"], // Must precede d and 3"
     ["p[f))", "p̪͡f"], // Must precede p and f
-    ["b[v))", "b̪͡v"], // Must precede b and v
+    ["b[v))", "b̪͡v"], // Must precede b and v and v)
     ["ts))", "t͡s"], // Must precede t and s
     ["dz))", "d͡z"], // Must precede d and z
     // Now do three letter symbols
@@ -27,6 +27,7 @@ const branner_map: Map<string, string> = new Map([
     ['c"', ""], // TODO
     ['j"', ""], // TODO
     ['v"', "ʋ"], // Must precede v
+    ['v)', '̬'], // Must precede v
     ["l-", "ɬ"], // Must precede l
     ['a"', "ɑ"], // Must precede a
     ["m&", "ɯ"], // Must precede m
@@ -51,6 +52,12 @@ const branner_map: Map<string, string> = new Map([
     ["G", "ɢ"],
     ["N", "ɴ"],
     ["@", "ə"],
+    ["5", `̋`],
+    ["4", `́`],
+    ["3", `̄`],
+    ["2", '̀'],
+    ["1", `̏`],
+    ["V)", `̥`]
 ])
 
 // Source: https://stackoverflow.com/a/3561711

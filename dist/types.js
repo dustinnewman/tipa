@@ -13,10 +13,15 @@ var syllable_weight;
 })(syllable_weight = exports.syllable_weight || (exports.syllable_weight = {}));
 exports.LETTER = "letter";
 exports.DIAC = "diacritic";
+exports.SUPRA = "suprasegmental";
 function is_diacritic(symbol) {
     return symbol.type === exports.DIAC;
 }
 exports.is_diacritic = is_diacritic;
+function is_supra(symbol) {
+    return symbol.type === exports.SUPRA;
+}
+exports.is_supra = is_supra;
 function is_letter(symbol) {
     if (Array.isArray(symbol)) {
         return false;

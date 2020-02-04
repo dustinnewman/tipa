@@ -21,4 +21,22 @@ describe("branner_to_ipa", function () {
         var result = branner_to_ipa_1.branner_to_ipa(branner);
         chai_1.expect(result).to.equal(ipa);
     });
+    it("should convert tones", function () {
+        var branner = "e5";
+        var ipa = "e̋";
+        var result = branner_to_ipa_1.branner_to_ipa(branner);
+        chai_1.expect(result).to.equal(ipa);
+    });
+    it("should convert voiced diacritics", function () {
+        var branner = "vv)";
+        var ipa = "v̬";
+        var result = branner_to_ipa_1.branner_to_ipa(branner);
+        chai_1.expect(result).to.equal(ipa);
+    });
+    it("should convert voiceless diacritics", function () {
+        var branner = "vV)";
+        var ipa = "v̥";
+        var result = branner_to_ipa_1.branner_to_ipa(branner);
+        chai_1.expect(result).to.equal(ipa);
+    });
 });

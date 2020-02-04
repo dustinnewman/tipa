@@ -49,6 +49,8 @@ export type ipa_symbol = {
 
 export type ipa_diacritic = ipa_symbol
 
+export type ipa_suprasegmental = ipa_symbol
+
 export type ipa_vowel = ipa_symbol & {
     place: place;
     consonant: boolean;
@@ -64,7 +66,7 @@ export type ipa_letter = ipa_vowel | ipa_consonant
 
 export type word = ipa_symbol[]
 
-export type ipa_segment = (ipa_letter) | (ipa_symbol[])
+export type ipa_segment = (ipa_letter) | ([ipa_letter, ...Array<ipa_diacritic>])
 
 export type correspondence = (number | null)[]
 
@@ -89,9 +91,14 @@ export type syllable = {
 
 export const LETTER = "letter"
 export const DIAC = "diacritic"
+export const SUPRA = "suprasegmental"
 
 export function is_diacritic(symbol: ipa_symbol): symbol is ipa_diacritic {
     return (symbol as ipa_diacritic).type === DIAC;
+}
+
+export function is_supra(symbol: ipa_symbol): symbol is ipa_suprasegmental {
+    return (symbol as ipa_suprasegmental).type === SUPRA;
 }
 
 export function is_letter(symbol: ipa_symbol | ipa_segment): symbol is ipa_letter {

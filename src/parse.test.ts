@@ -92,7 +92,9 @@ describe("parse", () => {
         })
         const branner = parse(".e5.", {
             auto_syllabify_start: true,
-            auto_syllabify_end: true
+            auto_syllabify_end: true,
+            use_branner: true,
+            use_ipa_sym: false
         })
         expect(ipa?.length).to.equal(branner?.length)
         expect(ipa).to.deep.equal(branner)
