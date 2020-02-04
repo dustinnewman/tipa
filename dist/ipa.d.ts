@@ -251,6 +251,7 @@ export declare const voiced_uvular_nasal: ipa_consonant;
 export declare const voiceless_glottal_fricative: ipa_consonant;
 export declare const voiceless_velar_fricative: ipa_consonant;
 export declare const voiced_velar_fricative: ipa_consonant;
+export declare const voiced_phar_fricative: ipa_consonant;
 export declare const syllable_break: ipa_suprasegmental;
 export declare const primary_stress: ipa_suprasegmental;
 export declare const secondary_stress: ipa_suprasegmental;

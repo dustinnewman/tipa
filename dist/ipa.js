@@ -2986,6 +2986,46 @@ exports.voiced_velar_fricative = {
         TENSE: types_1.feature.zero
     }
 };
+exports.voiced_phar_fricative = {
+    name: "voiced pharyngeal fricative",
+    type: types_1.LETTER,
+    place: PHAR,
+    manner: FRIC,
+    consonant: true,
+    vowel: false,
+    ipa_sym: "ʕ",
+    ipa_ent: "&#661;",
+    branner: "?&",
+    number: 145,
+    features: {
+        SYL: types_1.feature.neg,
+        CONS: types_1.feature.pos,
+        SON: types_1.feature.neg,
+        CONT: types_1.feature.pos,
+        DELREL: types_1.feature.neg,
+        APPROX: types_1.feature.neg,
+        TAP: types_1.feature.neg,
+        TRIL: types_1.feature.neg,
+        LAT: types_1.feature.neg,
+        NASAL: types_1.feature.neg,
+        VOICE: types_1.feature.pos,
+        SP_GLOT: types_1.feature.neg,
+        CON_GLOT: types_1.feature.neg,
+        LABIAL: types_1.feature.neg,
+        ROUND: types_1.feature.neg,
+        LAB_DEN: types_1.feature.neg,
+        CORONAL: types_1.feature.neg,
+        ANT: types_1.feature.zero,
+        DISTRO: types_1.feature.zero,
+        STRID: types_1.feature.zero,
+        DORSAL: types_1.feature.pos,
+        HIGH: types_1.feature.neg,
+        LOW: types_1.feature.pos,
+        FRONT: types_1.feature.neg,
+        BACK: types_1.feature.pos,
+        TENSE: types_1.feature.zero
+    }
+};
 exports.syllable_break = {
     name: "syllable break",
     type: types_1.SUPRA,
@@ -3160,6 +3200,7 @@ var all_phones = [
     exports.voiceless_glottal_fricative,
     exports.voiceless_velar_fricative,
     exports.voiced_velar_fricative,
+    exports.voiced_phar_fricative,
     exports.syllable_break,
     exports.primary_stress,
     exports.secondary_stress,

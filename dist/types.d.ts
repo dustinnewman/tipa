@@ -62,12 +62,13 @@ export declare type faithfulness_constraint = (input: word, output: word, corr: 
 export declare type mora = ipa_letter[];
 export declare enum syllable_weight {
     light = "light",
-    heavy = "heavy"
+    heavy = "heavy",
+    superheavy = "superheavy"
 }
 export declare type syllable = {
-    onset?: ipa_letter[];
-    nucleus: ipa_letter[];
-    coda?: ipa_letter[];
+    onset?: ipa_segment[];
+    nucleus: ipa_segment[];
+    coda?: ipa_segment[];
     weight: syllable_weight;
     tone?: "";
 };

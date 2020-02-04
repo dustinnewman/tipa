@@ -10,6 +10,7 @@ var syllable_weight;
 (function (syllable_weight) {
     syllable_weight["light"] = "light";
     syllable_weight["heavy"] = "heavy";
+    syllable_weight["superheavy"] = "superheavy";
 })(syllable_weight = exports.syllable_weight || (exports.syllable_weight = {}));
 exports.LETTER = "letter";
 exports.DIAC = "diacritic";
