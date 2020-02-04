@@ -1,9 +1,9 @@
-import { ipa_segment, is_letter, feature, ipa_letter } from "./types"
+import { phone, feature, ipa_letter } from "./types"
 import { get_feature_string, set_voice } from "./feature_string"
 import { get, get_by_feature_string } from "./ipa"
 
-export function devoice(input: ipa_segment): ipa_segment | undefined {
-    if (is_letter(input)) {
+export function devoice(input: phone): phone | undefined {
+    if (!Array.isArray(input)) {
         const input_fs = get_feature_string(input.features)
         const target_fs = set_voice(input_fs, feature.neg)
         if (input_fs === target_fs) {
@@ -20,7 +20,7 @@ export function devoice(input: ipa_segment): ipa_segment | undefined {
             // diacritic in the second position
             const voiceless_diac = get("voiceless diacritic")
             if (voiceless_diac !== undefined) {
-                const target_segment: ipa_segment = [input, voiceless_diac]
+                const target_segment: phone = [input, voiceless_diac]
                 return target_segment
             } else {
                 // In the very unusual case we do not find the

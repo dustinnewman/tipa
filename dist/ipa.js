@@ -3052,7 +3052,7 @@ exports.secondary_stress = {
 };
 exports.long = {
     name: "long",
-    type: types_1.SUPRA,
+    type: types_1.DIAC,
     ipa_sym: "ː",
     ipa_ent: "&#720;",
     branner: ":",
@@ -3060,7 +3060,7 @@ exports.long = {
 };
 exports.half_long = {
     name: "half long",
-    type: types_1.SUPRA,
+    type: types_1.DIAC,
     ipa_sym: "ˑ",
     ipa_ent: "&#721;",
     branner: ";",

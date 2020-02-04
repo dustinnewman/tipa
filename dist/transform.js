@@ -24,7 +24,7 @@ var types_1 = require("./types");
 var feature_string_1 = require("./feature_string");
 var ipa_1 = require("./ipa");
 function devoice(input) {
-    if (types_1.is_letter(input)) {
+    if (!Array.isArray(input)) {
         var input_fs = feature_string_1.get_feature_string(input.features);
         var target_fs = feature_string_1.set_voice(input_fs, types_1.feature.neg);
         if (input_fs === target_fs) {

@@ -1,8 +1,8 @@
-import { word } from "./types"
+import { ipa_symbol } from "./types"
 import { get } from "./ipa"
 import { branner_to_ipa } from "./branner_to_ipa"
 
-interface parse_options {
+interface tokenize_options {
     use_branner?: boolean;
     use_ipa_sym?: boolean;
     use_ipa_ent?: boolean;
@@ -10,7 +10,7 @@ interface parse_options {
     auto_syllabify_end?: boolean;
 }
 
-const DEF_OPTS: parse_options = {
+const DEF_OPTS: tokenize_options = {
     use_branner: false,
     use_ipa_sym: true,
     use_ipa_ent: false,
@@ -30,7 +30,7 @@ function split_by_ipa_ent(input: string): string[] {
     return input.split("")
 }
 
-export function parse(_input: string, options?: parse_options): word | undefined {
+export function tokenize(_input: string, options?: tokenize_options): ipa_symbol[] | undefined {
     // Use default options if not provided
     options = options ? { ...DEF_OPTS, ...options } : DEF_OPTS
 
@@ -70,7 +70,7 @@ export function parse(_input: string, options?: parse_options): word | undefined
         input = _input
     }
 
-    let output: word = []
+    let output: ipa_symbol[] = []
     const len = input.length
     for (let i = 0; i < len; i++) {
         const sym = get(input[i])

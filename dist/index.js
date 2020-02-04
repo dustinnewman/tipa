@@ -4,8 +4,8 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./ipa"));
-var parse_1 = require("./parse");
-exports.parse = parse_1.parse;
+var tokenize_1 = require("./tokenize");
+exports.tokenize = tokenize_1.tokenize;
 var constraints_1 = require("./constraints");
 exports.NOCODA = constraints_1.NOCODA;
 exports.ONSET = constraints_1.ONSET;

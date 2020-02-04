@@ -1,12 +1,12 @@
 import "mocha"
 import { expect } from "chai"
 import { LETTER, DIAC, SUPRA } from "./types"
-import { parse } from "./parse"
+import { tokenize } from "./tokenize"
 
-describe("parse", () => {
+describe("tokenize", () => {
 
-    it("should parse a syllable with an onset and no coda", () => {
-        const result = parse("mi")
+    it("should tokenize a syllable with an onset and no coda", () => {
+        const result = tokenize("mi")
         expect(result).to.not.be.undefined
     })
 
@@ -14,7 +14,7 @@ describe("parse", () => {
         const input = "mi"
         const input_len = input.length
 
-        const result = parse(input, {
+        const result = tokenize(input, {
             auto_syllabify_start: true,
             auto_syllabify_end: true
         })
@@ -25,40 +25,40 @@ describe("parse", () => {
         const input = ".mi."
         const input_len = input.length
 
-        const result = parse(input, {
+        const result = tokenize(input, {
             auto_syllabify_start: true,
             auto_syllabify_end: true
         })
         expect(result).to.have.lengthOf(input_len)
     })
 
-    it("should parse a syllable with a coda and onset", () => {
-        const result = parse("mæt")
+    it("should tokenize a syllable with a coda and onset", () => {
+        const result = tokenize("mæt")
         expect(result).to.not.be.undefined
     })
 
-    it("should parse a disyllabic word with no codas", () => {
-        const result = parse("lu.nə")
+    it("should tokenize a disyllabic word with no codas", () => {
+        const result = tokenize("lu.nə")
         expect(result).to.not.be.undefined
     })
 
-    it("should parse Branner and IPA the same", () => {
-        const ipa = parse("lʉ.nə", {
+    it("should tokenize Branner and IPA the same", () => {
+        const ipa = tokenize("lʉ.nə", {
             use_ipa_sym: true,
             use_branner: false
         })
-        const branner = parse("lu-.n@", {
+        const branner = tokenize("lu-.n@", {
             use_ipa_sym: false,
             use_branner: true
         })
         expect(ipa).to.deep.equal(branner)
     })
 
-    it("should parse combining symbols as separate diacritics", () => {
+    it("should tokenize combining symbols as separate diacritics", () => {
         const input = ".e̋."
         const input_len = input.length
 
-        const result = parse(input, {
+        const result = tokenize(input, {
             auto_syllabify_start: true,
             auto_syllabify_end: true
         })
@@ -70,11 +70,11 @@ describe("parse", () => {
         }
     })
 
-    it("should parse combining symbols as separate diacritics in Branner form", () => {
+    it("should tokenize combining symbols as separate diacritics in Branner form", () => {
         const input = ".e5."
         const input_len = input.length
 
-        const result = parse(input, {
+        const result = tokenize(input, {
             auto_syllabify_start: true,
             auto_syllabify_end: true
         })
@@ -86,12 +86,12 @@ describe("parse", () => {
         }
     })
 
-    it("should parse combining symbols identically between Unicode and Branner", () => {
-        const ipa = parse(".e̋.", {
+    it("should tokenize combining symbols identically between Unicode and Branner", () => {
+        const ipa = tokenize(".e̋.", {
             auto_syllabify_start: true,
             auto_syllabify_end: true
         })
-        const branner = parse(".e5.", {
+        const branner = tokenize(".e5.", {
             auto_syllabify_start: true,
             auto_syllabify_end: true,
             use_branner: true,
@@ -105,8 +105,8 @@ describe("parse", () => {
         }
     })
 
-    it("should parse long polysyllabic words with tone", () => {
-        const result = parse(".ʕe.es.a.án.")
+    it("should tokenize long polysyllabic words with tone", () => {
+        const result = tokenize(".ʕe.es.a.án.")
         expect(result).to.not.be.undefined
         if (result) {
             expect(result).to.have.lengthOf(13)

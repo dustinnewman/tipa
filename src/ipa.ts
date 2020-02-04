@@ -5,11 +5,12 @@ import {
     ipa_vowel,
     ipa_diacritic,
     ipa_letter,
-    is_letter,
+    is_phone,
     LETTER,
     DIAC,
     SUPRA,
-    ipa_suprasegmental
+    ipa_suprasegmental,
+    is_letter
 } from "./types"
 import { get_feature_string } from "./feature_string"
 
@@ -3125,18 +3126,18 @@ export const secondary_stress: ipa_suprasegmental = {
     number: 502
 }
 
-export const long: ipa_suprasegmental = {
+export const long: ipa_diacritic = {
     name: "long",
-    type: SUPRA,
+    type: DIAC,
     ipa_sym: "ː",
     ipa_ent: "&#720;",
     branner: ":",
     number: 503
 }
 
-export const half_long: ipa_suprasegmental = {
+export const half_long: ipa_diacritic = {
     name: "half long",
-    type: SUPRA,
+    type: DIAC,
     ipa_sym: "ˑ",
     ipa_ent: "&#721;",
     branner: ";",

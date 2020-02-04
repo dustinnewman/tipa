@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("mocha");
 var chai_1 = require("chai");
 var types_1 = require("./types");
-var parse_1 = require("./parse");
+var parse_1 = require("./tokenize");
 describe("parse", function () {
     it("should parse a syllable with an onset and no coda", function () {
         var result = parse_1.parse("mi");

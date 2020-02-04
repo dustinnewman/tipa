@@ -11,6 +11,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var types_1 = require("./types");
 var ipa_1 = require("./ipa");
 var DEF_OPTS = {
     ignore_initial_syllab: true,
@@ -27,13 +28,19 @@ function syllabify(_input, options) {
     }
     var input = _input;
     if (options.ignore_initial_syllab) {
-        if (input[0].branner === syllable_break.branner) {
-            input = input.slice(1);
+        var initial = input[0];
+        if (!types_1.is_phone(initial)) {
+            if (initial.branner === syllable_break.branner) {
+                input = input.slice(1);
+            }
         }
     }
     if (options.ignore_final_syllab) {
-        if (input[input.length - 1].branner === syllable_break.branner) {
-            input = input.slice(0, input.length - 1);
+        var final = input[input.length - 1];
+        if (!types_1.is_phone(final)) {
+            if (final.branner === syllable_break.branner) {
+                input = input.slice(0, input.length - 1);
+            }
         }
     }
 }

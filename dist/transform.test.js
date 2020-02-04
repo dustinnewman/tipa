@@ -24,12 +24,12 @@ require("mocha");
 var chai_1 = require("chai");
 var ipa_1 = require("./ipa");
 var transform_1 = require("./transform");
-var parse_1 = require("./parse");
+var tokenize_1 = require("./tokenize");
 var types_1 = require("./types");
 describe("devoice", function () {
     it("should return the input given a voiceless segment", function () {
         var voiceless = ipa_1.get("t");
-        if (voiceless !== undefined && types_1.is_letter(voiceless)) {
+        if (voiceless !== undefined && types_1.is_phone(voiceless)) {
             var result = transform_1.devoice(voiceless);
             chai_1.expect(result).to.deep.equal(voiceless);
         }
@@ -39,15 +39,15 @@ describe("devoice", function () {
         var voiceless = ipa_1.get("t");
         if (voiced !== undefined
             && voiceless !== undefined
-            && types_1.is_letter(voiced)
-            && types_1.is_letter(voiceless)) {
+            && types_1.is_phone(voiced)
+            && types_1.is_phone(voiceless)) {
             var result = transform_1.devoice(voiced);
             chai_1.expect(result).to.deep.equal(voiceless);
         }
     });
     it("should preserve diacritics", function () {
-        var voiced = parse_1.parse("v̄");
-        var devoiced = parse_1.parse("v̥̄");
+        var voiced = tokenize_1.tokenize("v̄");
+        var devoiced = tokenize_1.tokenize("v̥̄");
         if (voiced && devoiced) {
             var filtered_voiced = voiced.filter(function (x) { return !types_1.is_supra(x); });
             var filtered_devoiced = devoiced.filter(function (x) { return !types_1.is_supra(x); });

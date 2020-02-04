@@ -1,3 +1,3 @@
 export * from "./ipa";
-export { parse } from "./parse";
+export { tokenize } from "./tokenize";
 export { NOCODA, ONSET } from "./constraints";
