@@ -64,6 +64,8 @@ export type ipa_letter = ipa_vowel | ipa_consonant
 
 export type word = ipa_symbol[]
 
+export type ipa_segment = (ipa_letter) | (ipa_symbol[])
+
 export type correspondence = (number | null)[]
 
 export type markedness_constraint = (output: word) => number
@@ -92,7 +94,10 @@ export function is_diacritic(symbol: ipa_symbol): symbol is ipa_diacritic {
     return (symbol as ipa_diacritic).type === DIAC;
 }
 
-export function is_letter(symbol: ipa_symbol): symbol is ipa_letter {
+export function is_letter(symbol: ipa_symbol | ipa_segment): symbol is ipa_letter {
+    if (Array.isArray(symbol)) {
+        return false
+    }
     return (symbol as ipa_letter).type === LETTER;
 }
 

@@ -3151,6 +3151,15 @@ export const bottom_diacritic: ipa_diacritic = {
     number: 516
 }
 
+export const voiceless_diacritic: ipa_diacritic = {
+    name: "voiceless diacritic",
+    type: DIAC,
+    ipa_sym: `̥`,
+    ipa_ent: "&#805;",
+    branner: "V)",
+    number: 402
+}
+
 const all_phones: ipa_symbol[] = [
     high_front_tense_unround_vowel,
     high_front_tense_round_vowel,
@@ -3232,7 +3241,8 @@ const all_phones: ipa_symbol[] = [
     high_diacritic,
     mid_diacritic,
     low_diacritic,
-    bottom_diacritic
+    bottom_diacritic,
+    voiceless_diacritic
 ]
 
 let phones_by_name: { [key: string]: ipa_symbol } = {}
@@ -3268,7 +3278,7 @@ export function get(key: string): ipa_symbol | undefined {
     return undefined
 }
 
-export function get_by_feature_string(key: string): ipa_letter | undefined {
+export function get_by_feature_string(key: string): (ipa_letter | undefined) {
     if (letters_by_feature_string[key]) {
         return letters_by_feature_string[key]
     }
