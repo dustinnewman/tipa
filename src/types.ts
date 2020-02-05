@@ -4,8 +4,8 @@ export enum feature {
     pos = 1,
 }
 
-export type place = string
-export type manner = string
+type place = string
+type manner = string
 
 export interface feature_matrix {
     SYL: feature;

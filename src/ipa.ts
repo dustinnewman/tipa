@@ -1,11 +1,11 @@
 import {
     feature,
+    feature_string,
     ipa_symbol,
     ipa_consonant,
     ipa_vowel,
     ipa_diacritic,
     ipa_letter,
-    is_phone,
     LETTER,
     DIAC,
     SUPRA,
@@ -2648,7 +2648,7 @@ export const voiceless_pal_alv_fricative: ipa_consonant = {
     }
 }
 
-export const voiced_pal_alv_fricative = {
+export const voiced_pal_alv_fricative: ipa_consonant = {
     name: "voiced palatoalveolar fricative",
     type: LETTER,
     place: PAL_ALV,
@@ -2812,7 +2812,7 @@ export const voiced_velar_nasal: ipa_consonant = {
     }
 }
 
-export const voiceless_uvular_stop = {
+export const voiceless_uvular_stop: ipa_consonant = {
     name: "voiceless uvular stop",
     type: LETTER,
     place: UVU,
@@ -2853,7 +2853,7 @@ export const voiceless_uvular_stop = {
     }
 }
 
-export const voiced_uvular_stop = {
+export const voiced_uvular_stop: ipa_consonant = {
     name: "voiced uvular stop",
     type: LETTER,
     place: UVU,
@@ -3342,7 +3342,7 @@ export function get(key: string): ipa_symbol | undefined {
     return undefined
 }
 
-export function get_by_feature_string(key: string): (ipa_letter | undefined) {
+export function get_by_feature_string(key: feature_string): (ipa_letter | undefined) {
     if (letters_by_feature_string[key]) {
         return letters_by_feature_string[key]
     }

@@ -18,3 +18,4 @@ exports.voice = transform_1.voice;
 var constraints_1 = require("./constraints");
 exports.NOCODA = constraints_1.NOCODA;
 exports.ONSET = constraints_1.ONSET;
+__export(require("./types"));

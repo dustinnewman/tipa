@@ -3,8 +3,8 @@ export declare enum feature {
     zero = 0,
     pos = 1
 }
-export declare type place = string;
-export declare type manner = string;
+declare type place = string;
+declare type manner = string;
 export interface feature_matrix {
     SYL: feature;
     CONS: feature;
@@ -83,3 +83,4 @@ export declare function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol 
 export declare function is_consonant(symbol: phone): symbol is ipa_consonant;
 export declare function is_vowel(symbol: phone): symbol is ipa_vowel;
 export declare function is_syllabic(symbol: phone): boolean;
+export {};

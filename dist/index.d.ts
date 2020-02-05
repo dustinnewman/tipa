@@ -5,3 +5,4 @@ export { syllabify } from "./syllabify";
 export { parse } from "./parse";
 export { devoice, voice } from "./transform";
 export { NOCODA, ONSET } from "./constraints";
+export * from "./types";
