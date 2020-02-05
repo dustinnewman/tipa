@@ -1,2 +1,8 @@
 import { word } from "./types";
-export declare function parse(input: string): word | undefined;
+interface parse_options {
+    use_branner?: boolean;
+    use_ipa_sym?: boolean;
+    use_ipa_ent?: boolean;
+}
+export declare function parse(input: string, opts?: parse_options): word | undefined;
+export {};

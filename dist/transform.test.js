@@ -96,4 +96,65 @@ describe("transform", function () {
             }
         });
     });
+    describe("nasalize", function () {
+        it("should nasalize vowels into a phone", function () {
+            var tokens = ipa_1.get("a");
+            if (tokens && types_1.is_phone(tokens)) {
+                var result = transform_1.nasalize(tokens);
+                chai_1.expect(result).to.not.be.undefined;
+                chai_1.expect(result).to.have.lengthOf(2);
+                chai_1.expect(result).to.be.an("array");
+                if (result && types_1.is_phone(result) && Array.isArray(result)) {
+                    chai_1.expect(result[0]).to.have.property("type");
+                    chai_1.expect(result[0].vowel).to.be.true;
+                    chai_1.expect(result[1].type).to.equal("diacritic");
+                }
+            }
+        });
+    });
+    describe("denasalize", function () {
+        it("should not denasalize nasals into obstruents", function () {
+            var tokens = ipa_1.get("m");
+            var obstruent = ipa_1.get("b");
+            if (tokens && types_1.is_phone(tokens) && obstruent && types_1.is_phone(obstruent)) {
+                var result = transform_1.denasalize(tokens);
+                chai_1.expect(result).to.not.be.undefined;
+                chai_1.expect(result).to.have.lengthOf(2);
+                chai_1.expect(result).to.be.an("array");
+                chai_1.expect(result).to.not.be.deep.equal(obstruent);
+            }
+        });
+    });
+    describe("ejectivize", function () {
+        it("should turn obstruents into ejectives", function () {
+            var tokens = ipa_1.get("t");
+            if (tokens && types_1.is_phone(tokens)) {
+                var result = transform_1.ejectivize(tokens);
+                chai_1.expect(result).to.not.be.undefined;
+                chai_1.expect(result).to.have.lengthOf(2);
+                chai_1.expect(result).to.be.an("array");
+                if (result && types_1.is_phone(result) && Array.isArray(result)) {
+                    chai_1.expect(result[0]).to.have.property("type");
+                    chai_1.expect(result[0].consonant).to.be.true;
+                    chai_1.expect(result[1].type).to.equal("diacritic");
+                }
+            }
+        });
+    });
+    describe("aspirate", function () {
+        it("should aspirate obstruents", function () {
+            var tokens = ipa_1.get("t");
+            if (tokens && types_1.is_phone(tokens)) {
+                var result = transform_1.aspirate(tokens);
+                chai_1.expect(result).to.not.be.undefined;
+                chai_1.expect(result).to.have.lengthOf(2);
+                chai_1.expect(result).to.be.an("array");
+                if (result && types_1.is_phone(result) && Array.isArray(result)) {
+                    chai_1.expect(result[0]).to.have.property("type");
+                    chai_1.expect(result[0].consonant).to.be.true;
+                    chai_1.expect(result[1].type).to.equal("diacritic");
+                }
+            }
+        });
+    });
 });

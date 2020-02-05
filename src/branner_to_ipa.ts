@@ -17,15 +17,17 @@ const branner_map: Map<string, string> = new Map([
     ["oe)", "œ"],
     ["OE)", "Œ"],
     ["l~)", "ɫ"],
+    ["~/^", "\u034A"], // Must precede ~
     ["ng)", "ŋ"],
     ["nr)", ""], // TODO
     ["nj)", ""], // TODO
     ['l3")', "ɮ"], // Must precede 3"
+    ['h")', "\u0324"], // Must precede h
     ["rr)", ""], // TODO
     ['m&"', ""], // TODO Must precede m&
     ['3"', "ʒ"], // Must precede 3
-    ['c"', ""], // TODO
-    ['j"', ""], // TODO
+    ['c"', ""], // TODO Must precede c
+    ['j"', ""], // TODO Must precede j
     ['v"', "ʋ"], // Must precede v
     ['v)', "\u032C"], // Must precede v
     ["l-", "ɬ"], // Must precede l
@@ -47,6 +49,8 @@ const branner_map: Map<string, string> = new Map([
     ["c&", "ɔ"], // Must precede c
     ["r&", "ɹ"], // Must precede r
     ["?&", "ʕ"], // Must precede ?
+    ["h^", "\u02B0"], // Must precede h
+    ["~^", "\u0303"], // Must precede ~
     ["0-", "θ"],
     ["d-", "ð"],
     ["?", "ʔ"],
@@ -60,7 +64,9 @@ const branner_map: Map<string, string> = new Map([
     ["2", "\u0300"],
     ["1", "\u030F"],
     ["V)", "\u0325"],
-    [",)", "\u0329"]
+    [",)", "\u0329"],
+    ["~", "\u0330"],
+    ["`", "\u02BC"]
 ])
 
 // Source: https://stackoverflow.com/a/3561711

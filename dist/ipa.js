@@ -3292,6 +3292,54 @@ exports.syllabic_diacritic = {
     branner: ",)",
     number: 431
 };
+exports.nasal_diacritic = {
+    name: "nasal diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u0303",
+    ipa_ent: "&#771;",
+    branner: "~^",
+    number: 424
+};
+exports.denasal_diacritic = {
+    name: "denasal diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u034A",
+    ipa_ent: "&#842;",
+    branner: "~/^",
+    number: 842 // UNOFFICIAL [uses the decimal value (HTML entity)]
+};
+exports.creaky_voiced = {
+    name: "creaky voiced",
+    type: types_1.DIAC,
+    ipa_sym: "\u0330",
+    ipa_ent: "&#816;",
+    branner: "~",
+    number: 406
+};
+exports.breathy_voiced = {
+    name: "breathy voiced",
+    type: types_1.DIAC,
+    ipa_sym: "\u0324",
+    ipa_ent: "&#804;",
+    branner: 'h")',
+    number: 405
+};
+exports.ejective_diacritic = {
+    name: "ejective",
+    type: types_1.DIAC,
+    ipa_sym: "\u02BC",
+    ipa_ent: "&#700;",
+    branner: "`",
+    number: 401
+};
+exports.aspirated_diacritic = {
+    name: "aspirated",
+    type: types_1.DIAC,
+    ipa_sym: "\u02B0",
+    ipa_ent: "&#688;",
+    branner: "h^",
+    number: 404
+};
 var all_phones = [
     exports.high_front_tense_unround_vowel,
     exports.high_front_tense_round_vowel,
@@ -3380,7 +3428,14 @@ var all_phones = [
     exports.low_diacritic,
     exports.bottom_diacritic,
     exports.voiceless_diacritic,
-    exports.syllabic_diacritic
+    exports.voiced_diacritic,
+    exports.syllabic_diacritic,
+    exports.nasal_diacritic,
+    exports.denasal_diacritic,
+    exports.creaky_voiced,
+    exports.breathy_voiced,
+    exports.ejective_diacritic,
+    exports.aspirated_diacritic
 ];
 var phones_by_name = {};
 var phones_by_ipa_sym = {};

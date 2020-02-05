@@ -1,7 +1,7 @@
 import "mocha"
 import { expect } from "chai"
 import { get } from "./ipa"
-import { devoice, voice } from "./transform"
+import { devoice, voice, nasalize, denasalize, ejectivize, aspirate } from "./transform"
 import { tokenize } from "./tokenize"
 import { is_phone, is_letter, is_supra, phone } from "./types"
 
@@ -80,6 +80,71 @@ describe("transform", () => {
                 && is_phone(output)) {
                 const result = voice(input)
                 expect(result).to.deep.equal(output)
+            }
+        })
+    })
+
+    describe("nasalize", () => {
+        it("should nasalize vowels into a phone", () => {
+            const tokens = get("a")
+            if (tokens && is_phone(tokens)) {
+                const result = nasalize(tokens)
+                expect(result).to.not.be.undefined
+                expect(result).to.have.lengthOf(2)
+                expect(result).to.be.an("array")
+                if (result && is_phone(result) && Array.isArray(result)) {
+                    expect(result[0]).to.have.property("type")
+                    expect(result[0].vowel).to.be.true
+                    expect(result[1].type).to.equal("diacritic")
+                }
+            }
+        })
+    })
+
+    describe("denasalize", () => {
+        it("should not denasalize nasals into obstruents", () => {
+            const tokens = get("m")
+            const obstruent = get("b")
+            if (tokens && is_phone(tokens) && obstruent && is_phone(obstruent)) {
+                const result = denasalize(tokens)
+                expect(result).to.not.be.undefined
+                expect(result).to.have.lengthOf(2)
+                expect(result).to.be.an("array")
+                expect(result).to.not.be.deep.equal(obstruent)
+            }
+        })
+    })
+
+    describe("ejectivize", () => {
+        it("should turn obstruents into ejectives", () => {
+            const tokens = get("t")
+            if (tokens && is_phone(tokens)) {
+                const result = ejectivize(tokens)
+                expect(result).to.not.be.undefined
+                expect(result).to.have.lengthOf(2)
+                expect(result).to.be.an("array")
+                if (result && is_phone(result) && Array.isArray(result)) {
+                    expect(result[0]).to.have.property("type")
+                    expect(result[0].consonant).to.be.true
+                    expect(result[1].type).to.equal("diacritic")
+                }
+            }
+        })
+    })
+
+    describe("aspirate", () => {
+        it("should aspirate obstruents", () => {
+            const tokens = get("t")
+            if (tokens && is_phone(tokens)) {
+                const result = aspirate(tokens)
+                expect(result).to.not.be.undefined
+                expect(result).to.have.lengthOf(2)
+                expect(result).to.be.an("array")
+                if (result && is_phone(result) && Array.isArray(result)) {
+                    expect(result[0]).to.have.property("type")
+                    expect(result[0].consonant).to.be.true
+                    expect(result[1].type).to.equal("diacritic")
+                }
             }
         })
     })

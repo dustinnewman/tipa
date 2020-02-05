@@ -3382,6 +3382,60 @@ export const syllabic_diacritic: ipa_diacritic = {
     number: 431
 }
 
+export const nasal_diacritic: ipa_diacritic = {
+    name: "nasal diacritic",
+    type: DIAC,
+    ipa_sym: "\u0303",
+    ipa_ent: "&#771;",
+    branner: "~^",
+    number: 424
+}
+
+export const denasal_diacritic: ipa_diacritic = {
+    name: "denasal diacritic",
+    type: DIAC,
+    ipa_sym: "\u034A",
+    ipa_ent: "&#842;",
+    branner: "~/^", // UNOFFICIAL [follows the convention of o/)]
+    number: 842 // UNOFFICIAL [uses the decimal value (HTML entity)]
+}
+
+export const creaky_voiced: ipa_diacritic = {
+    name: "creaky voiced",
+    type: DIAC,
+    ipa_sym: "\u0330",
+    ipa_ent: "&#816;",
+    branner: "~",
+    number: 406
+}
+
+export const breathy_voiced: ipa_diacritic = {
+    name: "breathy voiced",
+    type: DIAC,
+    ipa_sym: "\u0324",
+    ipa_ent: "&#804;",
+    branner: 'h")',
+    number: 405
+}
+
+export const ejective_diacritic: ipa_diacritic = {
+    name: "ejective",
+    type: DIAC,
+    ipa_sym: "\u02BC",
+    ipa_ent: "&#700;",
+    branner: "`",
+    number: 401
+}
+
+export const aspirated_diacritic: ipa_diacritic = {
+    name: "aspirated",
+    type: DIAC,
+    ipa_sym: "\u02B0",
+    ipa_ent: "&#688;",
+    branner: "h^",
+    number: 404
+}
+
 const all_phones: ipa_symbol[] = [
     high_front_tense_unround_vowel,
     high_front_tense_round_vowel,
@@ -3470,7 +3524,14 @@ const all_phones: ipa_symbol[] = [
     low_diacritic,
     bottom_diacritic,
     voiceless_diacritic,
-    syllabic_diacritic
+    voiced_diacritic,
+    syllabic_diacritic,
+    nasal_diacritic,
+    denasal_diacritic,
+    creaky_voiced,
+    breathy_voiced,
+    ejective_diacritic,
+    aspirated_diacritic
 ]
 
 let phones_by_name: { [key: string]: ipa_symbol } = {}

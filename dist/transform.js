@@ -23,10 +23,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var types_1 = require("./types");
 var feature_string_1 = require("./feature_string");
 var ipa_1 = require("./ipa");
-function set_diacritic(input, set_fn, set_val, diacritic) {
+function set_diacritic(input, set_fn, diacritic) {
     if (!Array.isArray(input)) {
         var input_fs = feature_string_1.get_feature_string(input.features);
-        var target_fs = set_fn(input_fs, set_val);
+        var target_fs = set_fn(input_fs);
         if (input_fs === target_fs) {
             // Input is already transformed
             return input;
@@ -72,12 +72,34 @@ function set_diacritic(input, set_fn, set_val, diacritic) {
     }
 }
 function devoice(input) {
-    var voiceless_diac = ipa_1.get("voiceless diacritic");
-    return set_diacritic(input, feature_string_1.set_voice, types_1.feature.neg, voiceless_diac);
+    var diac = ipa_1.get("voiceless diacritic");
+    return set_diacritic(input, function (x) { return feature_string_1.set_voice(x, types_1.feature.neg); }, diac);
 }
 exports.devoice = devoice;
 function voice(input) {
-    var voiced_diac = ipa_1.get("voiced diacritic");
-    return set_diacritic(input, feature_string_1.set_voice, types_1.feature.pos, voiced_diac);
+    var diac = ipa_1.get("voiced diacritic");
+    return set_diacritic(input, function (x) { return feature_string_1.set_voice(x, types_1.feature.pos); }, diac);
 }
 exports.voice = voice;
+function nasalize(input) {
+    var diac = ipa_1.get("nasal diacritic");
+    return set_diacritic(input, function (x) { return feature_string_1.set_nasal(x, types_1.feature.pos); }, diac);
+}
+exports.nasalize = nasalize;
+function denasalize(input) {
+    var diac = ipa_1.get("denasal diacritic");
+    return set_diacritic(input, function (x) { return feature_string_1.set_nasal(x, types_1.feature.neg); }, diac);
+}
+exports.denasalize = denasalize;
+function ejectivize(input) {
+    var diac = ipa_1.get("ejective");
+    var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.pos), types_1.feature.neg); };
+    return set_diacritic(input, set_fn, diac);
+}
+exports.ejectivize = ejectivize;
+function aspirate(input) {
+    var diac = ipa_1.get("aspirated");
+    var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.neg), types_1.feature.pos); };
+    return set_diacritic(input, set_fn, diac);
+}
+exports.aspirate = aspirate;
