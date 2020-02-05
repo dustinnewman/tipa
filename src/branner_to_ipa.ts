@@ -36,11 +36,12 @@ const branner_map: Map<string, string> = new Map([
     ['m"', "ɱ"], // Must precede m
     ['r"', "ɾ"], // Must precede r
     ['g"', "ɣ"], // Must precede g
-    ["o-", ""], // TODO Must precede o
+    ["o-", "ɵ"], // Must precede o
     ["i-", "ɨ"], // Must precede i
     ["u-", "ʉ"], // Must precede u
-    ["e&", ""], // TODO Must precede e
-    ['E"', ""], // TODO Must precede E
+    ["e&", "ɘ"], // Must precede e
+    ["E&", "ɜ"], // Must precede E
+    ['E"', "ɞ"], // Must precede E
     ['U"', "ɤ"], // Must precede U
     ["v&", "ʌ"], // Must precede v
     ["c&", "ɔ"], // Must precede c
