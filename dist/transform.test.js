@@ -84,5 +84,16 @@ describe("transform", function () {
                 chai_1.expect(result).to.deep.equal(voiced);
             }
         });
+        it("should voice voiceless affricates", function () {
+            var input = ipa_1.get("t͡ʃ");
+            var output = ipa_1.get("d͡ʒ");
+            if (input !== undefined
+                && output !== undefined
+                && types_1.is_phone(input)
+                && types_1.is_phone(output)) {
+                var result = transform_1.voice(input);
+                chai_1.expect(result).to.deep.equal(output);
+            }
+        });
     });
 });

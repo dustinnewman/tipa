@@ -70,5 +70,17 @@ describe("transform", () => {
                 expect(result).to.deep.equal(voiced)
             }
         })
+
+        it("should voice voiceless affricates", () => {
+            const input = get("t͡ʃ")
+            const output = get("d͡ʒ")
+            if (input !== undefined
+                && output !== undefined
+                && is_phone(input)
+                && is_phone(output)) {
+                const result = voice(input)
+                expect(result).to.deep.equal(output)
+            }
+        })
     })
 })
