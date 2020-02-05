@@ -30,14 +30,14 @@ $ npm install tipa
 
 ## Functions
 
-| Name                   | Type Signature
-| ------                 | -------
-| `parse`                | `string => word`
-| `get`                  | `string => ipa_symbol`
-| `tokenize`             | `string => ipa_symbol[]`
-| `collapse`             | `ipa_symbol[] => ipa_segment[]`
-| `syllabify`            | `ipa_segment[] => word`
-| `devoice`              | `phone => phone`
+| Name                   | Type Signature                   | Example
+| ------                 | -------                          | -------
+| `parse`                | `string => word`                 | `parse("liŋˈɡwɪ.stɪks")`
+| `get`                  | `string => ipa_symbol`           | `get("low back rounded vowel")`
+| `tokenize`             | `string => ipa_symbol[]`         | `tokenize(".ʕe.es.a.án.")`
+| `collapse`             | `ipa_symbol[] => ipa_segment[]`  | `collapse(tokenize("kætz̥"))`
+| `syllabify`            | `ipa_segment[] => word`          | `syllabify(collapse(tokenize("lu.nə")))`
+| `devoice`              | `phone => phone`                 | `devoice(get("g"))`
 
 ## Types
 
