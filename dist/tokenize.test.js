@@ -106,4 +106,16 @@ describe("tokenize", function () {
             chai_1.expect(result[10].branner).to.equal("4");
         }
     });
+    it("should tokenize affricates as one letter", function () {
+        var input = "ɮdd͡ɮ.";
+        var result = tokenize_1.tokenize(input, {
+            auto_syllabify_start: true,
+            auto_syllabify_end: true
+        });
+        chai_1.expect(result).to.not.be.undefined;
+        chai_1.expect(result).to.have.lengthOf(5);
+        if (result) {
+            chai_1.expect(result[3].branner).to.equal('dl3")))');
+        }
+    });
 });

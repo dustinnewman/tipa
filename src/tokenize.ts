@@ -18,8 +18,20 @@ const DEF_OPTS: tokenize_options = {
     auto_syllabify_end: true,
 }
 
+const TIE_BAR = "\u0361"
+
 function split_by_ipa_sym(input: string): string[] {
-    return input.split("")
+    let all_segments = input.split("")
+    for (let i = 0; i < all_segments.length; i++) {
+        const curr = all_segments[i]
+        if (curr === TIE_BAR) {
+            const prev = all_segments[i - 1]
+            const next = all_segments[i + 1]
+            const affricate = prev + curr + next
+            all_segments = all_segments.slice(0, i - 1).concat(affricate).concat(all_segments.slice(i + 2))
+        }
+    }
+    return all_segments
 }
 
 function split_by_branner(input: string): string[] {

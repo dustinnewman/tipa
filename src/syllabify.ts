@@ -1,4 +1,4 @@
-import { word, syllable, ipa_segment, is_phone } from "./types"
+import { word, syllable, ipa_segment, is_phone, is_supra, is_syllabic, ipa_letter } from "./types"
 import { get } from "./ipa"
 
 interface syllabify_options {
@@ -39,4 +39,56 @@ export function syllabify(_input: ipa_segment[], options?: syllabify_options): w
             }
         }
     }
+
+    let word: word = []
+    let onset: ipa_segment[] = []
+    let nucleus: ipa_segment[] = []
+    let coda: ipa_segment[] = []
+    let syllable_segments: ipa_segment[] = []
+    let encountered_syllabic: boolean = false
+    const len = input.length
+    for (let i = 0; i < len; i++) {
+        const curr = input[i]
+        if (is_phone(curr)) {
+            if (is_syllabic(curr)) {
+                encountered_syllabic = true
+                nucleus.push(curr)
+            } else if (encountered_syllabic) {
+                coda.push(curr)
+            } else {
+                onset.push(curr)
+            }
+            syllable_segments.push(curr)
+        } else if (is_supra(curr)) {
+            // Encountered syllable break so push all the
+            // accumulated segments into the syllable
+            if (syllable_segments.length > 0) {
+                const syllable: syllable = {
+                    onset: onset,
+                    nucleus: nucleus,
+                    coda: coda,
+                    segments: syllable_segments
+                }
+                word.push(syllable)
+                // Reset all the accumulators
+                encountered_syllabic = false
+                syllable_segments = []
+                onset = []
+                nucleus = []
+                coda = []
+            }
+        }
+    }
+
+    if (syllable_segments.length > 0) {
+        const syllable: syllable = {
+            onset: onset,
+            nucleus: nucleus,
+            coda: coda,
+            segments: syllable_segments
+        }
+        word.push(syllable)
+    }
+
+    return word
 }

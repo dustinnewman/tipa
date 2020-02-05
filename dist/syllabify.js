@@ -43,5 +43,57 @@ function syllabify(_input, options) {
             }
         }
     }
+    var word = [];
+    var onset = [];
+    var nucleus = [];
+    var coda = [];
+    var syllable_segments = [];
+    var encountered_syllabic = false;
+    var len = input.length;
+    for (var i = 0; i < len; i++) {
+        var curr = input[i];
+        if (types_1.is_phone(curr)) {
+            if (types_1.is_syllabic(curr)) {
+                encountered_syllabic = true;
+                nucleus.push(curr);
+            }
+            else if (encountered_syllabic) {
+                coda.push(curr);
+            }
+            else {
+                onset.push(curr);
+            }
+            syllable_segments.push(curr);
+        }
+        else if (types_1.is_supra(curr)) {
+            // Encountered syllable break so push all the
+            // accumulated segments into the syllable
+            if (syllable_segments.length > 0) {
+                var syllable = {
+                    onset: onset,
+                    nucleus: nucleus,
+                    coda: coda,
+                    segments: syllable_segments
+                };
+                word.push(syllable);
+                // Reset all the accumulators
+                encountered_syllabic = false;
+                syllable_segments = [];
+                onset = [];
+                nucleus = [];
+                coda = [];
+            }
+        }
+    }
+    if (syllable_segments.length > 0) {
+        var syllable = {
+            onset: onset,
+            nucleus: nucleus,
+            coda: coda,
+            segments: syllable_segments
+        };
+        word.push(syllable);
+    }
+    return word;
 }
 exports.syllabify = syllabify;

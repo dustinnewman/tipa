@@ -58,7 +58,8 @@ const branner_map: Map<string, string> = new Map([
     ["3", "\u0304"],
     ["2", "\u0300"],
     ["1", "\u030F"],
-    ["V)", "\u0325"]
+    ["V)", "\u0325"],
+    [",)", "\u0329"]
 ])
 
 // Source: https://stackoverflow.com/a/3561711

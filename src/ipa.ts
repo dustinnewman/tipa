@@ -3213,6 +3213,15 @@ export const voiced_diacritic: ipa_diacritic = {
     number: 403
 }
 
+export const syllabic_diacritic: ipa_diacritic = {
+    name: "syllabic diacritic",
+    type: DIAC,
+    ipa_sym: "\u0329",
+    ipa_ent: "&#809;",
+    branner: ",)",
+    number: 431
+}
+
 const all_phones: ipa_symbol[] = [
     high_front_tense_unround_vowel,
     high_front_tense_round_vowel,
@@ -3296,7 +3305,8 @@ const all_phones: ipa_symbol[] = [
     mid_diacritic,
     low_diacritic,
     bottom_diacritic,
-    voiceless_diacritic
+    voiceless_diacritic,
+    syllabic_diacritic
 ]
 
 let phones_by_name: { [key: string]: ipa_symbol } = {}

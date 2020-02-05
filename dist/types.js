@@ -66,3 +66,10 @@ function is_vowel(symbol) {
     return symbol.vowel === true;
 }
 exports.is_vowel = is_vowel;
+function is_syllabic(symbol) {
+    if (Array.isArray(symbol)) {
+        return symbol.some(function (x) { return x.number === 431; });
+    }
+    return symbol.features.SYL === feature.pos;
+}
+exports.is_syllabic = is_syllabic;

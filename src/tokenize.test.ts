@@ -120,4 +120,18 @@ describe("tokenize", () => {
         }
     })
 
+    it("should tokenize affricates as one letter", () => {
+        const input = "ɮdd͡ɮ."
+
+        const result = tokenize(input, {
+            auto_syllabify_start: true,
+            auto_syllabify_end: true
+        })
+        expect(result).to.not.be.undefined
+        expect(result).to.have.lengthOf(5)
+        if (result) {
+            expect(result[3].branner).to.equal('dl3")))')
+        }
+    })
+
 })

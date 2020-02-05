@@ -264,5 +264,6 @@ export declare const low_diacritic: ipa_diacritic;
 export declare const bottom_diacritic: ipa_diacritic;
 export declare const voiceless_diacritic: ipa_diacritic;
 export declare const voiced_diacritic: ipa_diacritic;
+export declare const syllabic_diacritic: ipa_diacritic;
 export declare function get(key: string): ipa_symbol | undefined;
 export declare function get_by_feature_string(key: string): (ipa_letter | undefined);

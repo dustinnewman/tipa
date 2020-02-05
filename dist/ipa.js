@@ -3128,6 +3128,14 @@ exports.voiced_diacritic = {
     branner: "v)",
     number: 403
 };
+exports.syllabic_diacritic = {
+    name: "syllabic diacritic",
+    type: types_1.DIAC,
+    ipa_sym: "\u0329",
+    ipa_ent: "&#809;",
+    branner: ",)",
+    number: 431
+};
 var all_phones = [
     exports.high_front_tense_unround_vowel,
     exports.high_front_tense_round_vowel,
@@ -3211,7 +3219,8 @@ var all_phones = [
     exports.mid_diacritic,
     exports.low_diacritic,
     exports.bottom_diacritic,
-    exports.voiceless_diacritic
+    exports.voiceless_diacritic,
+    exports.syllabic_diacritic
 ];
 var phones_by_name = {};
 var phones_by_ipa_sym = {};

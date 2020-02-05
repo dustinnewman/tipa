@@ -147,3 +147,10 @@ export function is_vowel(symbol: phone): symbol is ipa_vowel {
     }
     return (symbol as ipa_vowel).vowel === true;
 }
+
+export function is_syllabic(symbol: phone): boolean {
+    if (Array.isArray(symbol)) {
+        return symbol.some(x => x.number === 431)
+    }
+    return (symbol as ipa_letter).features.SYL === feature.pos
+}

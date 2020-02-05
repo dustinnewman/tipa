@@ -82,3 +82,4 @@ export declare function is_letter(symbol: ipa_symbol): symbol is ipa_letter;
 export declare function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol is phone;
 export declare function is_consonant(symbol: phone): symbol is ipa_consonant;
 export declare function is_vowel(symbol: phone): symbol is ipa_vowel;
+export declare function is_syllabic(symbol: phone): boolean;
