@@ -26,41 +26,63 @@ var ipa_1 = require("./ipa");
 var transform_1 = require("./transform");
 var tokenize_1 = require("./tokenize");
 var types_1 = require("./types");
-describe("devoice", function () {
-    it("should return the input given a voiceless segment", function () {
-        var voiceless = ipa_1.get("t");
-        if (voiceless !== undefined && types_1.is_phone(voiceless)) {
-            var result = transform_1.devoice(voiceless);
-            chai_1.expect(result).to.deep.equal(voiceless);
-        }
-    });
-    it("should return a voiceless segment given a voiced segment", function () {
-        var voiced = ipa_1.get("d");
-        var voiceless = ipa_1.get("t");
-        if (voiced !== undefined
-            && voiceless !== undefined
-            && types_1.is_phone(voiced)
-            && types_1.is_phone(voiceless)) {
-            var result = transform_1.devoice(voiced);
-            chai_1.expect(result).to.deep.equal(voiceless);
-        }
-    });
-    it("should preserve diacritics", function () {
-        var voiced = tokenize_1.tokenize("v̄");
-        var devoiced = tokenize_1.tokenize("v̥̄");
-        if (voiced && devoiced) {
-            var filtered_voiced = voiced.filter(function (x) { return !types_1.is_supra(x); });
-            var filtered_devoiced = devoiced.filter(function (x) { return !types_1.is_supra(x); });
-            var voiced_letter = filtered_voiced[0];
-            var devoiced_letter = filtered_devoiced[0];
-            if (types_1.is_letter(voiced_letter) && types_1.is_letter(devoiced_letter)) {
-                var fv = __spread([voiced_letter], filtered_voiced.slice(1));
-                var fd = __spread([devoiced_letter], filtered_devoiced.slice(1));
-                var result = transform_1.devoice(fv);
-                if (result) {
-                    chai_1.expect(result).to.deep.equal(fd);
+describe("transform", function () {
+    describe("devoice", function () {
+        it("should return the input given a voiceless segment", function () {
+            var voiceless = ipa_1.get("t");
+            if (voiceless !== undefined && types_1.is_phone(voiceless)) {
+                var result = transform_1.devoice(voiceless);
+                chai_1.expect(result).to.deep.equal(voiceless);
+            }
+        });
+        it("should return a voiceless segment given a voiced segment", function () {
+            var voiced = ipa_1.get("d");
+            var voiceless = ipa_1.get("t");
+            if (voiced !== undefined
+                && voiceless !== undefined
+                && types_1.is_phone(voiced)
+                && types_1.is_phone(voiceless)) {
+                var result = transform_1.devoice(voiced);
+                chai_1.expect(result).to.deep.equal(voiceless);
+            }
+        });
+        it("should preserve diacritics", function () {
+            var voiced = tokenize_1.tokenize("v̄");
+            var devoiced = tokenize_1.tokenize("v̥̄");
+            if (voiced && devoiced) {
+                var filtered_voiced = voiced.filter(function (x) { return !types_1.is_supra(x); });
+                var filtered_devoiced = devoiced.filter(function (x) { return !types_1.is_supra(x); });
+                var voiced_letter = filtered_voiced[0];
+                var devoiced_letter = filtered_devoiced[0];
+                if (types_1.is_letter(voiced_letter) && types_1.is_letter(devoiced_letter)) {
+                    var fv = __spread([voiced_letter], filtered_voiced.slice(1));
+                    var fd = __spread([devoiced_letter], filtered_devoiced.slice(1));
+                    var result = transform_1.devoice(fv);
+                    if (result) {
+                        chai_1.expect(result).to.deep.equal(fd);
+                    }
                 }
             }
-        }
+        });
+    });
+    describe("voice", function () {
+        it("should return the input given a voiced segment", function () {
+            var voiced = ipa_1.get("d");
+            if (voiced !== undefined && types_1.is_phone(voiced)) {
+                var result = transform_1.voice(voiced);
+                chai_1.expect(result).to.deep.equal(voiced);
+            }
+        });
+        it("should return a voiced segment given a voiceless segment", function () {
+            var voiceless = ipa_1.get("t");
+            var voiced = ipa_1.get("d");
+            if (voiceless !== undefined
+                && voiced !== undefined
+                && types_1.is_phone(voiceless)
+                && types_1.is_phone(voiced)) {
+                var result = transform_1.voice(voiceless);
+                chai_1.expect(result).to.deep.equal(voiced);
+            }
+        });
     });
 });
