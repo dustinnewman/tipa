@@ -28,6 +28,17 @@ For NPM:
 $ npm install tipa
 ```
 
+## Functions
+
+| Name                   | Type Signature
+| ------                 | -------
+| `parse`                | `string => word`
+| `get`                  | `string => ipa_symbol`
+| `tokenize`             | `string => ipa_symbol[]`
+| `collapse`             | `ipa_symbol[] => ipa_segment[]`
+| `syllabify`            | `ipa_segment[] => word`
+| `devoice`              | `phone => phone`
+
 ## Types
 
 | Type                        | Meaning
