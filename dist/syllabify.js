@@ -15,7 +15,10 @@ var types_1 = require("./types");
 var ipa_1 = require("./ipa");
 var DEF_OPTS = {
     ignore_initial_syllab: true,
-    ignore_final_syllab: true
+    ignore_final_syllab: true,
+    diphthong_is_heavy: true,
+    coda_is_heavy: true,
+    mark_superheavy: false
 };
 function syllabify(_input, options) {
     // Use default options if not provided
@@ -69,10 +72,21 @@ function syllabify(_input, options) {
             // Encountered syllable break so push all the
             // accumulated segments into the syllable
             if (syllable_segments.length > 0) {
+                var weight = types_1.syllable_weight.light;
+                if (options.mark_superheavy && nucleus.length > 1 && coda.length > 0) {
+                    weight = types_1.syllable_weight.superheavy;
+                }
+                else if (options.diphthong_is_heavy && nucleus.length > 1) {
+                    weight = types_1.syllable_weight.heavy;
+                }
+                else if (options.coda_is_heavy && coda.length > 0) {
+                    weight = types_1.syllable_weight.heavy;
+                }
                 var syllable = {
                     onset: onset,
                     nucleus: nucleus,
                     coda: coda,
+                    weight: weight,
                     segments: syllable_segments
                 };
                 word.push(syllable);
@@ -86,10 +100,21 @@ function syllabify(_input, options) {
         }
     }
     if (syllable_segments.length > 0) {
+        var weight = types_1.syllable_weight.light;
+        if (options.mark_superheavy && nucleus.length > 1 && coda.length > 0) {
+            weight = types_1.syllable_weight.superheavy;
+        }
+        else if (options.diphthong_is_heavy && nucleus.length > 1) {
+            weight = types_1.syllable_weight.heavy;
+        }
+        else if (options.coda_is_heavy && coda.length > 0) {
+            weight = types_1.syllable_weight.heavy;
+        }
         var syllable = {
             onset: onset,
             nucleus: nucleus,
             coda: coda,
+            weight: weight,
             segments: syllable_segments
         };
         word.push(syllable);

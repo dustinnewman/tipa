@@ -23,6 +23,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("mocha");
 var chai_1 = require("chai");
 var ipa_1 = require("./ipa");
+var collapse_1 = require("./collapse");
 var transform_1 = require("./transform");
 var tokenize_1 = require("./tokenize");
 var types_1 = require("./types");
@@ -153,6 +154,31 @@ describe("transform", function () {
                     chai_1.expect(result[0]).to.have.property("type");
                     chai_1.expect(result[0].consonant).to.be.true;
                     chai_1.expect(result[1].type).to.equal("diacritic");
+                }
+            }
+        });
+        it("should aspirate diacriticized consonants", function () {
+            var tokens = tokenize_1.tokenize("l̥");
+            if (!tokens) {
+                return;
+            }
+            var segment = collapse_1.collapse(tokens);
+            if (!segment) {
+                return;
+            }
+            var input = segment[1];
+            if (input && types_1.is_phone(input) && types_1.is_consonant(input)) {
+                var result = transform_1.aspirate(input);
+                chai_1.expect(result).to.not.be.undefined;
+                chai_1.expect(result).to.have.lengthOf(3);
+                chai_1.expect(result).to.be.an("array");
+                if (result && Array.isArray(result)) {
+                    chai_1.expect(result[0].consonant).to.be.true;
+                    chai_1.expect(result[0].features.SP_GLOT).to.equal(types_1.feature.pos);
+                    chai_1.expect(result[0].features.CON_GLOT).to.equal(types_1.feature.neg);
+                    chai_1.expect(result[0].features.VOICE).to.equal(types_1.feature.neg);
+                    chai_1.expect(result[1].type).to.equal("diacritic");
+                    chai_1.expect(result[2].type).to.equal("diacritic");
                 }
             }
         });

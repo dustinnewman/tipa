@@ -1,6 +1,7 @@
 import "mocha"
 import { expect } from "chai"
 import { get } from "./ipa"
+import { collapse } from "./collapse"
 import { devoice, voice, nasalize, denasalize, ejectivize, aspirate } from "./transform"
 import { tokenize } from "./tokenize"
 import {
@@ -9,7 +10,8 @@ import {
     phone,
     is_diacritic,
     ipa_diacritic,
-    is_consonant
+    is_consonant,
+    feature
 } from "./types"
 
 describe("transform", () => {
@@ -151,6 +153,32 @@ describe("transform", () => {
                     expect(result[0]).to.have.property("type")
                     expect(result[0].consonant).to.be.true
                     expect(result[1].type).to.equal("diacritic")
+                }
+            }
+        })
+
+        it("should aspirate diacriticized consonants", () => {
+            const tokens = tokenize("l̥")
+            if (!tokens) {
+                return
+            }
+            const segment = collapse(tokens)
+            if (!segment) {
+                return
+            }
+            const input = segment[1]
+            if (input && is_phone(input) && is_consonant(input)) {
+                const result = aspirate(input)
+                expect(result).to.not.be.undefined
+                expect(result).to.have.lengthOf(3)
+                expect(result).to.be.an("array")
+                if (result && Array.isArray(result)) {
+                    expect(result[0].consonant).to.be.true
+                    expect(result[0].features.SP_GLOT).to.equal(feature.pos)
+                    expect(result[0].features.CON_GLOT).to.equal(feature.neg)
+                    expect(result[0].features.VOICE).to.equal(feature.neg)
+                    expect(result[1].type).to.equal("diacritic")
+                    expect(result[2].type).to.equal("diacritic")
                 }
             }
         })
