@@ -3644,13 +3644,16 @@ var phones_by_branner = {};
 var letters_by_feature_string = {};
 var num_phones = all_phones.length;
 for (var i = 0; i < num_phones; i++) {
-    var phone = all_phones[i];
+    var phone = Object.freeze(all_phones[i]);
     phones_by_name[phone.name] = phone;
     phones_by_ipa_sym[phone.ipa_sym] = phone;
     phones_by_branner[phone.branner] = phone;
     if (types_1.is_letter(phone)) {
         var fs = feature_string_1.get_feature_string(phone.features);
         letters_by_feature_string[fs] = phone;
+    }
+    if (types_1.is_letter(phone) || types_1.is_diacritic(phone)) {
+        Object.freeze(phone.features);
     }
 }
 function get(key) {

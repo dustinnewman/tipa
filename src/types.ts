@@ -111,9 +111,15 @@ export type ipa_segment = phone | ipa_suprasegmental
 export type mora = phone[]
 
 export enum syllable_weight {
-    light = "light",
-    heavy = "heavy",
-    superheavy = "superheavy"
+    light,
+    heavy,
+    superheavy
+}
+
+export enum syllable_stress {
+    unstressed,
+    primary,
+    secondary
 }
 
 export type syllable = {
@@ -121,6 +127,7 @@ export type syllable = {
     nucleus?: syllabic[],
     coda?: ipa_segment[],
     weight?: syllable_weight,
+    stress?: syllable_stress,
     segments: ipa_segment[]
 }
 

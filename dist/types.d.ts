@@ -85,15 +85,21 @@ export declare type sonorant = phone;
 export declare type ipa_segment = phone | ipa_suprasegmental;
 export declare type mora = phone[];
 export declare enum syllable_weight {
-    light = "light",
-    heavy = "heavy",
-    superheavy = "superheavy"
+    light = 0,
+    heavy = 1,
+    superheavy = 2
+}
+export declare enum syllable_stress {
+    unstressed = 0,
+    primary = 1,
+    secondary = 2
 }
 export declare type syllable = {
     onset?: ipa_segment[];
     nucleus?: syllabic[];
     coda?: ipa_segment[];
     weight?: syllable_weight;
+    stress?: syllable_stress;
     segments: ipa_segment[];
 };
 export declare type word = syllable[];

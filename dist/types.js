@@ -8,10 +8,16 @@ var feature;
 })(feature = exports.feature || (exports.feature = {}));
 var syllable_weight;
 (function (syllable_weight) {
-    syllable_weight["light"] = "light";
-    syllable_weight["heavy"] = "heavy";
-    syllable_weight["superheavy"] = "superheavy";
+    syllable_weight[syllable_weight["light"] = 0] = "light";
+    syllable_weight[syllable_weight["heavy"] = 1] = "heavy";
+    syllable_weight[syllable_weight["superheavy"] = 2] = "superheavy";
 })(syllable_weight = exports.syllable_weight || (exports.syllable_weight = {}));
+var syllable_stress;
+(function (syllable_stress) {
+    syllable_stress[syllable_stress["unstressed"] = 0] = "unstressed";
+    syllable_stress[syllable_stress["primary"] = 1] = "primary";
+    syllable_stress[syllable_stress["secondary"] = 2] = "secondary";
+})(syllable_stress = exports.syllable_stress || (exports.syllable_stress = {}));
 exports.LETTER = "letter";
 exports.DIAC = "diacritic";
 exports.SUPRA = "suprasegmental";

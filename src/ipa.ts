@@ -10,7 +10,8 @@ import {
     DIAC,
     SUPRA,
     ipa_suprasegmental,
-    is_letter
+    is_letter,
+    is_diacritic
 } from "./types"
 import { get_feature_string } from "./feature_string"
 
@@ -3739,13 +3740,17 @@ let letters_by_feature_string: { [key: string]: ipa_letter } = {}
 
 const num_phones = all_phones.length
 for (let i = 0; i < num_phones; i++) {
-    const phone = all_phones[i]
+    const phone = Object.freeze(all_phones[i])
     phones_by_name[phone.name] = phone
     phones_by_ipa_sym[phone.ipa_sym] = phone
     phones_by_branner[phone.branner] = phone
     if (is_letter(phone)) {
         const fs = get_feature_string(phone.features)
         letters_by_feature_string[fs] = phone
+    }
+
+    if (is_letter(phone) || is_diacritic(phone)) {
+        Object.freeze(phone.features)
     }
 }
 
