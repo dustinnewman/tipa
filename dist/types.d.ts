@@ -42,7 +42,9 @@ export declare type ipa_symbol = {
     branner: string;
     number: number;
 };
-export declare type ipa_diacritic = ipa_symbol;
+export declare type ipa_diacritic = ipa_symbol & {
+    features: feature_matrix | {};
+};
 export declare type ipa_suprasegmental = ipa_symbol;
 export declare type ipa_vowel = ipa_symbol & {
     place: place;
@@ -55,6 +57,29 @@ export declare type ipa_consonant = ipa_vowel & {
 };
 export declare type ipa_letter = ipa_vowel | ipa_consonant;
 export declare type phone = ipa_letter | ([ipa_letter, ...Array<ipa_diacritic>]);
+export declare type stop = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
+export declare type oral_stop = stop;
+export declare type nasal = stop;
+export declare type fricative = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
+export declare type vibrant = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
+export declare type tap = vibrant;
+export declare type trill = vibrant;
+export declare type voiced = phone & {
+    features: {
+        VOICE: feature.pos;
+    };
+};
+export declare type voiceless = phone & {
+    features: {
+        VOICE: feature.neg;
+    };
+};
+export declare type syllabic = phone & {
+    features: {
+        SYL: feature.pos;
+    };
+};
+export declare type sonorant = phone;
 export declare type ipa_segment = phone | ipa_suprasegmental;
 export declare type mora = phone[];
 export declare enum syllable_weight {
@@ -64,7 +89,7 @@ export declare enum syllable_weight {
 }
 export declare type syllable = {
     onset?: ipa_segment[];
-    nucleus?: ipa_segment[];
+    nucleus?: syllabic[];
     coda?: ipa_segment[];
     weight?: syllable_weight;
     segments: ipa_segment[];
@@ -82,5 +107,9 @@ export declare function is_letter(symbol: ipa_symbol): symbol is ipa_letter;
 export declare function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol is phone;
 export declare function is_consonant(symbol: phone): symbol is ipa_consonant;
 export declare function is_vowel(symbol: phone): symbol is ipa_vowel;
-export declare function is_syllabic(symbol: phone): boolean;
+export declare function is_stop(symbol: phone): symbol is stop;
+export declare function is_syllabic(symbol: phone): symbol is syllabic;
+export declare function is_voiced(symbol: phone): symbol is voiced;
+export declare function is_voiceless(symbol: phone): symbol is voiceless;
+export declare function is_sonorant(symbol: phone): symbol is sonorant;
 export {};

@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
@@ -40,16 +51,13 @@ function set_diacritic(input, set_fn, diacritic) {
             // We could not find the transformed counterpart
             // so we create an array and add the given
             // diacritic in the second position
-            if (diacritic !== undefined) {
-                var target_segment = [input, diacritic];
-                return target_segment;
+            var output = input;
+            var output_features = diacritic.features;
+            if (output_features) {
+                output.features = __assign(__assign({}, input.features), output_features);
             }
-            else {
-                // In the very unusual case we do not find the
-                // desired diacritic return undefined to signal
-                // to the caller that no such representation exists
-                return undefined;
-            }
+            var target_segment = [output, diacritic];
+            return target_segment;
         }
     }
     else {
@@ -60,46 +68,65 @@ function set_diacritic(input, set_fn, diacritic) {
         // In this case, simply add the given
         // diacritic after the others
         var letter = input[0];
-        if (diacritic !== undefined) {
-            return __spread([letter, diacritic], input.slice(1));
-        }
-        else {
-            // In the very unusual case we do not find the
-            // voiceless diacritic return undefined to signal
-            // to the caller that no such representation exists
-            return undefined;
-        }
+        return __spread([letter, diacritic], input.slice(1));
     }
 }
 function devoice(input) {
     var diac = ipa_1.get("voiceless diacritic");
-    return set_diacritic(input, function (x) { return feature_string_1.set_voice(x, types_1.feature.neg); }, diac);
+    if (diac && types_1.is_diacritic(diac)) {
+        var result = set_diacritic(input, function (x) { return feature_string_1.set_voice(x, types_1.feature.neg); }, diac);
+        if (types_1.is_voiceless(result)) {
+            return result;
+        }
+    }
+    return undefined;
 }
 exports.devoice = devoice;
 function voice(input) {
     var diac = ipa_1.get("voiced diacritic");
-    return set_diacritic(input, function (x) { return feature_string_1.set_voice(x, types_1.feature.pos); }, diac);
+    if (diac && types_1.is_diacritic(diac)) {
+        var result = set_diacritic(input, function (x) { return feature_string_1.set_voice(x, types_1.feature.pos); }, diac);
+        if (types_1.is_voiced(result)) {
+            return result;
+        }
+    }
+    return undefined;
 }
 exports.voice = voice;
 function nasalize(input) {
     var diac = ipa_1.get("nasal diacritic");
-    return set_diacritic(input, function (x) { return feature_string_1.set_nasal(x, types_1.feature.pos); }, diac);
+    if (diac && types_1.is_diacritic(diac)) {
+        return set_diacritic(input, function (x) { return feature_string_1.set_nasal(x, types_1.feature.pos); }, diac);
+    }
+    return undefined;
 }
 exports.nasalize = nasalize;
 function denasalize(input) {
     var diac = ipa_1.get("denasal diacritic");
-    return set_diacritic(input, function (x) { return feature_string_1.set_nasal(x, types_1.feature.neg); }, diac);
+    if (diac && types_1.is_diacritic(diac)) {
+        return set_diacritic(input, function (x) { return feature_string_1.set_nasal(x, types_1.feature.neg); }, diac);
+    }
+    return undefined;
 }
 exports.denasalize = denasalize;
 function ejectivize(input) {
     var diac = ipa_1.get("ejective");
-    var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.pos), types_1.feature.neg); };
-    return set_diacritic(input, set_fn, diac);
+    if (diac && types_1.is_diacritic(diac)) {
+        var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.pos), types_1.feature.neg); };
+        return set_diacritic(input, set_fn, diac);
+    }
+    return undefined;
 }
 exports.ejectivize = ejectivize;
 function aspirate(input) {
     var diac = ipa_1.get("aspirated");
-    var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.neg), types_1.feature.pos); };
-    return set_diacritic(input, set_fn, diac);
+    if (diac && types_1.is_diacritic(diac)) {
+        var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.neg), types_1.feature.pos); };
+        var result = set_diacritic(input, set_fn, diac);
+        if (types_1.is_consonant(result)) {
+            return result;
+        }
+    }
+    return undefined;
 }
 exports.aspirate = aspirate;

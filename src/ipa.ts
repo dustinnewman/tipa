@@ -3292,7 +3292,8 @@ export const long: ipa_diacritic = {
     ipa_sym: "ː",
     ipa_ent: "&#720;",
     branner: ":",
-    number: 503
+    number: 503,
+    features: {}
 }
 
 export const half_long: ipa_diacritic = {
@@ -3301,7 +3302,8 @@ export const half_long: ipa_diacritic = {
     ipa_sym: "ˑ",
     ipa_ent: "&#721;",
     branner: ";",
-    number: 504
+    number: 504,
+    features: {}
 }
 
 // NOTE: The diacritics come in two forms:
@@ -3316,7 +3318,8 @@ export const top_diacritic: ipa_diacritic = {
     ipa_sym: "\u030B",
     ipa_ent: "&#779;",
     branner: "5",
-    number: 512
+    number: 512,
+    features: {}
 }
 
 export const high_diacritic: ipa_diacritic = {
@@ -3325,7 +3328,8 @@ export const high_diacritic: ipa_diacritic = {
     ipa_sym: "\u0301",
     ipa_ent: "&#769;",
     branner: "4",
-    number: 513
+    number: 513,
+    features: {}
 }
 
 export const mid_diacritic: ipa_diacritic = {
@@ -3334,7 +3338,8 @@ export const mid_diacritic: ipa_diacritic = {
     ipa_sym: "\u0304",
     ipa_ent: "&#772;",
     branner: "3",
-    number: 514
+    number: 514,
+    features: {}
 }
 
 export const low_diacritic: ipa_diacritic = {
@@ -3343,7 +3348,8 @@ export const low_diacritic: ipa_diacritic = {
     ipa_sym: "\u0300",
     ipa_ent: "&#768;",
     branner: "2",
-    number: 515
+    number: 515,
+    features: {}
 }
 
 export const bottom_diacritic: ipa_diacritic = {
@@ -3352,7 +3358,8 @@ export const bottom_diacritic: ipa_diacritic = {
     ipa_sym: "\u030F",
     ipa_ent: "&#783;",
     branner: "1",
-    number: 516
+    number: 516,
+    features: {}
 }
 
 export const voiceless_diacritic: ipa_diacritic = {
@@ -3361,7 +3368,10 @@ export const voiceless_diacritic: ipa_diacritic = {
     ipa_sym: "\u0325",
     ipa_ent: "&#805;",
     branner: "V)",
-    number: 402
+    number: 402,
+    features: {
+        VOICE: feature.neg
+    }
 }
 
 export const voiced_diacritic: ipa_diacritic = {
@@ -3370,7 +3380,10 @@ export const voiced_diacritic: ipa_diacritic = {
     ipa_sym: "\u032C",
     ipa_ent: "&#812;",
     branner: "v)",
-    number: 403
+    number: 403,
+    features: {
+        VOICE: feature.pos
+    }
 }
 
 export const syllabic_diacritic: ipa_diacritic = {
@@ -3379,7 +3392,10 @@ export const syllabic_diacritic: ipa_diacritic = {
     ipa_sym: "\u0329",
     ipa_ent: "&#809;",
     branner: ",)",
-    number: 431
+    number: 431,
+    features: {
+        SYL: feature.pos
+    }
 }
 
 export const nasal_diacritic: ipa_diacritic = {
@@ -3388,7 +3404,10 @@ export const nasal_diacritic: ipa_diacritic = {
     ipa_sym: "\u0303",
     ipa_ent: "&#771;",
     branner: "~^",
-    number: 424
+    number: 424,
+    features: {
+        NASAL: feature.pos
+    }
 }
 
 export const denasal_diacritic: ipa_diacritic = {
@@ -3397,7 +3416,10 @@ export const denasal_diacritic: ipa_diacritic = {
     ipa_sym: "\u034A",
     ipa_ent: "&#842;",
     branner: "~/^", // UNOFFICIAL [follows the convention of o/)]
-    number: 842 // UNOFFICIAL [uses the decimal value (HTML entity)]
+    number: 842, // UNOFFICIAL [uses the decimal value (HTML entity)]
+    features: {
+        NASAL: feature.neg
+    }
 }
 
 export const creaky_voiced: ipa_diacritic = {
@@ -3406,7 +3428,11 @@ export const creaky_voiced: ipa_diacritic = {
     ipa_sym: "\u0330",
     ipa_ent: "&#816;",
     branner: "~",
-    number: 406
+    number: 406,
+    features: {
+        SP_GLOT: feature.neg,
+        CON_GLOT: feature.pos
+    }
 }
 
 export const breathy_voiced: ipa_diacritic = {
@@ -3415,7 +3441,11 @@ export const breathy_voiced: ipa_diacritic = {
     ipa_sym: "\u0324",
     ipa_ent: "&#804;",
     branner: 'h")',
-    number: 405
+    number: 405,
+    features: {
+        SP_GLOT: feature.pos,
+        CON_GLOT: feature.neg
+    }
 }
 
 export const ejective_diacritic: ipa_diacritic = {
@@ -3424,7 +3454,11 @@ export const ejective_diacritic: ipa_diacritic = {
     ipa_sym: "\u02BC",
     ipa_ent: "&#700;",
     branner: "`",
-    number: 401
+    number: 401,
+    features: {
+        SP_GLOT: feature.neg,
+        CON_GLOT: feature.pos
+    }
 }
 
 export const aspirated_diacritic: ipa_diacritic = {
@@ -3433,7 +3467,11 @@ export const aspirated_diacritic: ipa_diacritic = {
     ipa_sym: "\u02B0",
     ipa_ent: "&#688;",
     branner: "h^",
-    number: 404
+    number: 404,
+    features: {
+        SP_GLOT: feature.pos,
+        CON_GLOT: feature.neg
+    }
 }
 
 const all_phones: ipa_symbol[] = [

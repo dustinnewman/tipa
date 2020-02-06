@@ -1,4 +1,4 @@
-import { word, syllable, ipa_segment, is_phone, is_supra, is_syllabic, ipa_letter } from "./types"
+import { word, syllable, ipa_segment, is_phone, is_supra, is_syllabic, ipa_letter, syllabic } from "./types"
 import { get } from "./ipa"
 
 interface syllabify_options {
@@ -42,7 +42,7 @@ export function syllabify(_input: ipa_segment[], options?: syllabify_options): w
 
     let word: word = []
     let onset: ipa_segment[] = []
-    let nucleus: ipa_segment[] = []
+    let nucleus: syllabic[] = []
     let coda: ipa_segment[] = []
     let syllable_segments: ipa_segment[] = []
     let encountered_syllabic: boolean = false

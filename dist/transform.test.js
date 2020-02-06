@@ -50,8 +50,8 @@ describe("transform", function () {
             var voiced = tokenize_1.tokenize("v̄");
             var devoiced = tokenize_1.tokenize("v̥̄");
             if (voiced && devoiced) {
-                var filtered_voiced = voiced.filter(function (x) { return !types_1.is_supra(x); });
-                var filtered_devoiced = devoiced.filter(function (x) { return !types_1.is_supra(x); });
+                var filtered_voiced = voiced.filter(types_1.is_diacritic);
+                var filtered_devoiced = devoiced.filter(types_1.is_diacritic);
                 var voiced_letter = filtered_voiced[0];
                 var devoiced_letter = filtered_devoiced[0];
                 if (types_1.is_letter(voiced_letter) && types_1.is_letter(devoiced_letter)) {
@@ -128,7 +128,7 @@ describe("transform", function () {
     describe("ejectivize", function () {
         it("should turn obstruents into ejectives", function () {
             var tokens = ipa_1.get("t");
-            if (tokens && types_1.is_phone(tokens)) {
+            if (tokens && types_1.is_phone(tokens) && types_1.is_consonant(tokens)) {
                 var result = transform_1.ejectivize(tokens);
                 chai_1.expect(result).to.not.be.undefined;
                 chai_1.expect(result).to.have.lengthOf(2);
@@ -144,7 +144,7 @@ describe("transform", function () {
     describe("aspirate", function () {
         it("should aspirate obstruents", function () {
             var tokens = ipa_1.get("t");
-            if (tokens && types_1.is_phone(tokens)) {
+            if (tokens && types_1.is_phone(tokens) && types_1.is_consonant(tokens)) {
                 var result = transform_1.aspirate(tokens);
                 chai_1.expect(result).to.not.be.undefined;
                 chai_1.expect(result).to.have.lengthOf(2);

@@ -3,7 +3,14 @@ import { expect } from "chai"
 import { get } from "./ipa"
 import { devoice, voice, nasalize, denasalize, ejectivize, aspirate } from "./transform"
 import { tokenize } from "./tokenize"
-import { is_phone, is_letter, is_supra, phone } from "./types"
+import {
+    is_phone,
+    is_letter,
+    phone,
+    is_diacritic,
+    ipa_diacritic,
+    is_consonant
+} from "./types"
 
 describe("transform", () => {
     describe("devoice", () => {
@@ -32,8 +39,8 @@ describe("transform", () => {
             const voiced = tokenize("v̄")
             const devoiced = tokenize("v̥̄")
             if (voiced && devoiced) {
-                const filtered_voiced = voiced.filter(x => !is_supra(x))
-                const filtered_devoiced = devoiced.filter(x => !is_supra(x))
+                const filtered_voiced: ipa_diacritic[] = voiced.filter(is_diacritic)
+                const filtered_devoiced: ipa_diacritic[] = devoiced.filter(is_diacritic)
                 const voiced_letter = filtered_voiced[0]
                 const devoiced_letter = filtered_devoiced[0]
                 if (is_letter(voiced_letter) && is_letter(devoiced_letter)) {
@@ -118,7 +125,7 @@ describe("transform", () => {
     describe("ejectivize", () => {
         it("should turn obstruents into ejectives", () => {
             const tokens = get("t")
-            if (tokens && is_phone(tokens)) {
+            if (tokens && is_phone(tokens) && is_consonant(tokens)) {
                 const result = ejectivize(tokens)
                 expect(result).to.not.be.undefined
                 expect(result).to.have.lengthOf(2)
@@ -135,7 +142,7 @@ describe("transform", () => {
     describe("aspirate", () => {
         it("should aspirate obstruents", () => {
             const tokens = get("t")
-            if (tokens && is_phone(tokens)) {
+            if (tokens && is_phone(tokens) && is_consonant(tokens)) {
                 const result = aspirate(tokens)
                 expect(result).to.not.be.undefined
                 expect(result).to.have.lengthOf(2)

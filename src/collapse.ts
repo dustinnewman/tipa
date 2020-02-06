@@ -8,6 +8,13 @@ function clear_accum(accumulator: any[], output: ipa_segment[]) {
         if (accumulator.length === 1) {
             output.push(accumulator[0])
         } else {
+            // This is where we apply all the features of the diacritics
+            // Onto the base letter so e.g. the syllabic diacritic
+            // Will actually make the letter syllabic featured
+            const len = accumulator.length
+            for (let i = 1; i < len; i++) {
+                accumulator[0].features = { ...accumulator[0].features, ...accumulator[i].features }
+            }
             output.push(accumulator)
         }
     }

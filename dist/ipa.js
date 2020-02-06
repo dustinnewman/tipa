@@ -3212,7 +3212,8 @@ exports.long = {
     ipa_sym: "ː",
     ipa_ent: "&#720;",
     branner: ":",
-    number: 503
+    number: 503,
+    features: {}
 };
 exports.half_long = {
     name: "half long",
@@ -3220,7 +3221,8 @@ exports.half_long = {
     ipa_sym: "ˑ",
     ipa_ent: "&#721;",
     branner: ";",
-    number: 504
+    number: 504,
+    features: {}
 };
 // NOTE: The diacritics come in two forms:
 // combining and non-combining. I am using the
@@ -3234,7 +3236,8 @@ exports.top_diacritic = {
     ipa_sym: "\u030B",
     ipa_ent: "&#779;",
     branner: "5",
-    number: 512
+    number: 512,
+    features: {}
 };
 exports.high_diacritic = {
     name: "high diacritic",
@@ -3242,7 +3245,8 @@ exports.high_diacritic = {
     ipa_sym: "\u0301",
     ipa_ent: "&#769;",
     branner: "4",
-    number: 513
+    number: 513,
+    features: {}
 };
 exports.mid_diacritic = {
     name: "mid diacritic",
@@ -3250,7 +3254,8 @@ exports.mid_diacritic = {
     ipa_sym: "\u0304",
     ipa_ent: "&#772;",
     branner: "3",
-    number: 514
+    number: 514,
+    features: {}
 };
 exports.low_diacritic = {
     name: "low diacritic",
@@ -3258,7 +3263,8 @@ exports.low_diacritic = {
     ipa_sym: "\u0300",
     ipa_ent: "&#768;",
     branner: "2",
-    number: 515
+    number: 515,
+    features: {}
 };
 exports.bottom_diacritic = {
     name: "bottom diacritic",
@@ -3266,7 +3272,8 @@ exports.bottom_diacritic = {
     ipa_sym: "\u030F",
     ipa_ent: "&#783;",
     branner: "1",
-    number: 516
+    number: 516,
+    features: {}
 };
 exports.voiceless_diacritic = {
     name: "voiceless diacritic",
@@ -3274,7 +3281,10 @@ exports.voiceless_diacritic = {
     ipa_sym: "\u0325",
     ipa_ent: "&#805;",
     branner: "V)",
-    number: 402
+    number: 402,
+    features: {
+        VOICE: types_1.feature.neg
+    }
 };
 exports.voiced_diacritic = {
     name: "voiced diacritic",
@@ -3282,7 +3292,10 @@ exports.voiced_diacritic = {
     ipa_sym: "\u032C",
     ipa_ent: "&#812;",
     branner: "v)",
-    number: 403
+    number: 403,
+    features: {
+        VOICE: types_1.feature.pos
+    }
 };
 exports.syllabic_diacritic = {
     name: "syllabic diacritic",
@@ -3290,7 +3303,10 @@ exports.syllabic_diacritic = {
     ipa_sym: "\u0329",
     ipa_ent: "&#809;",
     branner: ",)",
-    number: 431
+    number: 431,
+    features: {
+        SYL: types_1.feature.pos
+    }
 };
 exports.nasal_diacritic = {
     name: "nasal diacritic",
@@ -3298,7 +3314,10 @@ exports.nasal_diacritic = {
     ipa_sym: "\u0303",
     ipa_ent: "&#771;",
     branner: "~^",
-    number: 424
+    number: 424,
+    features: {
+        NASAL: types_1.feature.pos
+    }
 };
 exports.denasal_diacritic = {
     name: "denasal diacritic",
@@ -3306,7 +3325,10 @@ exports.denasal_diacritic = {
     ipa_sym: "\u034A",
     ipa_ent: "&#842;",
     branner: "~/^",
-    number: 842 // UNOFFICIAL [uses the decimal value (HTML entity)]
+    number: 842,
+    features: {
+        NASAL: types_1.feature.neg
+    }
 };
 exports.creaky_voiced = {
     name: "creaky voiced",
@@ -3314,7 +3336,11 @@ exports.creaky_voiced = {
     ipa_sym: "\u0330",
     ipa_ent: "&#816;",
     branner: "~",
-    number: 406
+    number: 406,
+    features: {
+        SP_GLOT: types_1.feature.neg,
+        CON_GLOT: types_1.feature.pos
+    }
 };
 exports.breathy_voiced = {
     name: "breathy voiced",
@@ -3322,7 +3348,11 @@ exports.breathy_voiced = {
     ipa_sym: "\u0324",
     ipa_ent: "&#804;",
     branner: 'h")',
-    number: 405
+    number: 405,
+    features: {
+        SP_GLOT: types_1.feature.pos,
+        CON_GLOT: types_1.feature.neg
+    }
 };
 exports.ejective_diacritic = {
     name: "ejective",
@@ -3330,7 +3360,11 @@ exports.ejective_diacritic = {
     ipa_sym: "\u02BC",
     ipa_ent: "&#700;",
     branner: "`",
-    number: 401
+    number: 401,
+    features: {
+        SP_GLOT: types_1.feature.neg,
+        CON_GLOT: types_1.feature.pos
+    }
 };
 exports.aspirated_diacritic = {
     name: "aspirated",
@@ -3338,7 +3372,11 @@ exports.aspirated_diacritic = {
     ipa_sym: "\u02B0",
     ipa_ent: "&#688;",
     branner: "h^",
-    number: 404
+    number: 404,
+    features: {
+        SP_GLOT: types_1.feature.pos,
+        CON_GLOT: types_1.feature.neg
+    }
 };
 var all_phones = [
     exports.high_front_tense_unround_vowel,

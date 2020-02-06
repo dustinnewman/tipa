@@ -1,11 +1,11 @@
-import { phone, feature, ipa_letter, feature_string, ipa_diacritic } from "./types"
+import { phone, feature, ipa_letter, feature_string, ipa_diacritic, is_diacritic, stop, ipa_consonant, sonorant, voiceless, voiced, is_voiceless, is_voiced, is_consonant } from "./types"
 import { get_feature_string, set_voice, set_nasal, set_con_glot, set_sp_glot } from "./feature_string"
 import { get, get_by_feature_string } from "./ipa"
 
 function set_diacritic(
     input: phone,
     set_fn: (input_fs: feature_string) => feature_string,
-    diacritic: ipa_diacritic | undefined): phone | undefined {
+    diacritic: ipa_diacritic): phone {
     if (!Array.isArray(input)) {
         const input_fs: feature_string = get_feature_string(input.features)
         const target_fs: feature_string = set_fn(input_fs)
@@ -21,15 +21,13 @@ function set_diacritic(
             // We could not find the transformed counterpart
             // so we create an array and add the given
             // diacritic in the second position
-            if (diacritic !== undefined) {
-                const target_segment: phone = [input, diacritic]
-                return target_segment
-            } else {
-                // In the very unusual case we do not find the
-                // desired diacritic return undefined to signal
-                // to the caller that no such representation exists
-                return undefined
+            let output = input
+            const output_features = diacritic.features
+            if (output_features) {
+                output.features = { ...input.features, ...output_features }
             }
+            const target_segment: phone = [output, diacritic]
+            return target_segment
         }
     } else {
         // If we were not passed a single letter
@@ -39,45 +37,65 @@ function set_diacritic(
         // In this case, simply add the given
         // diacritic after the others
         const letter: ipa_letter = input[0]
-        if (diacritic !== undefined) {
-            return [letter, diacritic, ...input.slice(1)]
-        } else {
-            // In the very unusual case we do not find the
-            // voiceless diacritic return undefined to signal
-            // to the caller that no such representation exists
-            return undefined
-        }
+        return [letter, diacritic, ...input.slice(1)]
     }
 }
 
-export function devoice(input: phone): phone | undefined {
+export function devoice(input: phone): voiceless | undefined {
     const diac = get("voiceless diacritic")
-    return set_diacritic(input, x => set_voice(x, feature.neg), diac)
+    if (diac && is_diacritic(diac)) {
+        const result = set_diacritic(input, x => set_voice(x, feature.neg), diac)
+        if (is_voiceless(result)) {
+            return result
+        }
+    }
+    return undefined
 }
 
 export function voice(input: phone): phone | undefined {
     const diac = get("voiced diacritic")
-    return set_diacritic(input, x => set_voice(x, feature.pos), diac)
+    if (diac && is_diacritic(diac)) {
+        const result = set_diacritic(input, x => set_voice(x, feature.pos), diac)
+        if (is_voiced(result)) {
+            return result
+        }
+    }
+    return undefined
 }
 
-export function nasalize(input: phone): phone | undefined {
+export function nasalize(input: sonorant): phone | undefined {
     const diac = get("nasal diacritic")
-    return set_diacritic(input, x => set_nasal(x, feature.pos), diac)
+    if (diac && is_diacritic(diac)) {
+        return set_diacritic(input, x => set_nasal(x, feature.pos), diac)
+    }
+    return undefined
 }
 
 export function denasalize(input: phone): phone | undefined {
     const diac = get("denasal diacritic")
-    return set_diacritic(input, x => set_nasal(x, feature.neg), diac)
+    if (diac && is_diacritic(diac)) {
+        return set_diacritic(input, x => set_nasal(x, feature.neg), diac)
+    }
+    return undefined
 }
 
-export function ejectivize(input: phone): phone | undefined {
+export function ejectivize(input: stop): phone | undefined {
     const diac = get("ejective")
-    const set_fn = (x: feature_string) => set_sp_glot(set_con_glot(x, feature.pos), feature.neg)
-    return set_diacritic(input, set_fn, diac)
+    if (diac && is_diacritic(diac)) {
+        const set_fn = (x: feature_string) => set_sp_glot(set_con_glot(x, feature.pos), feature.neg)
+        return set_diacritic(input, set_fn, diac)
+    }
+    return undefined
 }
 
-export function aspirate(input: phone): phone | undefined {
+export function aspirate(input: ipa_consonant): ipa_consonant | undefined {
     const diac = get("aspirated")
-    const set_fn = (x: feature_string) => set_sp_glot(set_con_glot(x, feature.neg), feature.pos)
-    return set_diacritic(input, set_fn, diac)
+    if (diac && is_diacritic(diac)) {
+        const set_fn = (x: feature_string) => set_sp_glot(set_con_glot(x, feature.neg), feature.pos)
+        const result = set_diacritic(input, set_fn, diac)
+        if (is_consonant(result)) {
+            return result
+        }
+    }
+    return undefined
 }

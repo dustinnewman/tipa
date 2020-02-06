@@ -66,10 +66,46 @@ function is_vowel(symbol) {
     return symbol.vowel === true;
 }
 exports.is_vowel = is_vowel;
+function is_stop(symbol) {
+    if (Array.isArray(symbol)) {
+        var base_letter = symbol[0];
+        return is_stop(base_letter);
+    }
+    return (is_consonant(symbol)
+        && symbol.features.SON === feature.neg
+        && symbol.features.CONT === feature.neg
+        && symbol.features.DELREL === feature.neg);
+}
+exports.is_stop = is_stop;
 function is_syllabic(symbol) {
     if (Array.isArray(symbol)) {
-        return symbol.some(function (x) { return x.number === 431; });
+        var base_letter = symbol[0];
+        return is_syllabic(base_letter);
     }
     return symbol.features.SYL === feature.pos;
 }
 exports.is_syllabic = is_syllabic;
+function is_voiced(symbol) {
+    if (Array.isArray(symbol)) {
+        var base_letter = symbol[0];
+        return is_voiced(base_letter);
+    }
+    return symbol.features.VOICE === feature.pos;
+}
+exports.is_voiced = is_voiced;
+function is_voiceless(symbol) {
+    if (Array.isArray(symbol)) {
+        var base_letter = symbol[0];
+        return is_voiceless(base_letter);
+    }
+    return symbol.features.VOICE === feature.neg;
+}
+exports.is_voiceless = is_voiceless;
+function is_sonorant(symbol) {
+    if (Array.isArray(symbol)) {
+        var base_letter = symbol[0];
+        return is_sonorant(base_letter);
+    }
+    return symbol.features.SON === feature.pos;
+}
+exports.is_sonorant = is_sonorant;

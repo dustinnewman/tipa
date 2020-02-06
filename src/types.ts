@@ -47,7 +47,9 @@ export type ipa_symbol = {
     number: number;
 }
 
-export type ipa_diacritic = ipa_symbol
+export type ipa_diacritic = ipa_symbol & {
+    features: feature_matrix | {}
+}
 
 export type ipa_suprasegmental = ipa_symbol
 
@@ -66,6 +68,40 @@ export type ipa_letter = ipa_vowel | ipa_consonant
 
 export type phone = ipa_letter | ([ipa_letter, ...Array<ipa_diacritic>])
 
+export type stop = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+
+export type oral_stop = stop
+
+export type nasal = stop
+
+export type fricative = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+
+export type vibrant = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+
+export type tap = vibrant
+
+export type trill = vibrant
+
+export type voiced = phone & {
+    features: {
+        VOICE: feature.pos
+    }
+}
+
+export type voiceless = phone & {
+    features: {
+        VOICE: feature.neg
+    }
+}
+
+export type syllabic = phone & {
+    features: {
+        SYL: feature.pos
+    }
+}
+
+export type sonorant = phone
+
 export type ipa_segment = phone | ipa_suprasegmental
 
 export type mora = phone[]
@@ -78,7 +114,7 @@ export enum syllable_weight {
 
 export type syllable = {
     onset?: ipa_segment[],
-    nucleus?: ipa_segment[],
+    nucleus?: syllabic[],
     coda?: ipa_segment[],
     weight?: syllable_weight,
     segments: ipa_segment[]
@@ -148,9 +184,46 @@ export function is_vowel(symbol: phone): symbol is ipa_vowel {
     return (symbol as ipa_vowel).vowel === true;
 }
 
-export function is_syllabic(symbol: phone): boolean {
+export function is_stop(symbol: phone): symbol is stop {
     if (Array.isArray(symbol)) {
-        return symbol.some(x => x.number === 431)
+        const base_letter = symbol[0]
+        return is_stop(base_letter)
+    }
+    return (is_consonant(symbol)
+        && (symbol as ipa_letter).features.SON === feature.neg
+        && (symbol as ipa_letter).features.CONT === feature.neg
+        && (symbol as ipa_letter).features.DELREL === feature.neg
+    )
+}
+
+export function is_syllabic(symbol: phone): symbol is syllabic {
+    if (Array.isArray(symbol)) {
+        const base_letter = symbol[0]
+        return is_syllabic(base_letter)
     }
     return (symbol as ipa_letter).features.SYL === feature.pos
+}
+
+export function is_voiced(symbol: phone): symbol is voiced {
+    if (Array.isArray(symbol)) {
+        const base_letter = symbol[0]
+        return is_voiced(base_letter)
+    }
+    return (symbol as ipa_letter).features.VOICE === feature.pos
+}
+
+export function is_voiceless(symbol: phone): symbol is voiceless {
+    if (Array.isArray(symbol)) {
+        const base_letter = symbol[0]
+        return is_voiceless(base_letter)
+    }
+    return (symbol as ipa_letter).features.VOICE === feature.neg
+}
+
+export function is_sonorant(symbol: phone): symbol is sonorant {
+    if (Array.isArray(symbol)) {
+        const base_letter = symbol[0]
+        return is_sonorant(base_letter)
+    }
+    return (symbol as ipa_letter).features.SON === feature.pos
 }
