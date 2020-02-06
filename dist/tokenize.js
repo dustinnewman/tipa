@@ -70,6 +70,8 @@ function tokenize(_input, options) {
             }
         }
     }
+    // This decomposes the diacritics from the letters
+    _input = _input.normalize("NFD");
     var input;
     if (options.use_ipa_sym) {
         input = split_by_ipa_sym(_input);

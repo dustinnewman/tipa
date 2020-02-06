@@ -71,6 +71,9 @@ export function tokenize(_input: string, options?: tokenize_options): ipa_symbol
         }
     }
 
+    // This decomposes the diacritics from the letters
+    _input = _input.normalize("NFD")
+
     let input
     if (options.use_ipa_sym) {
         input = split_by_ipa_sym(_input)

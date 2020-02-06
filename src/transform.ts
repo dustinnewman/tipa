@@ -1,4 +1,4 @@
-import { phone, feature, ipa_letter, feature_string, ipa_diacritic, is_diacritic, stop, ipa_consonant, sonorant, voiceless, voiced, is_voiceless, is_voiced, is_consonant } from "./types"
+import { phone, feature, ipa_letter, feature_string, ipa_diacritic, is_diacritic, stop, ipa_consonant, sonorant, voiceless, voiced, is_voiceless, is_voiced, is_consonant, consonant } from "./types"
 import { get_feature_string, set_voice, set_nasal, set_con_glot, set_sp_glot } from "./feature_string"
 import { get, get_by_feature_string } from "./ipa"
 
@@ -21,12 +21,8 @@ function set_diacritic(
             // We could not find the transformed counterpart
             // so we create an array and add the given
             // diacritic in the second position
-            let output = input
-            const output_features = diacritic.features
-            if (output_features) {
-                output.features = { ...input.features, ...output_features }
-            }
-            const target_segment: phone = [output, diacritic]
+            input.features = { ...input.features, ...diacritic.features }
+            const target_segment: phone = [input, diacritic]
             return target_segment
         }
     } else {
@@ -37,6 +33,7 @@ function set_diacritic(
         // In this case, simply add the given
         // diacritic after the others
         const letter: ipa_letter = input[0]
+        letter.features = { ...letter.features, ...diacritic.features }
         return [letter, diacritic, ...input.slice(1)]
     }
 }
@@ -88,14 +85,16 @@ export function ejectivize(input: stop): phone | undefined {
     return undefined
 }
 
-export function aspirate(input: ipa_consonant): ipa_consonant | undefined {
-    const diac = get("aspirated")
-    if (diac && is_diacritic(diac)) {
-        const set_fn = (x: feature_string) => set_sp_glot(set_con_glot(x, feature.neg), feature.pos)
-        const result = set_diacritic(input, set_fn, diac)
-        if (is_consonant(result)) {
-            return result
+export function aspirate(input: phone): consonant | undefined {
+    if (is_consonant(input)) {
+        const diac = get("aspirated")
+        if (diac && is_diacritic(diac)) {
+            const set_fn = (x: feature_string) => set_sp_glot(set_con_glot(x, feature.neg), feature.pos)
+            const result = set_diacritic(input, set_fn, diac)
+            if (is_consonant(result)) {
+                return result
+            }
         }
+        return undefined
     }
-    return undefined
 }

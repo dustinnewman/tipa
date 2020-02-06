@@ -1,14 +1,30 @@
-import { word, syllable, ipa_segment, is_phone, is_supra, is_syllabic, ipa_letter, syllabic } from "./types"
+import {
+    word,
+    syllable,
+    ipa_segment,
+    is_phone,
+    is_supra,
+    is_syllabic,
+    syllabic,
+    syllable_weight
+} from "./types"
 import { get } from "./ipa"
 
 interface syllabify_options {
     ignore_initial_syllab?: boolean;
     ignore_final_syllab?: boolean;
+    diphthong_is_heavy?: boolean;
+    coda_is_heavy?: boolean;
+    long_is_heavy?: boolean;
+    mark_superheavy?: boolean;
 }
 
 const DEF_OPTS: syllabify_options = {
     ignore_initial_syllab: true,
-    ignore_final_syllab: true
+    ignore_final_syllab: true,
+    diphthong_is_heavy: true,
+    coda_is_heavy: true,
+    mark_superheavy: false
 }
 
 export function syllabify(_input: ipa_segment[], options?: syllabify_options): word | undefined {
@@ -63,10 +79,20 @@ export function syllabify(_input: ipa_segment[], options?: syllabify_options): w
             // Encountered syllable break so push all the
             // accumulated segments into the syllable
             if (syllable_segments.length > 0) {
+                let weight = syllable_weight.light
+                if (options.mark_superheavy && nucleus.length > 1 && coda.length > 0) {
+                    weight = syllable_weight.superheavy
+                } else if (options.diphthong_is_heavy && nucleus.length > 1) {
+                    weight = syllable_weight.heavy
+                } else if (options.coda_is_heavy && coda.length > 0) {
+                    weight = syllable_weight.heavy
+                }
+
                 const syllable: syllable = {
                     onset: onset,
                     nucleus: nucleus,
                     coda: coda,
+                    weight: weight,
                     segments: syllable_segments
                 }
                 word.push(syllable)
@@ -81,10 +107,20 @@ export function syllabify(_input: ipa_segment[], options?: syllabify_options): w
     }
 
     if (syllable_segments.length > 0) {
+        let weight = syllable_weight.light
+        if (options.mark_superheavy && nucleus.length > 1 && coda.length > 0) {
+            weight = syllable_weight.superheavy
+        } else if (options.diphthong_is_heavy && nucleus.length > 1) {
+            weight = syllable_weight.heavy
+        } else if (options.coda_is_heavy && coda.length > 0) {
+            weight = syllable_weight.heavy
+        }
+
         const syllable: syllable = {
             onset: onset,
             nucleus: nucleus,
             coda: coda,
+            weight: weight,
             segments: syllable_segments
         }
         word.push(syllable)

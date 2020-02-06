@@ -51,12 +51,8 @@ function set_diacritic(input, set_fn, diacritic) {
             // We could not find the transformed counterpart
             // so we create an array and add the given
             // diacritic in the second position
-            var output = input;
-            var output_features = diacritic.features;
-            if (output_features) {
-                output.features = __assign(__assign({}, input.features), output_features);
-            }
-            var target_segment = [output, diacritic];
+            input.features = __assign(__assign({}, input.features), diacritic.features);
+            var target_segment = [input, diacritic];
             return target_segment;
         }
     }
@@ -68,6 +64,7 @@ function set_diacritic(input, set_fn, diacritic) {
         // In this case, simply add the given
         // diacritic after the others
         var letter = input[0];
+        letter.features = __assign(__assign({}, letter.features), diacritic.features);
         return __spread([letter, diacritic], input.slice(1));
     }
 }
@@ -119,14 +116,16 @@ function ejectivize(input) {
 }
 exports.ejectivize = ejectivize;
 function aspirate(input) {
-    var diac = ipa_1.get("aspirated");
-    if (diac && types_1.is_diacritic(diac)) {
-        var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.neg), types_1.feature.pos); };
-        var result = set_diacritic(input, set_fn, diac);
-        if (types_1.is_consonant(result)) {
-            return result;
+    if (types_1.is_consonant(input)) {
+        var diac = ipa_1.get("aspirated");
+        if (diac && types_1.is_diacritic(diac)) {
+            var set_fn = function (x) { return feature_string_1.set_sp_glot(feature_string_1.set_con_glot(x, types_1.feature.neg), types_1.feature.pos); };
+            var result = set_diacritic(input, set_fn, diac);
+            if (types_1.is_consonant(result)) {
+                return result;
+            }
         }
+        return undefined;
     }
-    return undefined;
 }
 exports.aspirate = aspirate;

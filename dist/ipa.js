@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __values = (this && this.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -522,12 +533,12 @@ exports.low_mid_front_round_vowel = {
     }
 };
 exports.near_low_front_unround_vowel = {
-    name: "near-low front unrounded vowel",
+    name: "ash",
     type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "æ",
+    ipa_sym: "\u00E6",
     ipa_ent: "&#230;",
     branner: "ae)",
     number: 325,
@@ -644,7 +655,7 @@ exports.high_central_tense_unround_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɨ",
+    ipa_sym: "\u0268",
     ipa_ent: "&#616;",
     branner: "i-",
     number: 317,
@@ -683,7 +694,7 @@ exports.high_central_tense_round_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ʉ",
+    ipa_sym: "\u0289",
     ipa_ent: "&#649;",
     branner: "u-",
     number: 318,
@@ -1029,14 +1040,14 @@ exports.near_high_back_lax_round_vowel = {
     }
 };
 exports.high_mid_back_tense_unround_vowel = {
-    name: "high-mid back tense unrounded vowel",
+    name: "rams horn",
     type: types_1.LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɤ",
+    ipa_sym: "\u0264",
     ipa_ent: "&#612;",
-    branner: "U\"",
+    branner: 'U"',
     number: 315,
     features: {
         SYL: types_1.feature.pos,
@@ -1151,7 +1162,7 @@ exports.low_mid_back_lax_round_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɔ",
+    ipa_sym: "\u0254",
     ipa_ent: "&#596;",
     branner: "c&",
     number: 306,
@@ -1190,9 +1201,9 @@ exports.low_back_unround_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɑ",
+    ipa_sym: "\u0251",
     ipa_ent: "&#593;",
-    branner: "a\"",
+    branner: 'a"',
     number: 305,
     features: {
         SYL: types_1.feature.pos,
@@ -1229,9 +1240,9 @@ exports.low_back_round_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɒ",
+    ipa_sym: "\u0252",
     ipa_ent: "&#594;",
-    branner: "a\"&",
+    branner: 'a"&',
     number: 313,
     features: {
         SYL: types_1.feature.pos,
@@ -1431,7 +1442,7 @@ exports.voiceless_bilabial_fricative = {
     vowel: false,
     ipa_sym: "ɸ",
     ipa_ent: "&#632;",
-    branner: "P\"",
+    branner: 'P"',
     number: 126,
     features: {
         SYL: types_1.feature.neg,
@@ -1471,7 +1482,7 @@ exports.voiced_bilabial_fricative = {
     vowel: false,
     ipa_sym: "β",
     ipa_ent: "&#946;",
-    branner: "B\"",
+    branner: 'B"',
     number: 127,
     features: {
         SYL: types_1.feature.neg,
@@ -1671,7 +1682,7 @@ exports.voiced_labiodental_nasal = {
     vowel: false,
     ipa_sym: "ɱ",
     ipa_ent: "&#625;",
-    branner: "m\"",
+    branner: 'm"',
     number: 115,
     features: {
         SYL: types_1.feature.neg,
@@ -1791,7 +1802,7 @@ exports.voiced_labiodental_approximant = {
     vowel: false,
     ipa_sym: "ʋ",
     ipa_ent: "&#651;",
-    branner: "v\"",
+    branner: 'v"',
     number: 150,
     features: {
         SYL: types_1.feature.neg,
@@ -1983,13 +1994,13 @@ exports.voiced_dental_stop = {
     }
 };
 exports.voiceless_dental_fricative = {
-    name: "voiceless dental fricative",
+    name: "theta",
     type: types_1.LETTER,
     place: INTER_DENT,
     manner: FRIC,
     consonant: true,
     vowel: false,
-    ipa_sym: "θ",
+    ipa_sym: "\u03B8",
     ipa_ent: "&#952;",
     branner: "0-",
     number: 130,
@@ -2023,13 +2034,13 @@ exports.voiceless_dental_fricative = {
     }
 };
 exports.voiced_dental_fricative = {
-    name: "voiced dental fricative",
+    name: "eth",
     type: types_1.LETTER,
     place: INTER_DENT,
     manner: FRIC,
     consonant: true,
     vowel: false,
-    ipa_sym: "ð",
+    ipa_sym: "\u00F0",
     ipa_ent: "&#240;",
     branner: "d-",
     number: 131,
@@ -2311,7 +2322,7 @@ exports.voiced_alveolar_lat_affricate = {
     vowel: false,
     ipa_sym: "d͡ɮ",
     ipa_ent: "&#100;&#865;&#622;",
-    branner: "dl3\")))",
+    branner: 'dl3")))',
     number: pair_nums(104, 149),
     features: {
         SYL: types_1.feature.neg,
@@ -2391,7 +2402,7 @@ exports.voiced_alveolar_lat_fric = {
     vowel: false,
     ipa_sym: "ɮ",
     ipa_ent: "&#622;",
-    branner: "l3\")",
+    branner: 'l3")',
     number: 149,
     features: {
         SYL: types_1.feature.neg,
@@ -2511,7 +2522,7 @@ exports.voiced_alveolar_tap = {
     vowel: false,
     ipa_sym: "ɾ",
     ipa_ent: "&#638;",
-    branner: "r\"",
+    branner: 'r"',
     number: 124,
     features: {
         SYL: types_1.feature.neg,
@@ -2671,7 +2682,7 @@ exports.voiced_pal_alv_affricate = {
     vowel: false,
     ipa_sym: "d͡ʒ",
     ipa_ent: "&#100;&#865;&#658;",
-    branner: "d3\"))",
+    branner: 'd3"))',
     number: pair_nums(104, 135),
     features: {
         SYL: types_1.feature.neg,
@@ -2703,7 +2714,7 @@ exports.voiced_pal_alv_affricate = {
     }
 };
 exports.voiceless_pal_alv_fricative = {
-    name: "voiceless palatoalveolar fricative",
+    name: "esh",
     type: types_1.LETTER,
     place: PAL_ALV,
     manner: FRIC,
@@ -2743,7 +2754,7 @@ exports.voiceless_pal_alv_fricative = {
     }
 };
 exports.voiced_pal_alv_fricative = {
-    name: "voiced palatoalveolar fricative",
+    name: "ezh",
     type: types_1.LETTER,
     place: PAL_ALV,
     manner: FRIC,
@@ -2751,7 +2762,7 @@ exports.voiced_pal_alv_fricative = {
     vowel: false,
     ipa_sym: "ʒ",
     ipa_ent: "&#658;",
-    branner: "3\"",
+    branner: '3"',
     number: 135,
     features: {
         SYL: types_1.feature.neg,
@@ -2863,7 +2874,7 @@ exports.voiced_velar_stop = {
     }
 };
 exports.voiced_velar_nasal = {
-    name: "voiced velar nasal",
+    name: "engma",
     type: types_1.LETTER,
     place: VEL,
     manner: NASAL,
@@ -2900,6 +2911,46 @@ exports.voiced_velar_nasal = {
         FRONT: types_1.feature.neg,
         BACK: types_1.feature.neg,
         TENSE: types_1.feature.zero
+    }
+};
+exports.voiced_palatal_approx = {
+    name: "yod",
+    type: types_1.LETTER,
+    place: PAL,
+    manner: APPROX,
+    consonant: true,
+    vowel: false,
+    ipa_sym: "\u006A",
+    ipa_ent: "&#106;",
+    branner: "j",
+    number: 153,
+    features: {
+        SYL: types_1.feature.neg,
+        CONS: types_1.feature.neg,
+        SON: types_1.feature.pos,
+        CONT: types_1.feature.pos,
+        DELREL: types_1.feature.zero,
+        APPROX: types_1.feature.pos,
+        TAP: types_1.feature.neg,
+        TRIL: types_1.feature.neg,
+        LAT: types_1.feature.neg,
+        NASAL: types_1.feature.neg,
+        VOICE: types_1.feature.pos,
+        SP_GLOT: types_1.feature.neg,
+        CON_GLOT: types_1.feature.neg,
+        LABIAL: types_1.feature.neg,
+        ROUND: types_1.feature.neg,
+        LAB_DEN: types_1.feature.neg,
+        CORONAL: types_1.feature.pos,
+        ANT: types_1.feature.neg,
+        DISTRO: types_1.feature.pos,
+        STRID: types_1.feature.neg,
+        DORSAL: types_1.feature.pos,
+        HIGH: types_1.feature.pos,
+        LOW: types_1.feature.neg,
+        FRONT: types_1.feature.pos,
+        BACK: types_1.feature.neg,
+        TENSE: types_1.feature.pos
     }
 };
 exports.voiceless_uvular_stop = {
@@ -3022,6 +3073,46 @@ exports.voiced_uvular_nasal = {
         TENSE: types_1.feature.zero
     }
 };
+exports.voiced_uvular_fricative = {
+    name: "voiced uvular fricative",
+    type: types_1.LETTER,
+    place: UVU,
+    manner: FRIC,
+    consonant: true,
+    vowel: false,
+    ipa_sym: "\u0281",
+    ipa_ent: "&#641;",
+    branner: "R%",
+    number: 143,
+    features: {
+        SYL: types_1.feature.neg,
+        CONS: types_1.feature.pos,
+        SON: types_1.feature.neg,
+        CONT: types_1.feature.pos,
+        DELREL: types_1.feature.pos,
+        APPROX: types_1.feature.neg,
+        TAP: types_1.feature.neg,
+        TRIL: types_1.feature.neg,
+        LAT: types_1.feature.neg,
+        NASAL: types_1.feature.neg,
+        VOICE: types_1.feature.pos,
+        SP_GLOT: types_1.feature.neg,
+        CON_GLOT: types_1.feature.neg,
+        LABIAL: types_1.feature.neg,
+        ROUND: types_1.feature.neg,
+        LAB_DEN: types_1.feature.neg,
+        CORONAL: types_1.feature.neg,
+        ANT: types_1.feature.zero,
+        DISTRO: types_1.feature.zero,
+        STRID: types_1.feature.zero,
+        DORSAL: types_1.feature.pos,
+        HIGH: types_1.feature.neg,
+        LOW: types_1.feature.neg,
+        FRONT: types_1.feature.neg,
+        BACK: types_1.feature.pos,
+        TENSE: types_1.feature.zero
+    }
+};
 exports.voiceless_glottal_fricative = {
     name: "voiceless glottal fricative",
     type: types_1.LETTER,
@@ -3111,7 +3202,7 @@ exports.voiced_velar_fricative = {
     vowel: false,
     ipa_sym: "ɣ",
     ipa_ent: "&#611;",
-    branner: "g\"",
+    branner: 'g"',
     number: 141,
     features: {
         SYL: types_1.feature.neg,
@@ -3193,7 +3284,7 @@ exports.syllable_break = {
 exports.primary_stress = {
     name: "primary stress",
     type: types_1.SUPRA,
-    ipa_sym: "ˈ",
+    ipa_sym: "\u02C8",
     ipa_ent: "&#712;",
     branner: "'",
     number: 501
@@ -3201,10 +3292,18 @@ exports.primary_stress = {
 exports.secondary_stress = {
     name: "secondary stress",
     type: types_1.SUPRA,
-    ipa_sym: "ˌ",
+    ipa_sym: "\u02CC",
     ipa_ent: "&#716;",
     branner: ",",
     number: 502
+};
+exports.word_break = {
+    name: "word break",
+    type: types_1.SUPRA,
+    ipa_sym: "#",
+    ipa_ent: "&#35;",
+    branner: "#",
+    number: 35 // UNOFFICIAL [uses the decimal value (HTML entity)]
 };
 exports.long = {
     name: "long",
@@ -3378,6 +3477,63 @@ exports.aspirated_diacritic = {
         CON_GLOT: types_1.feature.neg
     }
 };
+exports.palatal_diacritic = {
+    name: "palatalized",
+    type: types_1.DIAC,
+    ipa_sym: "\u02B2",
+    ipa_ent: "&#690;",
+    branner: "j^",
+    number: 421,
+    features: {
+        DORSAL: types_1.feature.pos,
+        HIGH: types_1.feature.pos,
+        LOW: types_1.feature.neg,
+        FRONT: types_1.feature.pos,
+        BACK: types_1.feature.neg
+    }
+};
+exports.labial_diacritic = {
+    name: "labialized",
+    type: types_1.DIAC,
+    ipa_sym: "\u02B7",
+    ipa_ent: "&#695;",
+    branner: "w^",
+    number: 420,
+    features: {
+        LABIAL: types_1.feature.pos,
+        ROUND: types_1.feature.pos
+    }
+};
+exports.velar_diacritic = {
+    name: "velarized",
+    type: types_1.DIAC,
+    ipa_sym: "\u02E0",
+    ipa_ent: "&#736;",
+    branner: "g^",
+    number: 422,
+    features: {
+        DORSAL: types_1.feature.pos,
+        HIGH: types_1.feature.pos,
+        LOW: types_1.feature.neg,
+        FRONT: types_1.feature.neg,
+        BACK: types_1.feature.pos
+    }
+};
+exports.pharyngeal_diacritic = {
+    name: "pharyngealized",
+    type: types_1.DIAC,
+    ipa_sym: "\u02E4",
+    ipa_ent: "&#740;",
+    branner: "&g^",
+    number: 423,
+    features: {
+        DORSAL: types_1.feature.pos,
+        HIGH: types_1.feature.neg,
+        LOW: types_1.feature.pos,
+        FRONT: types_1.feature.neg,
+        BACK: types_1.feature.pos
+    }
+};
 var all_phones = [
     exports.high_front_tense_unround_vowel,
     exports.high_front_tense_round_vowel,
@@ -3444,12 +3600,14 @@ var all_phones = [
     exports.voiced_pal_alv_affricate,
     exports.voiceless_pal_alv_fricative,
     exports.voiced_pal_alv_fricative,
+    exports.voiced_palatal_approx,
     exports.voiceless_velar_stop,
     exports.voiced_velar_stop,
     exports.voiced_velar_nasal,
     exports.voiceless_uvular_stop,
     exports.voiced_uvular_stop,
     exports.voiced_uvular_nasal,
+    exports.voiced_uvular_fricative,
     exports.glottal_stop,
     exports.voiceless_glottal_fricative,
     exports.voiceless_velar_fricative,
@@ -3458,6 +3616,7 @@ var all_phones = [
     exports.syllable_break,
     exports.primary_stress,
     exports.secondary_stress,
+    exports.word_break,
     exports.long,
     exports.half_long,
     exports.top_diacritic,
@@ -3473,7 +3632,11 @@ var all_phones = [
     exports.creaky_voiced,
     exports.breathy_voiced,
     exports.ejective_diacritic,
-    exports.aspirated_diacritic
+    exports.aspirated_diacritic,
+    exports.palatal_diacritic,
+    exports.labial_diacritic,
+    exports.velar_diacritic,
+    exports.pharyngeal_diacritic
 ];
 var phones_by_name = {};
 var phones_by_ipa_sym = {};
@@ -3491,21 +3654,25 @@ for (var i = 0; i < num_phones; i++) {
     }
 }
 function get(key) {
+    // IMPORTANT: JavaScript by default does NOT copy
+    // objects. It copies the REFERENCE to the object.
+    // So we must copy the entire returned object or
+    // else we will pollute the phones
     if (phones_by_name[key]) {
-        return phones_by_name[key];
+        return __assign({}, phones_by_name[key]);
     }
     if (phones_by_branner[key]) {
-        return phones_by_branner[key];
+        return __assign({}, phones_by_branner[key]);
     }
     if (phones_by_ipa_sym[key]) {
-        return phones_by_ipa_sym[key];
+        return __assign({}, phones_by_ipa_sym[key]);
     }
     return undefined;
 }
 exports.get = get;
 function get_by_feature_string(key) {
     if (letters_by_feature_string[key]) {
-        return letters_by_feature_string[key];
+        return __assign({}, letters_by_feature_string[key]);
     }
     return undefined;
 }

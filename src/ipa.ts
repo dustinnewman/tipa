@@ -532,12 +532,12 @@ export const low_mid_front_round_vowel: ipa_vowel = {
 }
 
 export const near_low_front_unround_vowel: ipa_vowel = {
-    name: "near-low front unrounded vowel",
+    name: "ash",
     type: LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "æ",
+    ipa_sym: "\u00E6",
     ipa_ent: "&#230;",
     branner: "ae)",
     number: 325,
@@ -657,7 +657,7 @@ export const high_central_tense_unround_vowel: ipa_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɨ",
+    ipa_sym: "\u0268",
     ipa_ent: "&#616;",
     branner: "i-",
     number: 317,
@@ -697,7 +697,7 @@ export const high_central_tense_round_vowel: ipa_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ʉ",
+    ipa_sym: "\u0289",
     ipa_ent: "&#649;",
     branner: "u-",
     number: 318,
@@ -1052,14 +1052,14 @@ export const near_high_back_lax_round_vowel: ipa_vowel = {
 }
 
 export const high_mid_back_tense_unround_vowel: ipa_vowel = {
-    name: "high-mid back tense unrounded vowel",
+    name: "rams horn",
     type: LETTER,
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɤ",
+    ipa_sym: "\u0264",
     ipa_ent: "&#612;",
-    branner: `U"`,
+    branner: 'U"',
     number: 315,
     features: {
         SYL: feature.pos,
@@ -1177,7 +1177,7 @@ export const low_mid_back_lax_round_vowel: ipa_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɔ",
+    ipa_sym: "\u0254",
     ipa_ent: "&#596;",
     branner: "c&",
     number: 306,
@@ -1217,9 +1217,9 @@ export const low_back_unround_vowel: ipa_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɑ",
+    ipa_sym: "\u0251",
     ipa_ent: "&#593;",
-    branner: `a"`,
+    branner: 'a"',
     number: 305,
     features: {
         SYL: feature.pos,
@@ -1257,9 +1257,9 @@ export const low_back_round_vowel: ipa_vowel = {
     place: DORSAL,
     consonant: false,
     vowel: true,
-    ipa_sym: "ɒ",
+    ipa_sym: "\u0252",
     ipa_ent: "&#594;",
-    branner: `a"&`,
+    branner: 'a"&',
     number: 313,
     features: {
         SYL: feature.pos,
@@ -1464,7 +1464,7 @@ export const voiceless_bilabial_fricative: ipa_consonant = {
     vowel: false,
     ipa_sym: "ɸ",
     ipa_ent: "&#632;",
-    branner: `P"`,
+    branner: 'P"',
     number: 126,
     features: {
         SYL: feature.neg,
@@ -1505,7 +1505,7 @@ export const voiced_bilabial_fricative: ipa_consonant = {
     vowel: false,
     ipa_sym: "β",
     ipa_ent: "&#946;",
-    branner: `B"`,
+    branner: 'B"',
     number: 127,
     features: {
         SYL: feature.neg,
@@ -1710,7 +1710,7 @@ export const voiced_labiodental_nasal: ipa_consonant = {
     vowel: false,
     ipa_sym: "ɱ",
     ipa_ent: "&#625;",
-    branner: `m"`,
+    branner: 'm"',
     number: 115,
     features: {
         SYL: feature.neg,
@@ -1833,7 +1833,7 @@ export const voiced_labiodental_approximant: ipa_consonant = {
     vowel: false,
     ipa_sym: "ʋ",
     ipa_ent: "&#651;",
-    branner: `v"`,
+    branner: 'v"',
     number: 150,
     features: {
         SYL: feature.neg,
@@ -2030,13 +2030,13 @@ export const voiced_dental_stop: ipa_consonant = {
 }
 
 export const voiceless_dental_fricative: ipa_consonant = {
-    name: "voiceless dental fricative",
+    name: "theta",
     type: LETTER,
     place: INTER_DENT,
     manner: FRIC,
     consonant: true,
     vowel: false,
-    ipa_sym: "θ",
+    ipa_sym: "\u03B8",
     ipa_ent: "&#952;",
     branner: "0-",
     number: 130,
@@ -2071,13 +2071,13 @@ export const voiceless_dental_fricative: ipa_consonant = {
 }
 
 export const voiced_dental_fricative: ipa_consonant = {
-    name: "voiced dental fricative",
+    name: "eth",
     type: LETTER,
     place: INTER_DENT,
     manner: FRIC,
     consonant: true,
     vowel: false,
-    ipa_sym: "ð",
+    ipa_sym: "\u00F0",
     ipa_ent: "&#240;",
     branner: "d-",
     number: 131,
@@ -2366,7 +2366,7 @@ export const voiced_alveolar_lat_affricate: ipa_consonant = {
     vowel: false,
     ipa_sym: "d͡ɮ",
     ipa_ent: "&#100;&#865;&#622;",
-    branner: `dl3")))`,
+    branner: 'dl3")))',
     number: pair_nums(104, 149),
     features: {
         SYL: feature.neg,
@@ -2448,7 +2448,7 @@ export const voiced_alveolar_lat_fric: ipa_consonant = {
     vowel: false,
     ipa_sym: "ɮ",
     ipa_ent: "&#622;",
-    branner: `l3")`,
+    branner: 'l3")',
     number: 149,
     features: {
         SYL: feature.neg,
@@ -2571,7 +2571,7 @@ export const voiced_alveolar_tap: ipa_consonant = {
     vowel: false,
     ipa_sym: "ɾ",
     ipa_ent: "&#638;",
-    branner: `r"`,
+    branner: 'r"',
     number: 124,
     features: {
         SYL: feature.neg,
@@ -2735,7 +2735,7 @@ export const voiced_pal_alv_affricate: ipa_consonant = {
     vowel: false,
     ipa_sym: "d͡ʒ",
     ipa_ent: "&#100;&#865;&#658;",
-    branner: `d3"))`,
+    branner: 'd3"))',
     number: pair_nums(104, 135),
     features: {
         SYL: feature.neg,
@@ -2768,7 +2768,7 @@ export const voiced_pal_alv_affricate: ipa_consonant = {
 }
 
 export const voiceless_pal_alv_fricative: ipa_consonant = {
-    name: "voiceless palatoalveolar fricative",
+    name: "esh",
     type: LETTER,
     place: PAL_ALV,
     manner: FRIC,
@@ -2809,7 +2809,7 @@ export const voiceless_pal_alv_fricative: ipa_consonant = {
 }
 
 export const voiced_pal_alv_fricative: ipa_consonant = {
-    name: "voiced palatoalveolar fricative",
+    name: "ezh",
     type: LETTER,
     place: PAL_ALV,
     manner: FRIC,
@@ -2817,7 +2817,7 @@ export const voiced_pal_alv_fricative: ipa_consonant = {
     vowel: false,
     ipa_sym: "ʒ",
     ipa_ent: "&#658;",
-    branner: `3"`,
+    branner: '3"',
     number: 135,
     features: {
         SYL: feature.neg,
@@ -2932,7 +2932,7 @@ export const voiced_velar_stop: ipa_consonant = {
 }
 
 export const voiced_velar_nasal: ipa_consonant = {
-    name: "voiced velar nasal",
+    name: "engma",
     type: LETTER,
     place: VEL,
     manner: NASAL,
@@ -2971,6 +2971,48 @@ export const voiced_velar_nasal: ipa_consonant = {
         TENSE: feature.zero
     }
 }
+
+export const voiced_palatal_approx: ipa_consonant = {
+    name: "yod",
+    type: LETTER,
+    place: PAL,
+    manner: APPROX,
+    consonant: true,
+    vowel: false,
+    ipa_sym: "\u006A",
+    ipa_ent: "&#106;",
+    branner: "j",
+    number: 153,
+    features: {
+        SYL: feature.neg,
+        CONS: feature.neg,
+        SON: feature.pos,
+        CONT: feature.pos,
+        DELREL: feature.zero,
+        APPROX: feature.pos,
+        TAP: feature.neg,
+        TRIL: feature.neg,
+        LAT: feature.neg,
+        NASAL: feature.neg,
+        VOICE: feature.pos,
+        SP_GLOT: feature.neg,
+        CON_GLOT: feature.neg,
+        LABIAL: feature.neg,
+        ROUND: feature.neg,
+        LAB_DEN: feature.neg,
+        CORONAL: feature.pos,
+        ANT: feature.neg,
+        DISTRO: feature.pos,
+        STRID: feature.neg,
+        DORSAL: feature.pos,
+        HIGH: feature.pos,
+        LOW: feature.neg,
+        FRONT: feature.pos,
+        BACK: feature.neg,
+        TENSE: feature.pos
+    }
+}
+
 
 export const voiceless_uvular_stop: ipa_consonant = {
     name: "voiceless uvular stop",
@@ -3095,6 +3137,47 @@ export const voiced_uvular_nasal: ipa_consonant = {
     }
 }
 
+export const voiced_uvular_fricative: ipa_consonant = {
+    name: "voiced uvular fricative",
+    type: LETTER,
+    place: UVU,
+    manner: FRIC,
+    consonant: true,
+    vowel: false,
+    ipa_sym: "\u0281",
+    ipa_ent: "&#641;",
+    branner: "R%",
+    number: 143,
+    features: {
+        SYL: feature.neg,
+        CONS: feature.pos,
+        SON: feature.neg,
+        CONT: feature.pos,
+        DELREL: feature.pos,
+        APPROX: feature.neg,
+        TAP: feature.neg,
+        TRIL: feature.neg,
+        LAT: feature.neg,
+        NASAL: feature.neg,
+        VOICE: feature.pos,
+        SP_GLOT: feature.neg,
+        CON_GLOT: feature.neg,
+        LABIAL: feature.neg,
+        ROUND: feature.neg,
+        LAB_DEN: feature.neg,
+        CORONAL: feature.neg,
+        ANT: feature.zero,
+        DISTRO: feature.zero,
+        STRID: feature.zero,
+        DORSAL: feature.pos,
+        HIGH: feature.neg,
+        LOW: feature.neg,
+        FRONT: feature.neg,
+        BACK: feature.pos,
+        TENSE: feature.zero
+    }
+}
+
 export const voiceless_glottal_fricative: ipa_consonant = {
     name: "voiceless glottal fricative",
     type: LETTER,
@@ -3186,7 +3269,7 @@ export const voiced_velar_fricative: ipa_consonant = {
     vowel: false,
     ipa_sym: "ɣ",
     ipa_ent: "&#611;",
-    branner: `g"`,
+    branner: 'g"',
     number: 141,
     features: {
         SYL: feature.neg,
@@ -3271,7 +3354,7 @@ export const syllable_break: ipa_suprasegmental = {
 export const primary_stress: ipa_suprasegmental = {
     name: "primary stress",
     type: SUPRA,
-    ipa_sym: "ˈ",
+    ipa_sym: "\u02C8",
     ipa_ent: "&#712;",
     branner: "'",
     number: 501
@@ -3280,10 +3363,19 @@ export const primary_stress: ipa_suprasegmental = {
 export const secondary_stress: ipa_suprasegmental = {
     name: "secondary stress",
     type: SUPRA,
-    ipa_sym: "ˌ",
+    ipa_sym: "\u02CC",
     ipa_ent: "&#716;",
     branner: ",",
     number: 502
+}
+
+export const word_break: ipa_suprasegmental = {
+    name: "word break",
+    type: SUPRA,
+    ipa_sym: "#",
+    ipa_ent: "&#35;",
+    branner: "#",
+    number: 35 // UNOFFICIAL [uses the decimal value (HTML entity)]
 }
 
 export const long: ipa_diacritic = {
@@ -3474,6 +3566,67 @@ export const aspirated_diacritic: ipa_diacritic = {
     }
 }
 
+export const palatal_diacritic: ipa_diacritic = {
+    name: "palatalized",
+    type: DIAC,
+    ipa_sym: "\u02B2",
+    ipa_ent: "&#690;",
+    branner: "j^",
+    number: 421,
+    features: {
+        DORSAL: feature.pos,
+        HIGH: feature.pos,
+        LOW: feature.neg,
+        FRONT: feature.pos,
+        BACK: feature.neg
+    }
+}
+
+export const labial_diacritic: ipa_diacritic = {
+    name: "labialized",
+    type: DIAC,
+    ipa_sym: "\u02B7",
+    ipa_ent: "&#695;",
+    branner: "w^",
+    number: 420,
+    features: {
+        LABIAL: feature.pos,
+        ROUND: feature.pos
+    }
+}
+
+export const velar_diacritic: ipa_diacritic = {
+    name: "velarized",
+    type: DIAC,
+    ipa_sym: "\u02E0",
+    ipa_ent: "&#736;",
+    branner: "g^",
+    number: 422,
+    features: {
+        DORSAL: feature.pos,
+        HIGH: feature.pos,
+        LOW: feature.neg,
+        FRONT: feature.neg,
+        BACK: feature.pos
+    }
+}
+
+export const pharyngeal_diacritic: ipa_diacritic = {
+    name: "pharyngealized",
+    type: DIAC,
+    ipa_sym: "\u02E4",
+    ipa_ent: "&#740;",
+    branner: "&g^",
+    number: 423,
+    features: {
+        DORSAL: feature.pos,
+        HIGH: feature.neg,
+        LOW: feature.pos,
+        FRONT: feature.neg,
+        BACK: feature.pos
+    }
+}
+
 const all_phones: ipa_symbol[] = [
     high_front_tense_unround_vowel,
     high_front_tense_round_vowel,
@@ -3540,12 +3693,14 @@ const all_phones: ipa_symbol[] = [
     voiced_pal_alv_affricate,
     voiceless_pal_alv_fricative,
     voiced_pal_alv_fricative,
+    voiced_palatal_approx,
     voiceless_velar_stop,
     voiced_velar_stop,
     voiced_velar_nasal,
     voiceless_uvular_stop,
     voiced_uvular_stop,
     voiced_uvular_nasal,
+    voiced_uvular_fricative,
     glottal_stop,
     voiceless_glottal_fricative,
     voiceless_velar_fricative,
@@ -3554,6 +3709,7 @@ const all_phones: ipa_symbol[] = [
     syllable_break,
     primary_stress,
     secondary_stress,
+    word_break,
     long,
     half_long,
     top_diacritic,
@@ -3569,7 +3725,11 @@ const all_phones: ipa_symbol[] = [
     creaky_voiced,
     breathy_voiced,
     ejective_diacritic,
-    aspirated_diacritic
+    aspirated_diacritic,
+    palatal_diacritic,
+    labial_diacritic,
+    velar_diacritic,
+    pharyngeal_diacritic
 ]
 
 let phones_by_name: { [key: string]: ipa_symbol } = {}
@@ -3590,16 +3750,20 @@ for (let i = 0; i < num_phones; i++) {
 }
 
 export function get(key: string): ipa_symbol | undefined {
+    // IMPORTANT: JavaScript by default does NOT copy
+    // objects. It copies the REFERENCE to the object.
+    // So we must copy the entire returned object or
+    // else we will pollute the phones
     if (phones_by_name[key]) {
-        return phones_by_name[key]
+        return { ...phones_by_name[key] }
     }
 
     if (phones_by_branner[key]) {
-        return phones_by_branner[key]
+        return { ...phones_by_branner[key] }
     }
 
     if (phones_by_ipa_sym[key]) {
-        return phones_by_ipa_sym[key]
+        return { ...phones_by_ipa_sym[key] }
     }
 
     return undefined
@@ -3607,7 +3771,7 @@ export function get(key: string): ipa_symbol | undefined {
 
 export function get_by_feature_string(key: feature_string): (ipa_letter | undefined) {
     if (letters_by_feature_string[key]) {
-        return letters_by_feature_string[key]
+        return { ...letters_by_feature_string[key] }
     }
 
     return undefined

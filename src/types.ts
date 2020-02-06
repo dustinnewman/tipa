@@ -68,15 +68,19 @@ export type ipa_letter = ipa_vowel | ipa_consonant
 
 export type phone = ipa_letter | ([ipa_letter, ...Array<ipa_diacritic>])
 
-export type stop = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+export type consonant = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+
+export type vowel = ipa_vowel | ([ipa_vowel, ...Array<ipa_diacritic>])
+
+export type stop = consonant
 
 export type oral_stop = stop
 
 export type nasal = stop
 
-export type fricative = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+export type fricative = consonant
 
-export type vibrant = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>])
+export type vibrant = consonant
 
 export type tap = vibrant
 
@@ -168,7 +172,7 @@ export function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol is phone
     return is_letter(symbol)
 }
 
-export function is_consonant(symbol: phone): symbol is ipa_consonant {
+export function is_consonant(symbol: phone): symbol is consonant {
     if (Array.isArray(symbol)) {
         const base_consonant = symbol[0]
         return is_consonant(base_consonant)
@@ -176,7 +180,7 @@ export function is_consonant(symbol: phone): symbol is ipa_consonant {
     return (symbol as ipa_consonant).consonant === true;
 }
 
-export function is_vowel(symbol: phone): symbol is ipa_vowel {
+export function is_vowel(symbol: phone): symbol is vowel {
     if (Array.isArray(symbol)) {
         const base_vowel = symbol[0]
         return is_vowel(base_vowel)

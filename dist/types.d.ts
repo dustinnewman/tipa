@@ -57,11 +57,13 @@ export declare type ipa_consonant = ipa_vowel & {
 };
 export declare type ipa_letter = ipa_vowel | ipa_consonant;
 export declare type phone = ipa_letter | ([ipa_letter, ...Array<ipa_diacritic>]);
-export declare type stop = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
+export declare type consonant = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
+export declare type vowel = ipa_vowel | ([ipa_vowel, ...Array<ipa_diacritic>]);
+export declare type stop = consonant;
 export declare type oral_stop = stop;
 export declare type nasal = stop;
-export declare type fricative = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
-export declare type vibrant = ipa_consonant | ([ipa_consonant, ...Array<ipa_diacritic>]);
+export declare type fricative = consonant;
+export declare type vibrant = consonant;
 export declare type tap = vibrant;
 export declare type trill = vibrant;
 export declare type voiced = phone & {
@@ -105,8 +107,8 @@ export declare function is_diacritic(symbol: ipa_symbol): symbol is ipa_diacriti
 export declare function is_supra(symbol: ipa_symbol): symbol is ipa_suprasegmental;
 export declare function is_letter(symbol: ipa_symbol): symbol is ipa_letter;
 export declare function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol is phone;
-export declare function is_consonant(symbol: phone): symbol is ipa_consonant;
-export declare function is_vowel(symbol: phone): symbol is ipa_vowel;
+export declare function is_consonant(symbol: phone): symbol is consonant;
+export declare function is_vowel(symbol: phone): symbol is vowel;
 export declare function is_stop(symbol: phone): symbol is stop;
 export declare function is_syllabic(symbol: phone): symbol is syllabic;
 export declare function is_voiced(symbol: phone): symbol is voiced;
