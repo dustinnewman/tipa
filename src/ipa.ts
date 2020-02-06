@@ -53,7 +53,7 @@ export const place = {
     GLOTTAL,
 }
 
-export function is_dental(place: string) {
+export function is_labial(place: string) {
     return (
         place === LABIAL ||
         place === BILAB ||
