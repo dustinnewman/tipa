@@ -11,18 +11,18 @@ jobs:
         - uses: actions/checkout@v2
         # Setup .npmrc file to publish to npm
         - uses: actions/setup-node@v1
-            with:
-                node-version: '12.x'
-                registry-url: 'https://registry.npmjs.org'
+          with:
+            node-version: '12.x'
+            registry-url: 'https://registry.npmjs.org'
         - run: npm install
         # Publish to npm
         - run: npm publish --access public
-        env:
+          env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         # Setup .npmrc file to publish to GitHub Packages
         - uses: actions/setup-node@v1
-            with:
-                registry-url: 'https://npm.pkg.github.com'
+          with:
+            registry-url: 'https://npm.pkg.github.com'
         - run: npm publish
-            env:
+          env:
             NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
