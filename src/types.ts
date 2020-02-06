@@ -126,12 +126,6 @@ export type syllable = {
 
 export type word = syllable[]
 
-export type correspondence = (number | null)[]
-
-export type markedness_constraint = (output: word) => number
-
-export type faithfulness_constraint = (input: word, output: word, corr: correspondence) => number
-
 export const LETTER = "letter"
 export const DIAC = "diacritic"
 export const SUPRA = "suprasegmental"

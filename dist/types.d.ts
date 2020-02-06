@@ -97,9 +97,6 @@ export declare type syllable = {
     segments: ipa_segment[];
 };
 export declare type word = syllable[];
-export declare type correspondence = (number | null)[];
-export declare type markedness_constraint = (output: word) => number;
-export declare type faithfulness_constraint = (input: word, output: word, corr: correspondence) => number;
 export declare const LETTER = "letter";
 export declare const DIAC = "diacritic";
 export declare const SUPRA = "suprasegmental";

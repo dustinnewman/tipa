@@ -1,6 +1,6 @@
 {
   "name": "tipa",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "IPA in TypeScript",
   "private": false,
   "main": "dist/index.js",
