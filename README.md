@@ -1,7 +1,7 @@
 # tipa
 [![version](https://img.shields.io/npm/v/tipa.svg)](https://www.npmjs.org/package/tipa)
 
-*tipa* is a TypeScript package supporting parsing of linguistic input in Unicode, HTML Entity, and Branner (1994) formats. It contains extensive features from Hayes (2009), allowing you to transform sounds reliably.
+*tipa* is a TypeScript package supporting parsing of linguistic input in Unicode, HTML Entity, and [Branner (1994)](https://web.archive.org/web/19990209070257/http://weber.u.washington.edu/~yuenren/ASCII_IPA.html) formats. It contains extensive features from Hayes (2009) and Riggle (2012), allowing you to transform sounds reliably.
 
 
 ```js
