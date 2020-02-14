@@ -3352,6 +3352,15 @@ export const syllable_break: ipa_suprasegmental = {
     number: 506
 }
 
+export const mora: ipa_suprasegmental = {
+    name: "mora",
+    type: SUPRA,
+    ipa_sym: "\u03BC",
+    ipa_ent: "&#956;",
+    branner: 'u"', // UNOFFICIAL
+    number: 956 // UNOFFICIAL
+}
+
 export const primary_stress: ipa_suprasegmental = {
     name: "primary stress",
     type: SUPRA,
@@ -3708,6 +3717,7 @@ const all_phones: ipa_symbol[] = [
     voiced_velar_fricative,
     voiced_phar_fricative,
     syllable_break,
+    mora,
     primary_stress,
     secondary_stress,
     word_break,

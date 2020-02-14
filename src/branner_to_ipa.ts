@@ -30,6 +30,7 @@ const branner_map: Map<string, string> = new Map([
     ['c"', ""], // TODO Must precede c
     ['j"', ""], // TODO Must precede j
     ['v"', "ʋ"], // Must precede v
+    ['u"', "\u03BC"], // Must precede u
     ["v)", "\u032C"], // Must precede v
     ["l-", "ɬ"], // Must precede l
     ['a"', "\u0251"], // Must precede a
