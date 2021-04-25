@@ -60,12 +60,12 @@ exports.place = {
     EPIG: EPIG,
     GLOTTAL: GLOTTAL,
 };
-function is_dental(place) {
+function is_labial(place) {
     return (place === LABIAL ||
         place === BILAB ||
         place === LAB_DEN);
 }
-exports.is_dental = is_dental;
+exports.is_labial = is_labial;
 function is_coronal(place) {
     return (place === CORONAL ||
         place === INTER_DENT ||
@@ -3281,6 +3281,14 @@ exports.syllable_break = {
     branner: ".",
     number: 506
 };
+exports.mora_mark = {
+    name: "mora",
+    type: types_1.SUPRA,
+    ipa_sym: "\u03BC",
+    ipa_ent: "&#956;",
+    branner: 'u"',
+    number: 956 // UNOFFICIAL
+};
 exports.primary_stress = {
     name: "primary stress",
     type: types_1.SUPRA,
@@ -3534,7 +3542,7 @@ exports.pharyngeal_diacritic = {
         BACK: types_1.feature.pos
     }
 };
-var all_phones = [
+exports.all_phones = [
     exports.high_front_tense_unround_vowel,
     exports.high_front_tense_round_vowel,
     exports.near_high_front_lax_unround_vowel,
@@ -3614,6 +3622,7 @@ var all_phones = [
     exports.voiced_velar_fricative,
     exports.voiced_phar_fricative,
     exports.syllable_break,
+    exports.mora_mark,
     exports.primary_stress,
     exports.secondary_stress,
     exports.word_break,
@@ -3642,9 +3651,9 @@ var phones_by_name = {};
 var phones_by_ipa_sym = {};
 var phones_by_branner = {};
 var letters_by_feature_string = {};
-var num_phones = all_phones.length;
+var num_phones = exports.all_phones.length;
 for (var i = 0; i < num_phones; i++) {
-    var phone = Object.freeze(all_phones[i]);
+    var phone = Object.freeze(exports.all_phones[i]);
     phones_by_name[phone.name] = phone;
     phones_by_ipa_sym[phone.ipa_sym] = phone;
     phones_by_branner[phone.branner] = phone;

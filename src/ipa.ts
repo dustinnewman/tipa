@@ -3352,7 +3352,7 @@ export const syllable_break: ipa_suprasegmental = {
     number: 506
 }
 
-export const mora: ipa_suprasegmental = {
+export const mora_mark: ipa_suprasegmental = {
     name: "mora",
     type: SUPRA,
     ipa_sym: "\u03BC",
@@ -3637,7 +3637,7 @@ export const pharyngeal_diacritic: ipa_diacritic = {
     }
 }
 
-const all_phones: ipa_symbol[] = [
+export const all_phones: ipa_symbol[] = [
     high_front_tense_unround_vowel,
     high_front_tense_round_vowel,
     near_high_front_lax_unround_vowel,
@@ -3717,7 +3717,7 @@ const all_phones: ipa_symbol[] = [
     voiced_velar_fricative,
     voiced_phar_fricative,
     syllable_break,
-    mora,
+    mora_mark,
     primary_stress,
     secondary_stress,
     word_break,
