@@ -14,10 +14,10 @@
     "ipa",
     "linguistics"
   ],
-  "author": "Dustin Newman",
+  "author": "",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/dustinnewman/tipa.git",
+    "url": "https://github.com/uncomputation/tipa.git",
     "type": "git"
   },
   "devDependencies": {
