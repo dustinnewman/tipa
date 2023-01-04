@@ -155,6 +155,21 @@ export function is_letter(symbol: ipa_symbol): symbol is ipa_letter {
     return (symbol as ipa_symbol).type === LETTER
 }
 
+export function get_letter_from_phone(phone: phone): ipa_letter | undefined {
+    if (Array.isArray(phone)) {
+        const base_letter = phone[0]
+        if (is_letter(base_letter)) {
+            return base_letter
+        } else {
+            return undefined
+        }
+    } else if (is_letter(phone)) {
+        return phone
+    } else {
+        return undefined
+    }
+}
+
 export function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol is phone {
     if (symbol === undefined) {
         return false
@@ -174,61 +189,61 @@ export function is_phone(symbol: (ipa_symbol | (ipa_symbol[]))): symbol is phone
 }
 
 export function is_consonant(symbol: phone): symbol is consonant {
-    if (Array.isArray(symbol)) {
-        const base_consonant = symbol[0]
-        return is_consonant(base_consonant)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (symbol as ipa_consonant).consonant === true;
+    return (letter as ipa_consonant).consonant === true;
 }
 
 export function is_vowel(symbol: phone): symbol is vowel {
-    if (Array.isArray(symbol)) {
-        const base_vowel = symbol[0]
-        return is_vowel(base_vowel)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (symbol as ipa_vowel).vowel === true;
+    return (letter as ipa_vowel).vowel === true;
 }
 
 export function is_stop(symbol: phone): symbol is stop {
-    if (Array.isArray(symbol)) {
-        const base_letter = symbol[0]
-        return is_stop(base_letter)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (is_consonant(symbol)
-        && (symbol as ipa_letter).features.SON === feature.neg
-        && (symbol as ipa_letter).features.CONT === feature.neg
-        && (symbol as ipa_letter).features.DELREL === feature.neg
+    return (is_consonant(letter)
+        && letter.features.SON === feature.neg
+        && letter.features.CONT === feature.neg
+        && letter.features.DELREL === feature.neg
     )
 }
 
 export function is_syllabic(symbol: phone): symbol is syllabic {
-    if (Array.isArray(symbol)) {
-        const base_letter = symbol[0]
-        return is_syllabic(base_letter)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (symbol as ipa_letter).features.SYL === feature.pos
+    return letter.features.SYL === feature.pos
 }
 
 export function is_voiced(symbol: phone): symbol is voiced {
-    if (Array.isArray(symbol)) {
-        const base_letter = symbol[0]
-        return is_voiced(base_letter)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (symbol as ipa_letter).features.VOICE === feature.pos
+    return letter.features.VOICE === feature.pos
 }
 
 export function is_voiceless(symbol: phone): symbol is voiceless {
-    if (Array.isArray(symbol)) {
-        const base_letter = symbol[0]
-        return is_voiceless(base_letter)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (symbol as ipa_letter).features.VOICE === feature.neg
+    return letter.features.VOICE === feature.neg
 }
 
 export function is_sonorant(symbol: phone): symbol is sonorant {
-    if (Array.isArray(symbol)) {
-        const base_letter = symbol[0]
-        return is_sonorant(base_letter)
+    let letter = get_letter_from_phone(symbol)
+    if (letter === undefined) {
+        return false
     }
-    return (symbol as ipa_letter).features.SON === feature.pos
+    return letter.features.SON === feature.pos
 }

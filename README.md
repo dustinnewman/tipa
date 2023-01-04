@@ -57,7 +57,7 @@ $ npm install tipa
 To run tests on the library, first clone the repository:
 
 ```bash
-$ git clone https://github.com/dustinnewman98/tipa.git
+$ git clone https://github.com/dustinnewman/tipa.git
 $ cd tipa
 ```
 
