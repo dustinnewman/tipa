@@ -22,6 +22,11 @@ function clear_accum(accumulator: any[], output: ipa_segment[]) {
     return []
 }
 
+/**
+ * Applies a series of diacritics and suprasegmentals to an initial letter
+ * @param _input A list of IPA symbols
+ * @returns A list of processed IPA segments
+ */
 export function collapse(_input: ipa_symbol[]): ipa_segment[] | undefined {
     let input = _input
 
