@@ -1,0 +1,5 @@
+src
+tsconfig.json
+dist/**/*.test.d.ts
+dist/**/*.test.js
+yarn-error.log
