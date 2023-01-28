@@ -41,22 +41,17 @@ export function collapse(_input: ipa_symbol[]): ipa_segment[] | undefined {
                 accumulator.push(curr)
             }
             i += 1
-            continue
         } else {
             accumulator = clear_accum(accumulator, output)
             if (is_supra(curr)) {
                 output.push(curr)
                 i += 1
-                continue
-            }
-
-            // We have a letter which can either be standalone
-            // or the beginning of a string of modifying
-            // diacritics
-            if (is_letter(curr)) {
+            } else if (is_letter(curr)) {
+                // We have a letter which can either be standalone
+                // or the beginning of a string of modifying
+                // diacritics
                 accumulator = [curr]
                 i += 1
-                continue
             }
         }
     }
